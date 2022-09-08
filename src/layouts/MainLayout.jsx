@@ -1,9 +1,9 @@
 export default function MainLayout({ children }) {
   return (
     <div>
-      <header></header>
+      <header>Header</header>
       <main>{children}</main>
-      <footer></footer>
+      <footer>Footer</footer>
     </div>
   );
 }
