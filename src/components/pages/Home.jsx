@@ -1,3 +1,5 @@
+import { Box, Typography } from "@mui/material";
+
 export default function Home() {
-  return <div>Home</div>;
+  return <Box>Home</Box>;
 }

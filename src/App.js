@@ -7,6 +7,7 @@ import Prices from "./components/pages/Prices";
 import AboutUs from "./components/pages/AboutUs";
 import Contacts from "./components/pages/Contacts";
 import MainLayout from "./layouts/MainLayout";
+//styles
 
 function App() {
   return (
