@@ -1,7 +1,7 @@
 //Mui components
 import { Box, Container, Grid, Typography } from "@mui/material";
 //common container
-import { CommonPaper } from "../components/common";
+import { BoxBackground, CommonPaper } from "../components/common";
 //constants
 import {
   COMPANY_MAIN_PHONE_NUMBER,
@@ -16,14 +16,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export default function Contacts() {
   return (
-    <Box
-      sx={{
-        background: "url(/images/contacts.svg)",
-        width: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }}
-    >
+    <BoxBackground img="/images/contacts.svg">
       <Container
         sx={{
           pt: { lg: "215px", sm: "200px", xs: "260px" }
@@ -59,6 +52,6 @@ export default function Contacts() {
           </Grid>
         </CommonPaper>
       </Container>
-    </Box>
+    </BoxBackground>
   );
 }

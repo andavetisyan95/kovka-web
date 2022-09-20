@@ -1,22 +1,14 @@
 //MUI components
-import { Box, Container, Typography, Grid, Button } from "@mui/material";
+import { Container, Typography, Grid, Button } from "@mui/material";
 //react hooks
 import { useNavigate } from "react-router";
-// import { makeStyles } from "@mui/styles";
 //react components
-import { CommonPaper } from "src/components/common/";
+import { BoxBackground, CommonPaper } from "src/components/common/";
 
 export default function MainPage() {
   const navigate = useNavigate();
   return (
-    <Box
-      sx={{
-        background: "url(/images/mainBack.svg)",
-        width: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }}
-    >
+    <BoxBackground img="/images/mainBack.svg">
       {" "}
       <Container
         sx={{
@@ -55,6 +47,6 @@ export default function MainPage() {
           </Grid>
         </CommonPaper>
       </Container>
-    </Box>
+    </BoxBackground>
   );
 }

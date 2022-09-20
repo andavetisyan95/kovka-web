@@ -1,7 +1,8 @@
 //Mui components
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 //react hooks
 import { useEffect, useState } from "react";
+import { BoxBackground } from "src/components/common";
 
 export default function Prices() {
   const [prices, setPrices] = useState(null);
@@ -12,14 +13,7 @@ export default function Prices() {
   }, []);
 
   return (
-    <Box
-      sx={{
-        background: "url(/images/pricePage.svg)",
-        width: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }}
-    >
+    <BoxBackground img="/images/pricePage.svg">
       <Box sx={{ py: { xs: "180px" }, px: { lg: "200px", sm: "96px", xs: "23px" } }}>
         <Box
           sx={{
@@ -97,6 +91,6 @@ export default function Prices() {
           </Grid>
         </Box>
       </Box>
-    </Box>
+    </BoxBackground>
   );
 }

@@ -6,16 +6,16 @@ import { useEffect, useState } from "react";
 import { Advantege, MainPage, OurWorks, Services } from "./home-page";
 
 export default function Home() {
-  const { REACT_APP_SERVICE_HOST, REACT_APP_ADVANTEGES_HOST } = process.env;
   const [data, setData] = useState(null);
   useEffect(() => {
     fetchAllInfo();
-  }, []);
+  });
+  //env files are'nt work
 
   async function fetchAllInfo() {
     const [advanteges, services] = await Promise.all([
-      fetch(REACT_APP_ADVANTEGES_HOST).then(res => res.json()),
-      fetch(REACT_APP_SERVICE_HOST).then(res => res.json())
+      fetch("http://localhost:8000/advanteges").then(res => res.json()),
+      fetch("http://localhost:8000/services").then(res => res.json())
     ]);
     setData({ advanteges, services });
   }

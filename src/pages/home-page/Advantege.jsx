@@ -1,18 +1,11 @@
 //Mui components
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography } from "@mui/material";
 //react components
-import { CommonPaper } from "src/components/common";
+import { BoxBackground, CommonPaper } from "src/components/common";
 
 export default function Advantege({ advanteges }) {
   return (
-    <Box
-      sx={{
-        background: "url(/images/mainBack2.svg)",
-        width: "100%",
-        backgroundSize: "cover",
-        backgroundPosition: "center"
-      }}
-    >
+    <BoxBackground img="/images/mainBack2.svg">
       <Container sx={{ py: { lg: "80px", xs: "40px" } }}>
         <CommonPaper title="ПОЧЕМУ ВЫБИРАЮТ НАС?">
           <Grid container direction="column" sx={{ gap: { sm: "80px", xs: "40px" } }}>
@@ -45,6 +38,6 @@ export default function Advantege({ advanteges }) {
           </Grid>
         </CommonPaper>
       </Container>
-    </Box>
+    </BoxBackground>
   );
 }
