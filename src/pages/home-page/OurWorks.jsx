@@ -1,9 +1,9 @@
 //Mui components
-import { Grid, Typography, Box, ImageList, ImageListItem } from "@mui/material";
+import { Grid, Typography, ImageList, ImageListItem } from "@mui/material";
 //react router
 import { NavLink } from "react-router-dom";
 //react components
-import CommonBox from "src/components/common/CommonBox";
+import { CommonBox } from "src/components/common";
 
 export default function OurWorks({ works }) {
   return (

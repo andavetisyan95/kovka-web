@@ -1,5 +1,7 @@
 //MUI components
-import { Box, Container, Grid, Typography, Link } from "@mui/material";
+import { Box, Grid, Link } from "@mui/material";
+//components
+import { FooterTypography } from "src/components/common";
 //MUI icons
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
@@ -18,7 +20,7 @@ export default function Footer() {
   return (
     <Box
       sx={{
-        bgcolor: "black",
+        bgcolor: "1B1B1B",
         width: { lg: "100%" }
       }}
     >
@@ -50,30 +52,12 @@ export default function Footer() {
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
-                    <Typography
-                      sx={{
-                        fontSize: { lg: "20px", xs: "16px" },
-                        fontWeight: 500,
-                        lineHeight: { lg: "25px", xs: "20px" },
-                        textAlign: "center"
-                      }}
-                    >
-                      {COMPANY_MAIN_PHONE_NUMBER}
-                    </Typography>
+                    <FooterTypography title={COMPANY_MAIN_PHONE_NUMBER} />
                   </Link>
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_PHONE_NUMBER}`}>
-                    <Typography
-                      sx={{
-                        fontSize: { lg: "20px", xs: "16px" },
-                        fontWeight: 500,
-                        lineHeight: { lg: "25px", xs: "20px" },
-                        textAlign: "center"
-                      }}
-                    >
-                      {COMPANY_PHONE_NUMBER}
-                    </Typography>
+                    <FooterTypography title={COMPANY_PHONE_NUMBER} />
                   </Link>
                 </Grid>
               </Grid>
@@ -88,16 +72,7 @@ export default function Footer() {
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>
-                    <Typography
-                      sx={{
-                        fontSize: { lg: "20px", xs: "16px" },
-                        fontWeight: 500,
-                        lineHeight: { lg: "25px", xs: "20px" },
-                        textAlign: "center"
-                      }}
-                    >
-                      {COMPANY_EMAIL}
-                    </Typography>
+                    <FooterTypography title={COMPANY_EMAIL} />
                   </Link>
                 </Grid>
               </Grid>
@@ -115,16 +90,7 @@ export default function Footer() {
                     sx={{ textDecoration: "none" }}
                     href={"https://yandex.ru/maps/?ll=36.901489%2C55.641605&z=18"}
                   >
-                    <Typography
-                      sx={{
-                        fontSize: { lg: "20px", xs: "16px" },
-                        fontWeight: 500,
-                        lineHeight: { lg: "25px", xs: "20px" },
-                        textAlign: "center"
-                      }}
-                    >
-                      {COMPANY_LOCATION}
-                    </Typography>
+                    <FooterTypography title={COMPANY_LOCATION} />
                   </Link>
                 </Grid>
               </Grid>

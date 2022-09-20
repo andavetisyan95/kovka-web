@@ -4,7 +4,7 @@ import { Box, Container, Typography, Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router";
 // import { makeStyles } from "@mui/styles";
 //react components
-import CommonPaper from "src/components/common/CommonPaper";
+import { CommonPaper } from "src/components/common/";
 
 export default function MainPage() {
   const navigate = useNavigate();

@@ -9,18 +9,7 @@ import { useLocation } from "react-router";
 export default function MainLayout({ children }) {
   const location = useLocation();
   return (
-    <Box
-      position="relative"
-      // sx={{
-      //   width: {
-      //     xs: "0",
-      //     sm: "21%",
-      //     md: "54%",
-      //     lg: "75%",
-      //     xl: "100%"
-      //   }
-      // }}
-    >
+    <Box position="relative">
       <Box>
         <Header />
       </Box>

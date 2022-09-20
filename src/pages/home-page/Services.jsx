@@ -1,5 +1,5 @@
 //Mui components
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 //React router
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
@@ -41,7 +41,7 @@ export default function Services({ services }) {
         </Grid>
         <Grid item sx={{ display: { xs: "none", lg: "block" } }}>
           {/* nkarner@ dzevov bacen */}
-          {isShown && <img width="662px" height="500px" src={"/images/gates.svg"} />}
+          {isShown && <img width="662px" height="500px" src={"/images/gates.svg"} alt="works" />}
         </Grid>
       </Grid>
     </CommonBox>
