@@ -9,7 +9,8 @@ export default function Advantege({ advanteges }) {
       sx={{
         background: "url(/images/mainBack2.svg)",
         width: "100%",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        backgroundPosition: "center"
       }}
     >
       <Container sx={{ py: { lg: "80px", xs: "40px" } }}>
