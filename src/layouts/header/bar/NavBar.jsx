@@ -1,0 +1,169 @@
+//MUI components
+import {
+  ListItemText,
+  Grid,
+  AppBar,
+  useTheme,
+  Toolbar,
+  useMediaQuery,
+  Container,
+  IconButton,
+  FormControl,
+  Typography,
+  TextField
+} from "@mui/material";
+import { makeStyles } from "@mui/styles";
+//react router
+import { NavLink, useNavigate } from "react-router-dom";
+//icons from Mui
+import SearchIcon from "@mui/icons-material/Search";
+//source
+import { navLinks } from "src/source/navLinks";
+//components
+import DrawerComponent from "./DrawerComponent";
+import CallSection from "./CallSection";
+//react hooks
+import { useState, useEffect } from "react";
+
+const useStyles = makeStyles(theme => ({
+  sectionDesktop: {
+    display: "none",
+    [theme.breakpoints.up("lg")]: {
+      display: "flex"
+    }
+  }
+}));
+
+export default function NavBar() {
+  const navigate = useNavigate();
+  const classes = useStyles();
+  const theme = useTheme();
+
+  // const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
+
+  const [title, setTitle] = useState("");
+  const [items, setItems] = useState([]);
+  const [scroll, setScroll] = useState(false);
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setScroll(true);
+    } else {
+      setScroll(false);
+    }
+  };
+
+  const handleEnter = e => {
+    if (e.key === "Enter") {
+      if (title === "" || !items.includes(title)) {
+        navigate(`/search_results?query=${title}`);
+      } else {
+        e.preventDefault();
+        setTitle(e.target.value);
+      }
+    }
+  };
+
+  // useEffect(() => {
+  //   if (title.length >= 1 && title !== undefined) {
+  //     const handle = setTimeout(() => {
+  //       fetch("http://localhost:8000/services ")
+  //         .then(res => res.json())
+  //         .then(results => {
+  //           setItems(results);
+  //         });
+  //     }, 500);
+  //     return () => {
+  //       clearTimeout(handle);
+  //     };
+  //   }
+  // }, [title]);
+
+  window.addEventListener("scroll", changeBackground);
+  return (
+    <AppBar sx={{ bgcolor: scroll ? "rgba(0,0,0,0.7)" : "transparent" }}>
+      <Container maxWidth="xl" sx={{ px: { sm: "100px" } }}>
+        <Toolbar>
+          <Grid
+            container
+            sx={{
+              gap: { xl: "180px", lg: "55px" },
+              pt: "15px"
+            }}
+            justifyContent="center"
+            alignItems="center"
+            direction={{ xs: "column", lg: "row" }}
+          >
+            <Grid item>
+              <NavLink to={"/"}>
+                <img src={"/images/logo.svg"} alt="logo" />{" "}
+              </NavLink>
+            </Grid>
+            <Grid item className={classes.sectionDesktop}>
+              <Grid
+                container
+                sx={{
+                  gap: { lg: "60px" },
+                  display: { xs: "none", lg: "flex" }
+                }}
+                alignItems="center"
+                justifyContent="center"
+              >
+                {navLinks.map(({ title, path }) => (
+                  <Grid item onClick={() => navigate(path)} key={title} sx={{ cursor: "pointer" }}>
+                    <Typography
+                      sx={{
+                        fontFamily: "Mulish",
+                        fontStyle: "normal",
+                        fontWeight: 300,
+                        fontSize: { xl: "20px", lg: "16px" },
+                        lineHeight: "25px"
+                      }}
+                    >
+                      {title}
+                    </Typography>
+                  </Grid>
+                ))}
+              </Grid>
+            </Grid>
+            <Grid item>
+              <FormControl
+                sx={{
+                  border: "1px solid #FFFFFF",
+                  borderRadius: "5px",
+                  bgcolor: "transparent",
+                  display: "flex",
+                  flexDirection: "row",
+                  width: {
+                    xs: "220px"
+                  }
+                }}
+              >
+                <TextField
+                  variant="outlined"
+                  onChange={e => setTitle(e.target.value)}
+                  onKeyPress={handleEnter}
+                  value={title}
+                  placeholder="Поиск"
+                  InputProps={{
+                    sx: {
+                      "& input": {
+                        color: "white",
+                        padding: 0,
+                        ml: "15px"
+                      }
+                    },
+                    endAdornment: (
+                      <IconButton sx={{ color: "white" }}>
+                        <SearchIcon />
+                      </IconButton>
+                    )
+                  }}
+                />
+              </FormControl>
+            </Grid>
+          </Grid>
+        </Toolbar>
+      </Container>
+    </AppBar>
+  );
+}

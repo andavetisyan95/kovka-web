@@ -1,0 +1,98 @@
+{
+    "services": [
+      {
+        "id": 1,
+        "title": "Кованые ворота",
+        "item":"kovannie-vorota",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+        "image": "/images/gates.svg",
+        "price":"от 9000 ₽/кв. м."
+      },
+      {
+        "id": 2,
+        "title": "Кованые перила",
+        "item":"kovannie-perila",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "/images/gates.svg",
+        "price":"от 7500 ₽/м. пог."
+      },
+      {
+        "id": 3,
+        "title": "Кованые балконы",
+        "item":"kovannie-balkoni",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "/images/gates.svg",
+        "price":"от 8500 ₽/м. пог."
+      },
+      {
+        "id": 4,
+        "title": "Кованые заборы",
+        "item":"kovannie-zabori",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "/images/gates.svg",
+        "price":"от 5500 ₽/кв. м."
+      },
+      {
+        "id": 5,
+        "title": "Кованые мангалы",
+        "item":"kovannie-mangali",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "/images/gates.svg",
+        "price":"от 8 300 ₽"
+      },
+      {
+        "id": 6,
+        "title": "Кованые навесы",
+        "item":"kovannie-navesi",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "/images/gates.svg",
+        "price":"от 15000 ₽ / Навес от 4500 ₽/кв. м."
+      },
+      {
+        "id":7,
+        "title": "Кованые подставки для всего",
+        "item":"kovannie-podstavki-dlya-vsego",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "/images/gates.svg",
+        "price":"от 9800 ₽/кв. м."
+      },
+      {
+        "id": 8,
+        "title": "Решётки на окна",
+        "item":"reshotki-na-okna",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image": "/images/gates.svg",
+        "price":"от 4200 ₽/кв. м."
+      },
+      {
+        "id": 9,
+        "title": "Кованные стулья и столы",
+        "item":"kovannie-stulya-i-stoly",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        "image":"/images/gates.svg",
+        "price":"Договорная"
+      }
+    ],
+    "advanteges":[
+      {
+        "id":"1",
+        "title":"Качество",
+        "subtitle":"Мы обладаем собственным производством, оборудованием, специалистами."
+      },{
+        "id":"2",
+        "title":"Гарантия",
+        "subtitle":"Ответственный подход: планирование, исполнение, контроль качества на каждом этапе, гарантия."
+      },
+      {
+        "id":"3",
+        "title":"Местоположение",
+        "subtitle":"Кузница имеет удобное расположение."
+      },
+      {
+        "id":"4",
+        "title":"Цена",
+        "subtitle":"У нас хорошие цены."
+      }
+    ]
+    
+}

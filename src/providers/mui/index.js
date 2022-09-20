@@ -18,7 +18,8 @@ export const theme = createTheme({
         root: {
           color: "#FFF",
           fontFamily: "Mulish",
-          fontStyle: "normal"
+          fontStyle: "normal",
+          fontWeight: 400
         }
       }
     },
@@ -26,7 +27,11 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           backgroundColor: "#FFDB7F",
-          "&:hover": { backgroundColor: "#D7AF48" }
+          "&:hover": { backgroundColor: "#D7AF48" },
+          fontFamily: "Mulish",
+          fontWeight: 500,
+          fontStyle: "normal",
+          textAlign: "center"
         }
       }
     }

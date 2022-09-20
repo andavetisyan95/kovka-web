@@ -1,25 +1,32 @@
-// import { Container } from "@mui/material";
-import NavMenu from "./header/appBar/NavMenu";
-import Footer from "src/layouts/footer/Footer";
-import { Box, Container } from "@mui/material";
+//react components
+import NavMenu from "./header/bar/NavMenu";
+import Footer from "src/layouts/footer";
+import Header from "./header";
+//Material UI
+import { Box } from "@mui/material";
+import { useLocation } from "react-router";
 
 export default function MainLayout({ children }) {
+  const location = useLocation();
   return (
     <Box
-    // sx={{
-    //   width: {
-    //     xs: "0",
-    //     sm: "21%",
-    //     md: "54%",
-    //     lg: "75%",
-    //     xl: "100%"
-    //   }
-    // }}
+      position="relative"
+      // sx={{
+      //   width: {
+      //     xs: "0",
+      //     sm: "21%",
+      //     md: "54%",
+      //     lg: "75%",
+      //     xl: "100%"
+      //   }
+      // }}
     >
-      <NavMenu />
+      <Box>
+        <Header />
+      </Box>
 
-      <Container sx={{ height: "100vh" }}>{children}</Container>
-      <Footer />
+      <Box>{children}</Box>
+      {location.pathname !== "/contacts" && <Footer />}
     </Box>
   );
 }
