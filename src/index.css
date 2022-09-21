@@ -46,28 +46,26 @@ code {
   width: 100%;
 }
 
-.kovka_items{
-  text-decoration: none;
-}
 
 .kovka_items:hover{
-  color:#FFDB7F
+  color:#FFDB7F;
+  transition: 1s
 }
 
 
 .kovka_items::after{
   content: "";
-  height: 3px;
+  height: 1px;
   width: 0;
   background: #FFDB7F;
   position: absolute;
   left:0;
-  bottom: -1px;
-  transition: 0.5s;
+  bottom: 5px;
+  transition: 1s;
 }
 
 .kovka_items:hover::after{
-  width: 100%;
+  width: 100%
 }
 
 .watch-more:hover{

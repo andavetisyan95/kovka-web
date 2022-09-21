@@ -1,5 +1,5 @@
 //react components
-import NavMenu from "./header/bar/NavMenu";
+// import NavMenu from "./header/bar/NavMenu";
 
 import Header from "./header";
 //Material UI
@@ -14,9 +14,8 @@ export default function MainLayout({ children }) {
       <Box>
         <Header />
       </Box>
-
       <Box>{children}</Box>
-      {location.pathname !== "/contacts" && location.pathname !== "/*" && <Footer />}
+      <Box>{location.pathname !== "/contacts" && location.pathname !== "/*" && <Footer />}</Box>
     </Box>
   );
 }

@@ -15,8 +15,8 @@ export default function OurWorks({ works }) {
         }}
       >
         <Grid item>
-          <ImageList variant="masonry" cols={3}>
-            {works?.map(({ image, id, subtitle }) => (
+          <ImageList cols={3}>
+            {works?.slice(0, 6).map(({ image, id, subtitle }) => (
               <ImageListItem sx={{ cursor: "pointer" }} key={id}>
                 <img src={image} alt={subtitle} />
               </ImageListItem>

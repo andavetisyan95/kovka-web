@@ -1,8 +1,8 @@
 //Mui components
-import { Grid, Typography } from "@mui/material";
+import { Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
 //React router
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+
 //react components
 import { CommonBox } from "src/components/common";
 
@@ -17,24 +17,28 @@ export default function Services({ services }) {
     <CommonBox title="НАШИ УСЛУГИ">
       <Grid container direction="row" columnSpacing={10}>
         <Grid item>
-          <Grid container sx={{ gap: { xs: "24px", sm: "40px" } }} direction="column">
-            {services?.map(({ title, id, item }) => (
+          <Grid container direction="column">
+            {services?.map(({ title, id }) => (
               <Grid item key={id}>
-                <NavLink to={`/catalog_item/${item}`}>
-                  <Typography
-                    className="kovka_items"
-                    variant="div"
-                    component="div"
-                    onMouseEnter={() => showImage(id)}
-                    onMouseLeave={() => setIsShown(false)}
-                    sx={{
-                      fontSize: { lg: "30px", sm: "24px", xs: "20px" },
-                      lineHeight: { lg: "38px", sm: "30px", xs: "25px" }
-                    }}
-                  >
-                    {title}
-                  </Typography>
-                </NavLink>
+                <List>
+                  <ListItem sx={{ padding: 0, cursor: "pointer" }}>
+                    <ListItemText>
+                      <Typography
+                        variant="span"
+                        component="span"
+                        className="kovka_items"
+                        onMouseEnter={() => showImage(id)}
+                        onMouseLeave={() => setIsShown(false)}
+                        sx={{
+                          fontSize: { lg: "30px", sm: "24px", xs: "20px" },
+                          lineHeight: { lg: "38px", sm: "30px", xs: "25px" }
+                        }}
+                      >
+                        {title}
+                      </Typography>
+                    </ListItemText>
+                  </ListItem>
+                </List>
               </Grid>
             ))}
           </Grid>

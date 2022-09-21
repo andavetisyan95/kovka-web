@@ -15,8 +15,6 @@ export default function CommonPaper({ title, children }) {
       >
         <Grid item>
           <Typography
-            variant="h4"
-            container="h1"
             sx={{
               color: "primary.main",
               fontFamily: "Play",
