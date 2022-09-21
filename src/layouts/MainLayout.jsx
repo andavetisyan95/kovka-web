@@ -1,11 +1,10 @@
 //react components
-// import NavMenu from "./header/bar/NavMenu";
-
 import Header from "./header";
+import Footer from "./footer";
 //Material UI
 import { Box } from "@mui/material";
+//react router
 import { useLocation } from "react-router";
-import Footer from "./footer";
 
 export default function MainLayout({ children }) {
   const location = useLocation();

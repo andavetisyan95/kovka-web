@@ -15,8 +15,13 @@ import {
   COMPANY_EMAIL,
   COMPANY_LOCATION
 } from "src/constants";
+import { useEffect } from "react";
 
 export default function Footer() {
+  //makes scroll up to the top of page
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   return (
     <Box
       sx={{
