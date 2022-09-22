@@ -2,7 +2,6 @@
 import {
   Grid,
   AppBar,
-  // useTheme,
   Toolbar,
   //useMediaQuery,
   IconButton,
@@ -10,9 +9,9 @@ import {
   Typography,
   TextField
 } from "@mui/material";
-import { makeStyles } from "@mui/styles";
+
 //react router
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //icons from Mui
 import SearchIcon from "@mui/icons-material/Search";
 //source
@@ -21,23 +20,13 @@ import { navLinks } from "src/source/navLinks";
 //react hooks
 import { useState } from "react";
 
-const useStyles = makeStyles(theme => ({
-  sectionDesktop: {
-    display: "none",
-    [theme.breakpoints.up("lg")]: {
-      display: "flex"
-    }
-  }
-}));
-
 export default function NavBar() {
   const navigate = useNavigate();
-  const classes = useStyles();
-  // const theme = useTheme();
 
   // const isMatch = useMediaQuery(theme.breakpoints.down("lg"));
 
   const [title, setTitle] = useState("");
+
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
   const changeBackground = () => {
@@ -95,12 +84,10 @@ export default function NavBar() {
           alignItems="center"
           direction={{ xs: "column", lg: "row" }}
         >
-          <Grid item>
-            <NavLink to={"/"}>
-              <img src={"/images/logo.svg"} alt="logo" />{" "}
-            </NavLink>
+          <Grid item onClick={() => navigate("/")} sx={{ cursor: "pointer" }}>
+            <img src={"/images/logo.svg"} alt="logo" />{" "}
           </Grid>
-          <Grid item className={classes.sectionDesktop}>
+          <Grid item>
             <Grid
               container
               sx={{

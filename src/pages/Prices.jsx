@@ -61,8 +61,8 @@ export default function Prices() {
             </Grid>
           </Grid>
           <Grid container spacing={2}>
-            {prices?.map(({ title, price }) => (
-              <Grid item xs={12}>
+            {prices?.map(({ title, price, id }) => (
+              <Grid item xs={12} key={id}>
                 <Grid container>
                   <Grid item xs={12} sm={6}>
                     <Typography

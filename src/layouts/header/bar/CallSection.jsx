@@ -10,6 +10,7 @@ import { useState } from "react";
 
 export default function CallSection() {
   const [hiden, setHiden] = useState(false);
+
   const handleChangeVisibility = () => {
     if (window.scrollY >= 1) {
       setHiden(true);

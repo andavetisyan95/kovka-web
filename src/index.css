@@ -28,22 +28,23 @@ code {
   align-items: center;
 }
 
+
+
 .link_decor{
   text-decoration: none;
 }
 
 .nav_bar_items::after{
   content: "";
-  height: 2px;
+  height: 1px;
   width: 0;
   background: #FFDB7F;
   position: absolute;
-  left:0;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .nav_bar_items:hover::after{
-  width: 100%;
+  width: 100%
 }
 
 
@@ -80,3 +81,5 @@ code {
 .text_field{
   color:white
 }
+
+
