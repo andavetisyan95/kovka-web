@@ -8,20 +8,15 @@ import { CommonBox } from "src/components/common";
 export default function OurWorks({ works }) {
   return (
     <CommonBox title="НАШИ РАБОТЫ">
-      <Grid
-        container
-        sx={{
-          pb: { lg: "160px", sm: "120px", xs: "80px" }
-        }}
-      >
+      <Grid container spacing={8}>
         <Grid item>
-          <ImageList cols={3}>
+          <Grid container spacing={3}>
             {works?.slice(0, 6).map(({ image, id, subtitle }) => (
-              <ImageListItem sx={{ cursor: "pointer" }} key={id}>
+              <Grid item sx={{ cursor: "pointer" }} key={id}>
                 <img src={image} alt={subtitle} />
-              </ImageListItem>
+              </Grid>
             ))}
-          </ImageList>
+          </Grid>
         </Grid>
         <Grid item>
           <NavLink to={"/catalog"}>

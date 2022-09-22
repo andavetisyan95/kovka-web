@@ -1,5 +1,5 @@
 //Mui components
-import { Grid, Paper, Typography } from "@mui/material";
+import { Grid, Paper, Typography, Container } from "@mui/material";
 
 export default function CommonPaper({ title, children }) {
   return (
