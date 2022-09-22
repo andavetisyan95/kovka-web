@@ -10,11 +10,7 @@ export default function MainPage() {
   return (
     <BoxBackground img="/images/mainBack.svg">
       {" "}
-      <Container
-        sx={{
-          pt: { lg: "215px", sm: "200px", xs: "260px" }
-        }}
-      >
+      <Container sx={{ pt: { xl: "240px", xs: "180px" } }}>
         <CommonPaper title="ПРОИЗВОДИТЕЛЬ КОВАННЫХ ИЗДЕЛИЙ">
           <Grid container direction="column" sx={{ gap: { sm: "80px", xs: "40px" } }}>
             <Grid item>

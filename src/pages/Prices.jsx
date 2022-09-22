@@ -14,7 +14,7 @@ export default function Prices() {
 
   return (
     <BoxBackground img="/images/pricePage.svg">
-      <Box sx={{ py: { xs: "180px" }, px: { lg: "200px", sm: "96px", xs: "23px" } }}>
+      <Box sx={{ pt: { xl: "240px", xs: "180px" }, px: { lg: "200px", sm: "96px", xs: "23px" } }}>
         <Box
           sx={{
             py: { sm: "80px", xs: "40px" },
