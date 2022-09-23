@@ -1,5 +1,5 @@
 //Mui components
-import { Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Fade, Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
 //React router
 import { useState } from "react";
 //react components
@@ -45,7 +45,11 @@ export default function Services({ services }) {
         </Grid>
         <Grid item sx={{ display: { xs: "none", lg: "block" } }}>
           {/* nkarner@ dzevov bacen */}
-          {isShown && <img width="662px" height="500px" src={"/images/stul.svg"} alt="works" />}
+          {isShown && (
+            <Fade in={isShown} timeout={1500}>
+              <img width="662px" height="500px" src={"/images/stul.svg"} alt="works" />
+            </Fade>
+          )}
         </Grid>
       </Grid>
     </CommonBox>

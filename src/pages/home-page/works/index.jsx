@@ -11,8 +11,8 @@ import { useState } from "react";
 
 export default function OurWorks({ works }) {
   const [hover, setHover] = useState(false);
-  const showIcon = () => {
-    setHover(true);
+  const showIcon = id => {
+    setHover(id);
   };
   return (
     <CommonBox title="НАШИ РАБОТЫ">
@@ -24,17 +24,18 @@ export default function OurWorks({ works }) {
                 item
                 sx={{ cursor: "pointer" }}
                 key={id}
-                onMouseEnter={() => showIcon()}
+                onMouseEnter={() => showIcon(id)}
                 onMouseLeave={() => setHover(false)}
               >
                 <Box position="relative">
                   <img src={image} alt={subtitle} />
-                  {hover ? (
+                  {hover === id ? (
                     <Button
                       sx={{
                         position: "absolute",
                         top: "50%",
                         left: "50%",
+                        transform: "translate(-50%, -50%)",
                         background: "rgba(0, 0, 0, 0.7)",
                         borderRadius: "5px",
                         width: "40px",

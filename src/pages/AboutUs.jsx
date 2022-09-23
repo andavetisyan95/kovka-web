@@ -1,10 +1,9 @@
 //Mui components
 import { Box } from "@mui/material";
-
 //React hooks
 import { useState, useEffect } from "react";
 //Components
-import about from "./about-page";
+import { Main, Machins } from "./about-page";
 import { OurWorks } from "./home-page";
 
 export default function AboutUs() {
@@ -16,9 +15,9 @@ export default function AboutUs() {
   }, []);
   return (
     <Box>
-      <about.Main />
+      <Main />
       <OurWorks works={items} />
-      <about.Machins />
+      <Machins />
     </Box>
   );
 }

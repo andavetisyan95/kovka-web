@@ -1,4 +1,4 @@
-export { default as MainPage } from "./MainPage";
-export { default as OurWorks } from "./OurWorks";
-export { default as Services } from "./Services";
-export { default as Advantege } from "./Advantege";
+export { default as MainPage } from "./main";
+export { default as OurWorks } from "./works";
+export { default as Services } from "./our-services";
+export { default as Advantege } from "./advantege";

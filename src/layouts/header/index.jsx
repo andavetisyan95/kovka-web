@@ -18,5 +18,3 @@ export default function Header() {
     </Box>
   );
 }
-// export { default as CallSection } from "./bar/CallSection";
-// export { default as NavBar } from "./bar/NavBar";

@@ -53,6 +53,10 @@ code {
   transition: 1s
 }
 
+.kovka_items{
+  position: relative;
+
+}
 
 .kovka_items::after{
   content: "";
@@ -61,7 +65,7 @@ code {
   background: #FFDB7F;
   position: absolute;
   left:0;
-  bottom: 5px;
+  bottom: -5px;
   transition: 1s;
 }
 
