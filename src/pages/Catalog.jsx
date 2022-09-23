@@ -1,10 +1,10 @@
 import { Box } from "@mui/material";
-import { MoreServices } from "./catalog-page";
+import { MoreServices, Main } from "./catalog-page";
 
 export default function Catalog() {
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <Catalog />
+      <Main />
       <MoreServices />
     </Box>
   );
