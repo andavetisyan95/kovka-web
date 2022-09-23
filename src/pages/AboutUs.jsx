@@ -1,3 +1,5 @@
+//react
+import axios from "axios";
 //Mui components
 import { Box } from "@mui/material";
 //React hooks
@@ -9,9 +11,10 @@ import { OurWorks } from "./home-page";
 export default function AboutUs() {
   const [items, setItems] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:8000/services")
-      .then(res => res.json())
-      .then(results => setItems(results));
+    axios
+      .get("http://localhost:8000/services")
+      .then(res => setItems(res.data))
+      .catch(err => console.log(err));
   }, []);
   return (
     <Box>

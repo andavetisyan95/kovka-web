@@ -1,3 +1,5 @@
+//react
+import axios from "axios";
 //Mui components
 import { Box, Grid, Typography } from "@mui/material";
 //react hooks
@@ -7,9 +9,10 @@ import { BoxBackground } from "src/components/common";
 export default function Prices() {
   const [prices, setPrices] = useState(null);
   useEffect(() => {
-    fetch("http://localhost:8000/services")
-      .then(res => res.json())
-      .then(result => setPrices(result));
+    axios
+      .get("http://localhost:8000/services")
+      .then(res => setPrices(res.data))
+      .catch(err => console.log(err));
   }, []);
 
   return (

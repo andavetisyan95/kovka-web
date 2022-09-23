@@ -3,7 +3,7 @@ import { Container, Grid, Typography } from "@mui/material";
 //react components
 import { BoxBackground, CommonPaper } from "src/components/common";
 
-export default function Advantege({ advanteges }) {
+export default function Advanteg({ advanteges }) {
   return (
     <BoxBackground img="/images/mainBack2.svg">
       <Container sx={{ py: { lg: "80px", xs: "40px" } }}>

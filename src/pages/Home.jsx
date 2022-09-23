@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { Advantege, MainPage, OurWorks, Services } from "./home-page";
 
 export default function Home() {
-  const [data, setData] = useState(null);
+  const [kovkaData, setKovkaData] = useState([]);
 
   useEffect(() => {
     fetchAllInfo();
@@ -17,18 +17,31 @@ export default function Home() {
 
   async function fetchAllInfo() {
     const [advanteges, services] = await Promise.all([
-      fetch(process.env.REACT_APP_ADVANTEGES_HOST).then(res => res.json()),
-      fetch(process.env.REACT_APP_SERVICE_HOST).then(res => res.json())
+      axios
+        .get(process.env.REACT_APP_ADVANTEGES_HOST)
+        .then(res => {
+          setKovkaData(res.data);
+          console.log(res.data);
+        })
+        .catch(err => console.log(err)),
+      axios
+        .get(process.env.REACT_APP_SERVICE_HOST)
+        .then(res => {
+          setKovkaData(res.data);
+          console.log(res.data);
+        })
+        .catch(err => console.log(err))
     ]);
-    setData({ advanteges, services });
+    setKovkaData({ advanteges, services });
+    console.log(kovkaData);
   }
 
   return (
     <Box>
       <MainPage />
-      <Services services={data?.services} />
-      <OurWorks works={data?.services} />
-      <Advantege advanteges={data?.advanteges} />
+      <Services services={kovkaData?.services} />
+      <OurWorks works={kovkaData?.services} />
+      <Advantege advanteges={kovkaData?.advanteges} />
     </Box>
   );
 }
