@@ -34,13 +34,18 @@ code {
   text-decoration: none;
 }
 
+.nav_bar_items{
+  position: relative;
+}
+
 .nav_bar_items::after{
   content: "";
   height: 1px;
   width: 0;
   background: #FFDB7F;
   position: absolute;
-  transition: 1s;
+  transition: 0.5s;
+  bottom: -2px;
 }
 
 .nav_bar_items:hover::after{

@@ -29,6 +29,7 @@ export default function NavBar() {
 
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
+  const [transition, setTransition] = useState(false);
   const changeBackground = () => {
     if (window.scrollY >= 2) {
       setScroll(true);
@@ -98,7 +99,13 @@ export default function NavBar() {
               justifyContent="center"
             >
               {navLinks.map(({ title, path }) => (
-                <Grid item onClick={() => navigate(path)} key={title} sx={{ cursor: "pointer" }}>
+                <Grid
+                  item
+                  onClick={() => navigate(path)}
+                  key={title}
+                  sx={{ cursor: "pointer" }}
+                  className="nav_bar_items"
+                >
                   <Typography
                     sx={{
                       fontFamily: "Mulish",
@@ -128,7 +135,6 @@ export default function NavBar() {
               }}
             >
               <TextField
-                variant="outlined"
                 onChange={e => setTitle(e.target.value)}
                 onKeyPress={handleEnter}
                 value={title}

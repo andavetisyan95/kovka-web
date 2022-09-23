@@ -40,7 +40,7 @@ export default function Home() {
     <Box>
       <MainPage />
       <Services services={kovkaData?.services} />
-      <OurWorks works={kovkaData?.services} />
+      <OurWorks />
       <Advantege advanteges={kovkaData?.advanteges} />
     </Box>
   );
