@@ -28,7 +28,9 @@ code {
   align-items: center;
 }
 
-
+.bord{
+  color:red
+}
 
 .link_decor{
   text-decoration: none;
@@ -36,6 +38,18 @@ code {
 
 .nav_bar_items{
   position: relative;
+}
+
+.active{
+  position: relative;
+}
+.active::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  background: #FFDB7F;
+  bottom: -5px;
+  position: absolute;
 }
 
 .nav_bar_items::after{

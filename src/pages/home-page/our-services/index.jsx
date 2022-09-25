@@ -7,13 +7,13 @@ import { CommonBox } from "src/components/common";
 
 export default function Services({ services }) {
   const [isShown, setIsShown] = useState(false);
-  const [imgName, setImgName] = useState([]);
+  const [image, setImage] = useState([]);
 
   const showImage = i => {
     setIsShown(true);
     services?.filter(el => {
       if (el.id === i) {
-        return setImgName(el);
+        return setImage(el);
       } else {
         return null;
       }
@@ -55,7 +55,7 @@ export default function Services({ services }) {
             {/* nkarner@ dzevov bacen */}
             {isShown && (
               <Fade in={isShown} timeout={1500}>
-                <img width="100%" height={500} src={imgName.image} alt="works" />
+                <img width="100%" height={500} src={image.image} alt="works" />
               </Fade>
             )}
           </Grid>

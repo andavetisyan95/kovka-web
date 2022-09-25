@@ -31,9 +31,9 @@ export default function CallSection() {
         <Toolbar>
           <Grid container className="grid_center" pt={5} columnSpacing={10} pb={1.3}>
             <Grid item>
-              <Box className="flex_center" gap="15px">
+              <Box className="flex_center" gap="20px">
                 <Box>
-                  <PhoneIcon sx={{ width: 20, height: 20, color: "primary.main" }} />
+                  <PhoneIcon sx={{ width: 25, height: 25, color: "primary.main" }} />
                 </Box>
                 <Box>
                   <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
@@ -61,9 +61,9 @@ export default function CallSection() {
               </Box>
             </Grid>
             <Grid item>
-              <Box className="flex_center" gap="15px">
+              <Box className="flex_center" gap="20px">
                 <Box>
-                  <MailIcon sx={{ width: 22.5, height: 18.75 }} color="primary" mt={4.5} mb={1.6} />
+                  <MailIcon sx={{ width: 25, height: 25 }} color="primary" mt={4.5} mb={1.6} />
                 </Box>
                 <Box>
                   <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>

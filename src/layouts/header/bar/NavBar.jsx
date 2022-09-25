@@ -31,6 +31,7 @@ export default function NavBar() {
 
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
+  const [active, setActive] = useState(null);
 
   const changeBackground = () => {
     if (window.scrollY >= 2) {
@@ -109,10 +110,13 @@ export default function NavBar() {
               {navLinks.map(({ title, path }) => (
                 <Grid
                   item
-                  onClick={() => navigate(path)}
+                  onClick={() => {
+                    navigate(path);
+                    setActive(title);
+                  }}
                   key={title}
                   sx={{ cursor: "pointer" }}
-                  className="nav_bar_items"
+                  className={active === title ? "active" : "nav_bar_items"}
                 >
                   <Typography
                     sx={{

@@ -39,10 +39,10 @@ export default function Main() {
           </Typography>
         </Grid>
         <Grid item>
-          <Grid container position="relative" sx={{ gap: { xs: "16px", sm: "20px", lg: "24px" } }}>
+          <Grid container columnSpacing={3} rowSpacing={2}>
             {works.map(({ title, description, image, id }) => (
               <Grid item key={`${title}_${id}`} xs={12} sm={6} lg={4}>
-                <img src={image} alt={title} />
+                <img width={400} height={400} src={image} alt={title} />
               </Grid>
             ))}
           </Grid>
