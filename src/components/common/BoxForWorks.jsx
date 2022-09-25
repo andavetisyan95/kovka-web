@@ -5,8 +5,14 @@ import ZoomInIcon from "@mui/icons-material/ZoomIn";
 
 export default function BoxForWorks({ imgName }) {
   return (
-    <Box position="relative">
-      <img src={`/images/${imgName}`} alt={imgName} />
+    <Box position="relative" sx={{ overflow: "hidden" }}>
+      <img
+        src={`/images/${imgName}`}
+        alt={imgName}
+        width="100%"
+        height={250}
+        style={{ objectFit: "cover", borderRadius: 5 }}
+      />
       <Button
         sx={{
           position: "absolute",
@@ -14,15 +20,12 @@ export default function BoxForWorks({ imgName }) {
           left: "50%",
           transform: "translate(-50%, -50%)",
           background: "rgba(0, 0, 0, 0.7)",
-          borderRadius: "5px",
-          width: "40px",
-          height: "40px",
+          width: 40,
+          height: 40,
           "&:hover": { background: "rgba(0, 0, 0, 0.7)" }
         }}
       >
-        <IconButton>
-          <ZoomInIcon sx={{ color: "white", width: "20px", height: "20px" }} />
-        </IconButton>
+        <ZoomInIcon sx={{ color: "white", width: 20, height: 20 }} />
       </Button>
     </Box>
   );

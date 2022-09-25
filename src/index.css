@@ -45,7 +45,7 @@ code {
   background: #FFDB7F;
   position: absolute;
   transition: 0.5s;
-  bottom: -2px;
+  bottom: -5px;
 }
 
 .nav_bar_items:hover::after{

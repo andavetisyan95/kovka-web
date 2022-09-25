@@ -5,7 +5,8 @@ import { Box } from "@mui/material";
 //react hooks
 import { useEffect, useState } from "react";
 //react components
-import { Advantege, MainPage, OurWorks, Services } from "./home-page";
+import { Advantege, MainPage, Services } from "./home-page";
+import { OurWorks } from "src/components/common";
 
 export default function Home() {
   const [kovkaData, setKovkaData] = useState([]);
@@ -16,24 +17,11 @@ export default function Home() {
   //env files are'nt work
 
   async function fetchAllInfo() {
-    const [advanteges, services] = await Promise.all([
-      axios
-        .get(process.env.REACT_APP_ADVANTEGES_HOST)
-        .then(res => {
-          setKovkaData(res.data);
-          console.log(res.data);
-        })
-        .catch(err => console.log(err)),
-      axios
-        .get(process.env.REACT_APP_SERVICE_HOST)
-        .then(res => {
-          setKovkaData(res.data);
-          console.log(res.data);
-        })
-        .catch(err => console.log(err))
+    const [services, advanteges] = await Promise.all([
+      fetch(process.env.REACT_APP_SERVICE_HOST).then(res => res.json()),
+      fetch(process.env.REACT_APP_ADVANTEGES_HOST).then(res => res.json())
     ]);
-    setKovkaData({ advanteges, services });
-    console.log(kovkaData);
+    setKovkaData({ services, advanteges });
   }
 
   return (

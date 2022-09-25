@@ -19,6 +19,8 @@ import { navLinks } from "src/source/navLinks";
 
 //react hooks
 import { useState } from "react";
+//MUI icons
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -29,7 +31,7 @@ export default function NavBar() {
 
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
-  const [transition, setTransition] = useState(false);
+
   const changeBackground = () => {
     if (window.scrollY >= 2) {
       setScroll(true);
@@ -42,6 +44,7 @@ export default function NavBar() {
     if (e.key === "Enter") {
       if (title === "" || !items.includes(title)) {
         navigate(`/search_results?query=${title}`);
+        setTitle("");
       } else {
         e.preventDefault();
         setTitle(e.target.value);
@@ -88,7 +91,12 @@ export default function NavBar() {
           <Grid item onClick={() => navigate("/")} sx={{ cursor: "pointer" }}>
             <img src={"/images/logo.svg"} alt="logo" />{" "}
           </Grid>
+
           <Grid item>
+            {/* drawercomponent dnel */}
+            {/* <Grid item>
+              <MenuIcon sx={{ color: "white", display: { xs: "block", lg: "none" } }} />
+            </Grid> */}
             <Grid
               container
               sx={{
@@ -111,7 +119,7 @@ export default function NavBar() {
                       fontFamily: "Mulish",
                       fontStyle: "normal",
                       fontWeight: 300,
-                      fontSize: { xl: "20px", lg: "16px" },
+                      fontSize: { xl: 20, lg: 16 },
                       lineHeight: "25px"
                     }}
                   >
@@ -139,6 +147,7 @@ export default function NavBar() {
                 onKeyPress={handleEnter}
                 value={title}
                 placeholder="Поиск"
+                focused={false}
                 InputProps={{
                   sx: {
                     "& input": {

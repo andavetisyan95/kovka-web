@@ -37,7 +37,7 @@
         "title": "Кованые мангалы",
         "item":"kovannie-mangali",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/gates.svg",
+        "image": "/images/perila.svg",
         "price":"от 8 300 ₽"
       },
       {
@@ -45,7 +45,7 @@
         "title": "Кованые навесы",
         "item":"kovannie-navesi",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/gates.svg",
+        "image": "/images/vrata.svg",
         "price":"от 15000 ₽ / Навес от 4500 ₽/кв. м."
       },
       {
@@ -53,7 +53,7 @@
         "title": "Кованые подставки для всего",
         "item":"kovannie-podstavki-dlya-vsego",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/gates.svg",
+        "image": "/images/kovannie-perila.svg",
         "price":"от 9800 ₽/кв. м."
       },
       {

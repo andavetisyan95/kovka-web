@@ -6,7 +6,7 @@ import { Box } from "@mui/material";
 import { useState, useEffect } from "react";
 //Components
 import { Main, Machins } from "./about-page";
-import { OurWorks } from "./home-page";
+import { OurWorks } from "src/components/common";
 
 export default function AboutUs() {
   const [items, setItems] = useState(null);

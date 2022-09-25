@@ -33,11 +33,11 @@ export default function CallSection() {
             <Grid item>
               <Box className="flex_center" gap="15px">
                 <Box>
-                  <PhoneIcon sx={{ width: "20px", height: "20px", color: "primary.main" }} />
+                  <PhoneIcon sx={{ width: 20, height: 20, color: "primary.main" }} />
                 </Box>
                 <Box>
                   <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
-                    <Typography sx={{ fontSize: "24px", fontWeight: 500, lineHeight: "30px" }}>
+                    <Typography sx={{ fontSize: 24, fontWeight: 500, lineHeight: "30px" }}>
                       {COMPANY_MAIN_PHONE_NUMBER}
                     </Typography>
                   </Link>
@@ -49,7 +49,7 @@ export default function CallSection() {
                 <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_PHONE_NUMBER}`}>
                   <Typography
                     sx={{
-                      fontSize: "24px",
+                      fontSize: 24,
                       fontWeight: 500,
                       lineHeight: "30px",
                       textAlign: "center"
@@ -63,16 +63,11 @@ export default function CallSection() {
             <Grid item>
               <Box className="flex_center" gap="15px">
                 <Box>
-                  <MailIcon
-                    sx={{ width: "22.5px", height: "18.75px" }}
-                    color="primary"
-                    mt={4.5}
-                    mb={1.6}
-                  />
+                  <MailIcon sx={{ width: 22.5, height: 18.75 }} color="primary" mt={4.5} mb={1.6} />
                 </Box>
                 <Box>
                   <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>
-                    <Typography sx={{ fontSize: "24px", fontWeight: 500, lineHeight: "30px" }}>
+                    <Typography sx={{ fontSize: 24, fontWeight: 500, lineHeight: "30px" }}>
                       {COMPANY_EMAIL}
                     </Typography>
                   </Link>
