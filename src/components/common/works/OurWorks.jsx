@@ -6,33 +6,41 @@ import { NavLink } from "react-router-dom";
 import { BoxForWorks, CommonBox } from "src/components/common";
 
 export default function OurWorks() {
+  const imageList = [
+    "/images/reshotka.svg",
+    "/images/stul.svg",
+    "/images/gates.svg",
+    "/images/perila.svg",
+    "/images/vrata.svg",
+    "/images/kovannie-perila.svg"
+  ];
   return (
     <CommonBox title="НАШИ РАБОТЫ">
       <Grid container spacing={8} direction="column">
         <Grid item xs={12}>
           <Grid container spacing={3}>
             <Grid item xs={6} sm={4.5} lg={3}>
-              <BoxForWorks imgName="reshotka.svg" />
+              <BoxForWorks imgName="/images/reshotka.svg" imageList={imageList} />
             </Grid>
             <Grid item xs={6} sm={7.5} lg={5}>
-              <BoxForWorks imgName="stul.svg" />
+              <BoxForWorks imgName="/images/stul.svg" imageList={imageList} />
             </Grid>
             <Hidden lgDown>
               <Grid item lg={4}>
-                <BoxForWorks imgName="gates.svg" />
+                <BoxForWorks imgName="/images/gates.svg" imageList={imageList} />
               </Grid>
             </Hidden>
             <Grid item xs={12} sm={8} lg={6}>
-              <BoxForWorks imgName="gates.svg" />
+              <BoxForWorks imgName="/images/perila.svg" imageList={imageList} />
             </Grid>
             <Hidden smDown>
               <Grid item sm={4} lg={3}>
-                <BoxForWorks imgName="reshotka.svg" />
+                <BoxForWorks imgName="/images/vrata.svg" imageList={imageList} />
               </Grid>
             </Hidden>
             <Hidden lgDwon>
               <Grid item lg={3}>
-                <BoxForWorks imgName="stul.svg" />
+                <BoxForWorks imgName="/images/kovannie-perila.svg" imageList={imageList} />
               </Grid>
             </Hidden>
           </Grid>

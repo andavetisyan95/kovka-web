@@ -2,14 +2,21 @@
 import { Box, Button, Modal } from "@mui/material";
 //Mui icons
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
-import { useState } from "react";
+//react hooks
+import { memo, useState } from "react";
+//React components
+import { ImgModal } from "..";
 
-export default function BoxForWorks({ imgName }) {
+export default memo(function BoxForWorks({ imgName, imageList }) {
   const [hover, setHover] = useState(null);
-  const [modalIsOpen, setModalIsOpen] = useState(null);
-  function openModal(imageName) {
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  function openModal() {
     setModalIsOpen(true);
   }
+  const handleClose = () => {
+    setModalIsOpen(false);
+  };
   return (
     <Box
       onMouseEnter={() => setHover(imgName)}
@@ -18,11 +25,12 @@ export default function BoxForWorks({ imgName }) {
       sx={{ overflow: "hidden", cursor: "pointer" }}
     >
       <img
-        src={`/images/${imgName}`}
+        src={imgName}
         alt={imgName}
         width="100%"
         height={250}
         style={{ objectFit: "cover", borderRadius: 5 }}
+        onClick={() => openModal()}
       />
       {hover === imgName && (
         <Button
@@ -36,11 +44,18 @@ export default function BoxForWorks({ imgName }) {
             height: 40,
             "&:hover": { background: "rgba(0, 0, 0, 0.7)" }
           }}
-          onClick={() => openModal(imgName)}
         >
           <ZoomInIcon sx={{ color: "white", width: 20, height: 20 }} />
         </Button>
       )}
+      {modalIsOpen && (
+        <ImgModal
+          setOpen={modalIsOpen}
+          close={handleClose}
+          currentImg={imgName}
+          imageList={imageList}
+        />
+      )}
     </Box>
   );
-}
+});

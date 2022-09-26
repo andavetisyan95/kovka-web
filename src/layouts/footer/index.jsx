@@ -7,7 +7,7 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 //react dom
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 //constants
 import {
   COMPANY_MAIN_PHONE_NUMBER,
@@ -18,6 +18,7 @@ import {
 import { useEffect } from "react";
 
 export default function Footer() {
+  const navigate = useNavigate();
   //makes scroll up to the top of page
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -103,15 +104,15 @@ export default function Footer() {
           </Grid>
         </Grid>
         <Grid
+          onClick={() => navigate("/")}
           item
           sx={{
             pt: { md: "120px" },
-            pb: { xs: "83px", md: "120px" }
+            pb: { xs: "83px", md: "120px" },
+            cursor: "pointer"
           }}
         >
-          <NavLink to={"/"}>
-            <img src="/images/footer.svg" alt="logo" />
-          </NavLink>
+          <img src="/images/footer.svg" alt="logo" />
         </Grid>
       </Grid>
     </Box>
