@@ -12,7 +12,7 @@ export default function AboutUs() {
   const [items, setItems] = useState(null);
   useEffect(() => {
     axios
-      .get("http://localhost:8000/services")
+      .get(process.env.REACT_APP_SERVICE_HOST)
       .then(res => setItems(res.data))
       .catch(err => console.log(err));
   }, []);

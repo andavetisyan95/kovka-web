@@ -1,66 +1,78 @@
 //MUI icons
-import MenuIcon from "@mui/icons-material/Menu";
 import CloseIcon from "@mui/icons-material/Close";
 //MUI components
 import {
+  drawerClasses,
+  Grid,
   IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
-  SwipeableDrawer
+  SwipeableDrawer,
+  Typography
 } from "@mui/material";
 //react hooks
 import { useState } from "react";
 //source
 import { navLinks } from "src/source/navLinks";
-import { NavLink } from "react-router-dom";
+//react dom
+import { useNavigate } from "react-router-dom";
 
-export default function DrawerComponent() {
-  const [open, setOpen] = useState(false);
+export default function DrawerComponent({ open, close }) {
+  const navigate = useNavigate();
+  const [active, setActive] = useState(null);
   return (
     <SwipeableDrawer
       anchor="left"
       open={open}
-      onOpen={() => setOpen(true)}
-      onClose={() => setOpen(false)}
+      sx={{ backgroundColor: "rgba(0,0,0,0.3)" }}
+      PaperProps={{
+        sx: {
+          background: "black",
+          width: { xs: "100vw", sm: "auto" },
+          pl: { xs: "20px", sm: "96px" },
+          pr: { sm: "152px" },
+          pt: "152px"
+        }
+      }}
     >
-      <IconButton>
-        <CloseIcon onClose={() => setOpen(false)} />
-      </IconButton>
-      <List>
-        {navLinks.map(({ title, path }) => (
-          <ListItem key={title}>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <NavLink to={path}>
-                <ListItemText primary={title} />
-              </NavLink>
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <IconButton sx={{ color: "white" }}>
-        <MenuIcon onClick={() => setOpen(!open)} />
-      </IconButton>
+      <Grid
+        container
+        direction="column"
+        sx={{ justifyContent: "center", alignItems: "center" }}
+        spacing={10}
+      >
+        <Grid item sx={{ alignSelf: { xs: "start", sm: "center" } }}>
+          <IconButton onClick={close}>
+            <CloseIcon sx={{ color: "white" }} />
+          </IconButton>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column" sx={{ gap: { xs: "70px" } }}>
+            {navLinks.map(({ title, path }) => (
+              <Grid
+                item
+                onClick={() => {
+                  navigate(path);
+                  setActive(title);
+                }}
+                sx={{ cursor: "pointer" }}
+                className={active === title ? "active" : "nav_bar_items"}
+              >
+                <Typography
+                  sx={{
+                    fontSize: { sm: "20px", xs: "16px" },
+                    lineHeight: { sm: "25px", xs: "20px" }
+                  }}
+                >
+                  {title}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+      </Grid>
     </SwipeableDrawer>
   );
-}
-
-{
-  /* <Drawer open={true} onClose={() => setOpen(false)}>
-      <List>
-        {navLinks.map(({ title, path }) => (
-          <ListItem key={title}>
-            <ListItemButton sx={{ textAlign: "center" }}>
-              <NavLink to={path}>
-                <ListItemText primary={title} />
-              </NavLink>
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <IconButton onClick={() => setOpen(!open)} sx={{ color: "white" }}>
-        <MenuIcon />
-      </IconButton>
-    </Drawer> */
 }

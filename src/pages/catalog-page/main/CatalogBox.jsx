@@ -1,5 +1,5 @@
 //Mui components
-import { Box, Collapse, Grid, Paper, Typography } from "@mui/material";
+import { Box, Collapse, Grid, Typography } from "@mui/material";
 //react hooks
 import { useState } from "react";
 
@@ -11,7 +11,7 @@ export default function CatalogBox({ title, description, image, item }) {
       onMouseEnter={() => setShowInfo(item)}
       onMouseLeave={() => setShowInfo(false)}
       position="relative"
-      sx={{ overflow: "hidden", cursor: "pointer" }}
+      sx={{ cursor: "pointer" }}
     >
       <img style={{ objectFit: "cover" }} width="100%" height={380} src={image} alt={image} />
       <Collapse
@@ -19,15 +19,14 @@ export default function CatalogBox({ title, description, image, item }) {
         in={showInfo === item}
         orientation="vertical"
       >
-        <Paper
+        <Box
           sx={{
             position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)",
-            background: "rgba(0, 0, 0, 0.4)",
-            width: "100%",
-            bottom: "0"
+            background: "rgba(0, 0, 0, 0.3)",
+            width: "100%"
           }}
         >
           <Grid
@@ -52,7 +51,7 @@ export default function CatalogBox({ title, description, image, item }) {
               </Typography>
             </Grid>
           </Grid>
-        </Paper>
+        </Box>
       </Collapse>
     </Box>
   );

@@ -13,6 +13,6 @@ export default function CatalogItem() {
       .catch(err => console.log(err));
   }, []);
 
-  console.log(itemInfo[0].title);
+  console.log(itemInfo[0]);
   return <div>Catalog Item </div>;
 }

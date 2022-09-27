@@ -34,7 +34,7 @@ export default function Footer() {
         container
         sx={{
           direction: { xs: "column", md: "row" },
-          gap: { xl: "530px", lg: "200px", md: "130px" },
+          gap: { xl: "530px", lg: "200px", md: "180px" },
           justifyContent: "center",
           alignItems: "center"
         }}

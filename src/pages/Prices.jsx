@@ -10,7 +10,7 @@ export default function Prices() {
   const [prices, setPrices] = useState(null);
   useEffect(() => {
     axios
-      .get("http://localhost:8000/services")
+      .get(process.env.REACT_APP_SERVICE_HOST)
       .then(res => setPrices(res.data))
       .catch(err => console.log(err));
   }, []);

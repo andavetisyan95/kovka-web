@@ -13,7 +13,7 @@ export default function Main() {
   const navigate = useNavigate();
   useEffect(() => {
     axios
-      .get("http://localhost:8000/services")
+      .get(process.env.REACT_APP_SERVICE_HOST)
       .then(res => setWorks(res.data))
       .catch(err => console.log(err));
   }, []);
