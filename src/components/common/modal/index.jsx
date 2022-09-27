@@ -9,18 +9,18 @@ import { memo, useState } from "react";
 export default memo(function ImgModal({ setOpen, close, currentImg, imageList }) {
   const [current, setCurrent] = useState(imageList.indexOf(currentImg));
 
+  if (!Array.isArray(imageList) || imageList.length <= 0) {
+    return null;
+  }
+
   const nextImg = () => {
     setCurrent(current === imageList.length - 1 ? 0 : current + 1);
-    console.log(current);
   };
 
   const prevImg = () => {
     setCurrent(current === 0 ? imageList.length - 1 : current - 1);
-    console.log(current);
   };
-  if (!Array.isArray(imageList) || imageList.length <= 0) {
-    return null;
-  }
+
   return (
     <Modal
       sx={{

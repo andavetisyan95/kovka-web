@@ -4,9 +4,13 @@ import axios from "axios";
 import { Box, Grid, Typography } from "@mui/material";
 //react hooks
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router";
+//react components
+import { CatalogBox } from "..";
 
 export default function Main() {
   const [works, setWorks] = useState([]);
+  const navigate = useNavigate();
   useEffect(() => {
     axios
       .get("http://localhost:8000/services")
@@ -40,9 +44,16 @@ export default function Main() {
         </Grid>
         <Grid item>
           <Grid container columnSpacing={3} rowSpacing={2}>
-            {works.map(({ title, description, image, id }) => (
-              <Grid item key={`${title}_${id}`} xs={12} sm={6} lg={4}>
-                <img width={400} height={400} src={image} alt={title} />
+            {works.map(({ title, description, item, image, id }) => (
+              <Grid
+                item
+                key={`${title}_${id}`}
+                xs={12}
+                sm={6}
+                lg={4}
+                onClick={() => navigate(`/catalog_item/${item}`)}
+              >
+                <CatalogBox title={title} description={description} item={item} image={image} />
               </Grid>
             ))}
           </Grid>
