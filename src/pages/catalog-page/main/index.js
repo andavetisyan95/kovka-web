@@ -1,2 +1,2 @@
 export { default as CatalogBox } from "./CatalogBox";
-export { default as Main } from "./MainPart";
+export { default as CatalogMain } from "./CatalogMain";

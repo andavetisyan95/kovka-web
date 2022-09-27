@@ -1,17 +1,7 @@
 //MUI icons
 import CloseIcon from "@mui/icons-material/Close";
 //MUI components
-import {
-  drawerClasses,
-  Grid,
-  IconButton,
-  List,
-  ListItem,
-  ListItemButton,
-  ListItemText,
-  SwipeableDrawer,
-  Typography
-} from "@mui/material";
+import { Grid, IconButton, Drawer, Typography } from "@mui/material";
 //react hooks
 import { useState } from "react";
 //source
@@ -23,13 +13,13 @@ export default function DrawerComponent({ open, close }) {
   const navigate = useNavigate();
   const [active, setActive] = useState(null);
   return (
-    <SwipeableDrawer
+    <Drawer
       anchor="left"
       open={open}
       sx={{ backgroundColor: "rgba(0,0,0,0.3)" }}
       PaperProps={{
         sx: {
-          background: "black",
+          backgroundColor: "primary.dark",
           width: { xs: "100vw", sm: "auto" },
           pl: { xs: "20px", sm: "96px" },
           pr: { sm: "152px" },
@@ -52,6 +42,7 @@ export default function DrawerComponent({ open, close }) {
           <Grid container direction="column" sx={{ gap: { xs: "70px" } }}>
             {navLinks.map(({ title, path }) => (
               <Grid
+                key={title}
                 item
                 onClick={() => {
                   navigate(path);
@@ -73,6 +64,6 @@ export default function DrawerComponent({ open, close }) {
           </Grid>
         </Grid>
       </Grid>
-    </SwipeableDrawer>
+    </Drawer>
   );
 }

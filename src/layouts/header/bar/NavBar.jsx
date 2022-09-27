@@ -84,7 +84,7 @@ export default function NavBar() {
           container
           sx={{
             py: "15px",
-            gap: { xs: "20px" }
+            gap: { xs: "20px", sm: "0" }
           }}
           justifyContent="center"
           alignItems="center"
@@ -96,7 +96,7 @@ export default function NavBar() {
           <Grid item>
             <Grid
               container
-              sx={{ gap: { xl: "170px", lg: "90px", md: "280px", xs: "100px", sm: "150px" } }}
+              sx={{ gap: { xl: "170px", lg: "90px", md: "280px", xs: "80px", sm: "150px" } }}
               justifyContent="center"
               alignItems="center"
             >

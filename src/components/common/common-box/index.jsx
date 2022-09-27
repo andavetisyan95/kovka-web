@@ -6,7 +6,8 @@ export default function CommonBox({ title, children }) {
     <Box sx={{ width: "100%" }}>
       <Container
         sx={{
-          py: { lg: "160px", sm: "120px", xs: "80px" }
+          py: { lg: "140px", sm: "120px", xs: "80px" },
+          px: { xl: "50px", lg: "120px", sm: "70px", xs: "24px" }
         }}
       >
         <Grid container sx={{ gap: { sm: "80px", xs: "40px" } }} direction="column">
