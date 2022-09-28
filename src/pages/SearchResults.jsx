@@ -13,14 +13,14 @@ export default function SearchResults() {
           container
           direction="column"
           spacing={10}
-          sx={{ py: { xs: "200px", sm: "220px" }, px: { xs: "96px", sm: "220px" } }}
+          sx={{ py: { xs: 25, sm: 27.5 }, px: { xs: 12, sm: 27.5 } }}
         >
           <Grid item>
             <Typography
               variant="h1"
               sx={{
                 color: "primary.main",
-                fontSize: { sm: "50px", xs: "30px" },
+                fontSize: { sm: 50, xs: 30 },
                 lineHeigh: { xs: "42px", sm: "70px" }
               }}
             >
@@ -28,7 +28,7 @@ export default function SearchResults() {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography sx={{ fontSize: "30px", lineHeight: "38px" }}>
+            <Typography sx={{ fontSize: 30, lineHeight: "38px" }}>
               По запросу {result} ничего не найдено.
             </Typography>
           </Grid>

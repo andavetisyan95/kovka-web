@@ -34,7 +34,7 @@ export default function Footer() {
         container
         sx={{
           direction: { xs: "column", md: "row" },
-          gap: { xl: "530px", lg: "200px", md: "180px" },
+          gap: { xl: 66.25, lg: 25, md: 22.5 },
           justifyContent: "center",
           alignItems: "center"
         }}
@@ -42,19 +42,19 @@ export default function Footer() {
         <Grid
           item
           sx={{
-            py: { xs: "83px", md: "120px" }
+            py: { xs: 10.375, md: 15 }
           }}
         >
-          <Grid container direction="column" sx={{ gap: { lg: "45px", xs: "20px" } }}>
+          <Grid container direction="column" sx={{ gap: { lg: 5.625, xs: 2.5 } }}>
             <Grid item>
               <Grid
                 container
-                sx={{ direction: { md: "row", xs: "row" }, gap: { md: "25px", xs: "16px" } }}
+                sx={{ direction: { md: "row", xs: "row" }, gap: { md: 3.125, xs: 2 } }}
                 justifyContent="center"
                 alignItems="center"
               >
                 <Grid item>
-                  <PhoneIcon sx={{ width: "20px", height: "20px", color: "primary.main" }} />
+                  <PhoneIcon sx={{ width: 20, height: 20, color: "primary.main" }} />
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
@@ -71,10 +71,10 @@ export default function Footer() {
             <Grid item>
               <Grid
                 container
-                sx={{ direction: { md: "row", xs: "row" }, gap: { md: "25px", xs: "16px" } }}
+                sx={{ direction: { md: "row", xs: "row" }, gap: { md: 3.125, xs: 2 } }}
               >
                 <Grid item>
-                  <MailIcon sx={{ width: "22.5px", height: "18.75px" }} color="primary" />
+                  <MailIcon sx={{ width: 22.5, height: 18.75 }} color="primary" />
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>
@@ -86,10 +86,10 @@ export default function Footer() {
             <Grid item>
               <Grid
                 container
-                sx={{ direction: { md: "row", xs: "row" }, gap: { md: "25px", xs: "16px" } }}
+                sx={{ direction: { md: "row", xs: "row" }, gap: { md: 3.125, xs: 2 } }}
               >
                 <Grid item>
-                  <LocationOnIcon sx={{ width: "18px", height: "18px" }} color="primary" />
+                  <LocationOnIcon sx={{ width: 18, height: 18 }} color="primary" />
                 </Grid>
                 <Grid item>
                   <Link
@@ -107,8 +107,8 @@ export default function Footer() {
           onClick={() => navigate("/")}
           item
           sx={{
-            pt: { md: "120px" },
-            pb: { xs: "83px", md: "120px" },
+            pt: { md: 15 },
+            pb: { xs: 10.375, md: 15 },
             cursor: "pointer"
           }}
         >

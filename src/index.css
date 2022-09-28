@@ -105,3 +105,6 @@ code {
   color:white
 }
 
+.clickable{
+  cursor: pointer;
+}

@@ -10,14 +10,14 @@ export default function PageNotFound() {
   return (
     <BoxBackground img="/images/noResult.svg">
       <Container>
-        <Box sx={{ pt: { lg: "160px", sm: "120px", xs: "80px" } }}>
+        <Box sx={{ pt: { lg: 20, sm: 15, xs: 10 } }}>
           <Grid
             container
             sx={{
               bgcolor: "rgba(0,0,0,0.7)",
-              gap: { sm: "80", xs: "40px" },
-              pt: { xs: "80px" },
-              pb: { xs: "80px" }
+              gap: { sm: 10, xs: 5 },
+              pt: { xs: 10 },
+              pb: { xs: 10 }
             }}
             direction="column"
             justifyContent="center"
@@ -26,7 +26,7 @@ export default function PageNotFound() {
             <Grid item>
               <Typography
                 sx={{
-                  fontSize: { xs: "140px", sm: "250px" },
+                  fontSize: { xs: 140, sm: 250 },
                   fontFamily: "Play",
                   color: "primary.main"
                 }}
@@ -35,21 +35,19 @@ export default function PageNotFound() {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography sx={{ fontSize: "40px", lineHeight: "50px" }}>
-                Страница не найдена
-              </Typography>
+              <Typography sx={{ fontSize: 40, lineHeight: "50px" }}>Страница не найдена</Typography>
             </Grid>
             <Grid item>
               <Button
                 onClick={() => navigate("/")}
                 sx={{
                   color: "black",
-                  fontSize: { xs: "16px", sm: "18px" },
+                  fontSize: { xs: 16, sm: 18 },
                   textTransform: "none",
                   fontWeight: "700",
                   lineHeight: { xs: "20px", sm: "25px" },
-                  width: { xs: "304px", sm: "320px" },
-                  height: { xs: "60px", sm: "80px" },
+                  width: { xs: 304, sm: 320 },
+                  height: { xs: 60, sm: 80 },
                   "&:hover": {
                     background: "transparent",
                     color: "primary.main",

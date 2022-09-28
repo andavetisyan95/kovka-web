@@ -17,7 +17,7 @@ export default function CatalogBox({ title, description, image, item }) {
         sx={{
           width: "100%",
           position: "absolute",
-          background: "rgba(0, 0, 0, 0.3)",
+          background: "rgba(0, 0, 0, 0.4)",
           bottom: 0
         }}
         timeout={600}
@@ -30,15 +30,11 @@ export default function CatalogBox({ title, description, image, item }) {
             width: "100%"
           }}
         >
-          <Grid
-            container
-            spacing={8}
-            sx={{ pt: "5px", pl: "40px", pb: { xs: "24px", lg: "40px" } }}
-          >
+          <Grid container spacing={8} sx={{ pt: "5px", pl: 5, pb: { xs: 3, lg: 5 } }}>
             <Grid item>
               <Typography
                 sx={{
-                  fontSize: { xs: "20px", sm: "25px", md: "1.563vw" },
+                  fontSize: { xs: 20, sm: 25, md: "1.563vw" },
                   lineHeight: { xs: "25px", sm: "38px" }
                 }}
                 color={showInfo ? "#FFDB7F" : "white"}
@@ -47,7 +43,7 @@ export default function CatalogBox({ title, description, image, item }) {
               </Typography>
             </Grid>
             <Grid item>
-              <Typography sx={{ fontSize: "16px", lineHeight: "20px", textAlign: "start" }}>
+              <Typography sx={{ fontSize: 16, lineHeight: "20px", textAlign: "start" }}>
                 {description}
               </Typography>
             </Grid>

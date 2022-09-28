@@ -10,16 +10,16 @@ export default function MainPage() {
   return (
     <BoxBackground img="/images/mainBack.svg">
       {" "}
-      <Container sx={{ pt: { xl: "240px", xs: "180px" } }}>
+      <Container sx={{ pt: { xl: 30, xs: 22.5 } }}>
         <CommonPaper title="ПРОИЗВОДИТЕЛЬ КОВАННЫХ ИЗДЕЛИЙ">
-          <Grid container direction="column" sx={{ gap: { sm: "80px", xs: "40px" } }}>
-            <Grid item>
+          <Grid container direction="column" sx={{ gap: { sm: 10, xs: 5 } }}>
+            <Grid item sx={{ pr: 5 }}>
               <Typography
                 sx={{
                   fontFamily: "Mulish",
                   fontStyle: "normal",
                   fontWeight: 400,
-                  fontSize: { xs: "16px", sm: "30px", lg: "40px" }
+                  fontSize: { xs: 16, sm: 30, lg: 40 }
                 }}
               >
                 Один из ведущих производителей кованых изделий в Московской области
@@ -30,11 +30,11 @@ export default function MainPage() {
                 onClick={() => navigate("/catalog")}
                 sx={{
                   color: "black",
-                  fontSize: { xs: "16px", sm: "18px" },
+                  fontSize: { xs: 16, sm: 18 },
                   textTransform: "capitalize",
                   lineHeight: { xs: "20px", sm: "25px" },
-                  width: { xs: "304px", sm: "320px" },
-                  height: { xs: "60px", sm: "80px" }
+                  width: { xs: 304, sm: 320 },
+                  height: { xs: 60, sm: 80 }
                 }}
               >
                 Каталог

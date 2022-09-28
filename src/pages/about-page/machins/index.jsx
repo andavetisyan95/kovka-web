@@ -7,11 +7,11 @@ import { BoxBackground, CommonPaper } from "src/components/common";
 export default function Machins() {
   return (
     <BoxBackground img="/images/Machins.svg">
-      <Container sx={{ py: { xs: "80px" } }}>
+      <Container sx={{ py: { xs: 10 } }}>
         <CommonPaper title="ОБОРУДОВАНИЕ">
-          <Box sx={{ pr: { sm: "80px", xs: "20px" } }}>
+          <Box sx={{ pr: { sm: 10, xs: 2.5 } }}>
             <Typography
-              sx={{ fontSize: { sm: "20px", xs: "16px" }, lineHeight: { sm: "28px", xs: "22px" } }}
+              sx={{ fontSize: { sm: 20, xs: 16 }, lineHeight: { sm: "28px", xs: "22px" } }}
             >
               Мы любим металл, и он отвечает нам взаимностью, только так можно создавать поистине
               достойные вещи. Каждый заказ индивидуален. В галерее художественной ковки представлены

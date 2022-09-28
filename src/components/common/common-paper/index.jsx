@@ -1,5 +1,5 @@
 //Mui components
-import { Grid, Paper, Typography, Container } from "@mui/material";
+import { Grid, Paper, Typography } from "@mui/material";
 
 export default function CommonPaper({ title, children }) {
   return (
@@ -19,7 +19,7 @@ export default function CommonPaper({ title, children }) {
               color: "primary.main",
               fontFamily: "Play",
               fontStyle: "normal",
-              fontSize: { sm: 40, xs: 30 },
+              fontSize: { sm: 40, xs: 30, xl: 50 },
               lineHeight: { lg: "69px", sm: "70px", xs: "42px" },
               fontWeight: 400
             }}

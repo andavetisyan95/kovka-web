@@ -31,7 +31,7 @@ export default function CallSection() {
         <Toolbar>
           <Grid container className="grid_center" pt={5} columnSpacing={10} pb={1.3}>
             <Grid item>
-              <Box className="flex_center" gap="20px">
+              <Box className="flex_center" gap={2.5}>
                 <Box>
                   <PhoneIcon sx={{ width: 25, height: 25, color: "primary.main" }} />
                 </Box>

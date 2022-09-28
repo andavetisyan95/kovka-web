@@ -5,10 +5,10 @@ import { CatalogCommon } from "..";
 
 export default function IndividualItem({ item }) {
   return (
-    <CatalogCommon>
+    <CatalogCommon title="КАТАЛОГ">
       <Grid container spacing={10}>
         <Grid item xs={12} sm={6}>
-          <Box position="relative" sx={{ height: { lg: "400px", sm: "320px", xs: "240px" } }}>
+          <Box position="relative" sx={{ height: { lg: 400, sm: 320, xs: 240 } }}>
             <img
               style={{ objectFit: "cover" }}
               width="100%"
@@ -19,12 +19,12 @@ export default function IndividualItem({ item }) {
           </Box>
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Grid container sx={{ gap: { lg: "80px", xs: "40px" } }}>
+          <Grid container sx={{ gap: { lg: 10, xs: 5 } }}>
             <Grid item>
               <Typography
                 sx={{
                   color: "primary.main",
-                  fontSize: { lg: "40px", sm: "30px", xs: "24px" },
+                  fontSize: { lg: 40, sm: 30, xs: 24 },
                   lineHeight: { lg: "50px", sm: "38px", xs: "30px" }
                 }}
               >
@@ -34,7 +34,7 @@ export default function IndividualItem({ item }) {
             <Grid item>
               <Typography
                 sx={{
-                  fontSize: { xs: "16px", sm: "20px", lg: "24px" },
+                  fontSize: { xs: 16, sm: 20, lg: 24 },
                   lineHeight: { xs: "20px", sm: "25px", lg: "30px" }
                 }}
               >

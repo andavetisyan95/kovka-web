@@ -6,11 +6,11 @@ import { BoxBackground, CommonPaper } from "src/components/common";
 export default function Main() {
   return (
     <BoxBackground img="/images/aboutPage.svg">
-      <Container sx={{ pt: { xs: "220px" }, pb: { xs: "40px" } }}>
+      <Container sx={{ pt: { xs: 27.5 }, pb: { xs: 5 } }}>
         <CommonPaper title="О НАС">
-          <Box sx={{ pr: { sm: "80px", xs: "20px" } }}>
+          <Box sx={{ pr: { sm: 10, xs: 2.5 } }}>
             <Typography
-              sx={{ fontSize: { sm: "20px", xs: "16px" }, lineHeight: { sm: "28px", xs: "22px" } }}
+              sx={{ fontSize: { sm: 20, xs: 16 }, lineHeight: { sm: "28px", xs: "22px" } }}
             >
               У нас Вы можете Заказать оригинальные кованые изделия, которые помогут создать красиво
               неповторимые интерьеры и экстерьеры. Наличие собственной производственного цеха

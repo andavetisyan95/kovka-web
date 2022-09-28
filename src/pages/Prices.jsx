@@ -17,12 +17,12 @@ export default function Prices() {
 
   return (
     <BoxBackground img="/images/pricePage.svg">
-      <Box sx={{ pt: { xl: "240px", xs: "180px" }, px: { lg: "200px", sm: "96px", xs: "23px" } }}>
+      <Box sx={{ pt: { xl: 30, xs: 22.5 }, px: { lg: 25, sm: 12, xs: 2.875 } }}>
         <Box
           sx={{
-            py: { sm: "80px", xs: "40px" },
-            pl: { lg: "80px", xs: "40px" },
-            gap: { xs: "40px" },
+            py: { sm: 10, xs: 5 },
+            pl: { lg: 10, xs: 5 },
+            gap: { xs: 5 },
             bgcolor: "rgba(0,0,0,0.7)"
           }}
           display="flex"
@@ -37,7 +37,7 @@ export default function Prices() {
                   color: "primary.main",
                   fontFamily: "Play",
                   fontStyle: "normal",
-                  fontSize: { sm: "50px", xs: "30px" },
+                  fontSize: { sm: 50, xs: 30 },
                   lineHeight: { lg: "46px", sm: "70px", xs: "42px" },
                   fontWeight: 400
                 }}
@@ -53,7 +53,7 @@ export default function Prices() {
                   color: "primary.main",
                   fontFamily: "Play",
                   fontStyle: "normal",
-                  fontSize: { sm: "50px", xs: "30px" },
+                  fontSize: { sm: 50, xs: 30 },
                   lineHeight: { lg: "46px", sm: "70px", xs: "none" },
                   fontWeight: 400,
                   display: { sm: "block", xs: "none" }
@@ -70,7 +70,7 @@ export default function Prices() {
                   <Grid item xs={12} sm={6}>
                     <Typography
                       sx={{
-                        fontSize: { lg: "24px", xs: "20px" },
+                        fontSize: { lg: 24, xs: 20 },
                         color: { xs: "primary.main", sm: "primary.light" },
                         lineHeight: { lg: "30px", xs: "25px" }
                       }}
@@ -81,7 +81,7 @@ export default function Prices() {
                   <Grid item xs={12} sm={6}>
                     <Typography
                       sx={{
-                        fontSize: { lg: "24px", xs: "20px" },
+                        fontSize: { lg: 24, xs: 20 },
                         lineHeight: { lg: "30px", xs: "25px" }
                       }}
                     >

@@ -16,7 +16,8 @@ export default memo(function BoxForWorks({ imgName, imageList }) {
       onMouseEnter={() => setHover(imgName)}
       onMouseLeave={() => setHover(false)}
       position="relative"
-      sx={{ overflow: "hidden", cursor: "pointer" }}
+      sx={{ overflow: "hidden" }}
+      className="clickable"
     >
       <img
         src={imgName}

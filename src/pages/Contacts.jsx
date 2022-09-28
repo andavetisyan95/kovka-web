@@ -19,7 +19,7 @@ export default function Contacts() {
     <BoxBackground img="/images/contacts.svg">
       <Container
         sx={{
-          pt: { xl: "240px", lg: "160px", sm: "200px", xs: "200px" }
+          pt: { xl: 30, lg: 20, sm: 25, xs: 25 }
         }}
       >
         <CommonPaper title="КОНТАКТНАЯ ИНФОРМАЦИЯ КОМПАНИИ">
@@ -27,22 +27,22 @@ export default function Contacts() {
             container
             direction="column"
             sx={{
-              gap: { xs: "40px", lg: "180px" },
+              gap: { xs: 5, lg: 22.5 },
               justifyContent: "center",
               alignItems: "center"
             }}
           >
             <Grid item>
-              <Grid container direction="column" sx={{ gap: "41px" }}>
+              <Grid container direction="column" sx={{ gap: 5.125 }}>
                 <Grid item>
-                  <Grid container direction="row" gap="24px">
+                  <Grid container direction="row" gap={3}>
                     <Grid item>
                       <PhoneIcon
                         sx={{
                           width: "1em",
                           height: "1em",
                           color: "primary.main",
-                          fontSize: { xs: "22px", sm: "26px", lg: "30px" }
+                          fontSize: { xs: 22, sm: 26, lg: 30 }
                         }}
                       />
                     </Grid>
@@ -51,7 +51,7 @@ export default function Contacts() {
                         <Grid item>
                           <Typography
                             sx={{
-                              fontSize: { xs: "20px", sm: "22px", xl: "30px" },
+                              fontSize: { xs: 20, sm: 22, xl: 30 },
                               lineHeight: { xs: "27px", sm: "29px", xl: "38px" }
                             }}
                           >
@@ -61,7 +61,7 @@ export default function Contacts() {
                         <Grid item>
                           <Typography
                             sx={{
-                              fontSize: { xs: "20px", sm: "22px", xl: "30px" },
+                              fontSize: { xs: 20, sm: 22, xl: 30 },
                               lineHeight: { xs: "27px", sm: "29px", xl: "38px" }
                             }}
                           >
@@ -73,21 +73,21 @@ export default function Contacts() {
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <Grid container direction="row" gap="24px">
+                  <Grid container direction="row" gap={3}>
                     <Grid item>
                       <MailIcon
                         sx={{
                           width: "1em",
                           height: "1em",
                           color: "primary.main",
-                          fontSize: { xs: "22px", sm: "26px", lg: "30px" }
+                          fontSize: { xs: 22, sm: 26, lg: 30 }
                         }}
                       />
                     </Grid>
                     <Grid item>
                       <Typography
                         sx={{
-                          fontSize: { xs: "20px", sm: "22px", xl: "30px" },
+                          fontSize: { xs: 20, sm: 22, xl: 30 },
                           lineHeight: { xs: "27px", sm: "29px", xl: "38px" }
                         }}
                       >
@@ -97,21 +97,21 @@ export default function Contacts() {
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <Grid container direction="row" gap="24px">
+                  <Grid container direction="row" gap={3}>
                     <Grid item>
                       <LocationOnIcon
                         sx={{
                           width: "1em",
                           height: "1em",
                           color: "primary.main",
-                          fontSize: { xs: "22px", sm: "26px", lg: "30px" }
+                          fontSize: { xs: 22, sm: 26, lg: 30 }
                         }}
                       />
                     </Grid>
                     <Grid item>
                       <Typography
                         sx={{
-                          fontSize: { xs: "20px", sm: "22px", xl: "30px" },
+                          fontSize: { xs: 20, sm: 22, xl: 30 },
                           lineHeight: { xs: "27px", sm: "29px", xl: "38px" }
                         }}
                       >
@@ -123,14 +123,14 @@ export default function Contacts() {
               </Grid>
             </Grid>
             <Grid item>
-              <Grid container direction="column" sx={{ gap: { xs: "30px", xl: 0 } }}>
+              <Grid container direction="column" sx={{ gap: { xs: 3.75, xl: 0 } }}>
                 <Grid item>
                   <Typography
                     sx={{
                       color: "primary.main",
                       fontFamily: "Mulish",
                       fontStyle: "normal",
-                      fontSize: { lg: "20px", md: "16px", xs: "14px" },
+                      fontSize: { lg: 20, md: 16, xs: 14 },
                       lineHeight: { lg: "25px", sm: "70px", xs: "42px" },
                       fontWeight: 500,
                       textAlign: "center"
