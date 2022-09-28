@@ -8,9 +8,9 @@ export default function CommonPaper({ title, children }) {
         container
         direction="column"
         sx={{
-          py: { sm: "80px", xs: "40px" },
-          pl: { sm: "40px", lg: "80px", xs: "20px" },
-          gap: { sm: "60px", xs: "40px" }
+          py: { sm: 10, xs: 5 },
+          pl: { sm: 5, lg: 10, xs: 15 },
+          gap: { sm: 7.5, xs: 5 }
         }}
       >
         <Grid item>
@@ -19,7 +19,7 @@ export default function CommonPaper({ title, children }) {
               color: "primary.main",
               fontFamily: "Play",
               fontStyle: "normal",
-              fontSize: { sm: "40px", xs: "30px" },
+              fontSize: { sm: 40, xs: 30 },
               lineHeight: { lg: "69px", sm: "70px", xs: "42px" },
               fontWeight: 400
             }}

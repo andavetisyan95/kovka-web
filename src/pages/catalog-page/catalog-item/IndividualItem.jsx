@@ -1,5 +1,3 @@
-//axios
-import axios from "axios";
 //MUi components
 import { Grid, Box, Typography } from "@mui/material";
 //react components
@@ -15,7 +13,7 @@ export default function IndividualItem({ item }) {
               style={{ objectFit: "cover" }}
               width="100%"
               height="100%"
-              src={item?.image}
+              src={item?.image || "/images/placeholder.jpg"}
               alt={item?.image}
             />
           </Box>

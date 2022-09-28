@@ -49,7 +49,7 @@ export default function OurWorks() {
           <NavLink to={"/catalog"}>
             <Typography
               className="watch-more"
-              sx={{ fontSize: { sx: "16px", sm: "20px" }, lineHeight: { sm: "25px", xs: "20px" } }}
+              sx={{ fontSize: { sx: 16, sm: 20 }, lineHeight: { sm: "25px", xs: "20px" } }}
             >
               Посмотреть больше
             </Typography>

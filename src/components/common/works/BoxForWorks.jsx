@@ -11,12 +11,6 @@ export default memo(function BoxForWorks({ imgName, imageList }) {
   const [hover, setHover] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  function openModal() {
-    setModalIsOpen(true);
-  }
-  const handleClose = () => {
-    setModalIsOpen(false);
-  };
   return (
     <Box
       onMouseEnter={() => setHover(imgName)}
@@ -30,7 +24,7 @@ export default memo(function BoxForWorks({ imgName, imageList }) {
         width="100%"
         height={250}
         style={{ objectFit: "cover", borderRadius: 5 }}
-        onClick={() => openModal()}
+        onClick={() => setModalIsOpen(true)}
       />
       {hover === imgName && (
         <Button
@@ -49,12 +43,22 @@ export default memo(function BoxForWorks({ imgName, imageList }) {
         </Button>
       )}
       {modalIsOpen && (
-        <ImgModal
-          setOpen={modalIsOpen}
-          close={handleClose}
-          currentImg={imgName}
-          imageList={imageList}
-        />
+        <Modal
+          sx={{
+            width: "100%",
+            height: "100%",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center"
+          }}
+          open={() => setModalIsOpen(true)}
+          onClose={() => setModalIsOpen(false)}
+        >
+          <ImgModal currentImg={imgName} imageList={imageList} />
+        </Modal>
       )}
     </Box>
   );

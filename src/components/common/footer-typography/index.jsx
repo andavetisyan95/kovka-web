@@ -4,7 +4,7 @@ export default function FooterTypography({ title }) {
   return (
     <Typography
       sx={{
-        fontSize: { lg: "20px", xs: "16px" },
+        fontSize: { lg: 20, xs: 16 },
         fontWeight: 500,
         lineHeight: { lg: "25px", xs: "20px" },
         textAlign: "center"

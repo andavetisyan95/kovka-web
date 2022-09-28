@@ -1,7 +1,7 @@
 //axios
 import axios from "axios";
 //MUi components
-import { Grid, Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 //react hooks
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
@@ -13,7 +13,7 @@ export default function CatalogItem() {
   const { itemName } = useParams();
 
   useEffect(() => {
-    axios(`http://localhost:8000/services?item=${itemName}`)
+    axios(`${process.env.REACT_APP_SERVICE_HOST}?item=${itemName}`)
       .then(res => setItemInfo(res.data))
       .catch(err => console.log(err));
   }, []);

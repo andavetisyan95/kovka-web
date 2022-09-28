@@ -6,15 +6,15 @@ export default function CommonBox({ title, children }) {
     <Box sx={{ width: "100%" }}>
       <Container
         sx={{
-          py: { lg: "140px", sm: "120px", xs: "80px" },
-          px: { xl: "50px", lg: "120px", sm: "70px", xs: "24px" }
+          py: { lg: 17.5, sm: 15, xs: 10 },
+          px: { xl: 3.75, lg: 18.75, sm: 8.75, xs: 3 }
         }}
       >
-        <Grid container sx={{ gap: { sm: "80px", xs: "40px" } }} direction="column">
+        <Grid container sx={{ gap: { sm: 8, xs: 5 } }} direction="column">
           <Grid item>
             <Typography
               sx={{
-                fontSize: { sm: "40px", xs: "30px" },
+                fontSize: { sm: 40, xs: 30 },
                 color: "primary.main",
                 fontFamily: "Play",
                 lineHeight: { lg: "69px", sm: "70px", xs: "42px" }

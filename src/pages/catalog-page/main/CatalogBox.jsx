@@ -4,28 +4,29 @@ import { Box, Collapse, Grid, Typography } from "@mui/material";
 import { useState } from "react";
 
 export default function CatalogBox({ title, description, image, item }) {
-  const [showInfo, setShowInfo] = useState(null);
+  const [showInfo, setShowInfo] = useState(false);
 
   return (
     <Box
-      onMouseEnter={() => setShowInfo(item)}
+      onMouseEnter={() => setShowInfo(true)}
       onMouseLeave={() => setShowInfo(false)}
-      position="relative"
-      sx={{ cursor: "pointer" }}
+      sx={{ cursor: "pointer", position: "relative" }}
     >
       <img style={{ objectFit: "cover" }} width="100%" height={380} src={image} alt={image} />
       <Collapse
-        style={{ transitionDuration: "600ms" }}
-        in={showInfo === item}
+        sx={{
+          width: "100%",
+          position: "absolute",
+          background: "rgba(0, 0, 0, 0.3)",
+          bottom: 0
+        }}
+        timeout={600}
+        in={showInfo}
         orientation="vertical"
+        collapsedSize={80}
       >
         <Box
           sx={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            background: "rgba(0, 0, 0, 0.3)",
             width: "100%"
           }}
         >
