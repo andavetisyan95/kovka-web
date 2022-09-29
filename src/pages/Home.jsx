@@ -14,7 +14,6 @@ export default function Home() {
   useEffect(() => {
     fetchAllInfo();
   }, []);
-  //env files are'nt work
 
   async function fetchAllInfo() {
     const [services, advanteges] = await Promise.all([

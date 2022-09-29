@@ -10,19 +10,29 @@ import { IndividualItem, ItemsExamples } from "./catalog-page";
 
 export default function CatalogItem() {
   const [itemInfo, setItemInfo] = useState([]);
+  const [examples, setExamples] = useState([]);
+
+  //get query params
   const { itemName } = useParams();
 
   useEffect(() => {
-    axios(`${process.env.REACT_APP_SERVICE_HOST}?item=${itemName}`)
+    axios
+      .get(`${process.env.REACT_APP_SERVICE_HOST}?item=${itemName}`)
       .then(res => setItemInfo(res.data))
+      .catch(err => console.log(err));
+  }, [itemName]);
+
+  useEffect(() => {
+    axios
+      .get(process.env.REACT_APP_SERVICE_HOST)
+      .then(res => setExamples(res.data))
       .catch(err => console.log(err));
   }, []);
 
-  console.log(itemInfo);
   return (
     <Box>
       <IndividualItem item={itemInfo[0]} />
-      <ItemsExamples />
+      <ItemsExamples examples={examples} />
     </Box>
   );
 }

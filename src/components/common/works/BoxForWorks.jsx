@@ -55,7 +55,7 @@ export default memo(function BoxForWorks({ imgName, imageList }) {
             justifyContent: "center",
             alignItems: "center"
           }}
-          open={() => setModalIsOpen(true)}
+          open={modalIsOpen}
           onClose={() => setModalIsOpen(false)}
         >
           <ImgModal currentImg={imgName} imageList={imageList} />

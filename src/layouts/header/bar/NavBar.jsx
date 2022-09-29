@@ -1,5 +1,14 @@
 //MUI components
-import { Grid, AppBar, Toolbar, IconButton, Typography, TextField, Hidden } from "@mui/material";
+import {
+  Grid,
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  TextField,
+  Hidden,
+  Slide
+} from "@mui/material";
 
 //react router
 import { useNavigate } from "react-router-dom";
@@ -21,12 +30,21 @@ export default function NavBar() {
   const [handleOpen, setHandleOpen] = useState(false);
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
+  const [handleAddTransition, setHandleAddTransition] = useState(false);
 
   const changeBackground = () => {
     if (window.scrollY >= 2) {
       setScroll(true);
     } else {
       setScroll(false);
+    }
+  };
+
+  const addTransition = () => {
+    if (window.scrollY >= 1) {
+      setHandleAddTransition(true);
+    } else {
+      setHandleAddTransition(false);
     }
   };
 
@@ -61,6 +79,7 @@ export default function NavBar() {
   // }, [title]);
 
   window.addEventListener("scroll", changeBackground);
+  window.addEventListener("scroll", addTransition);
   return (
     <AppBar
       sx={{
@@ -84,6 +103,7 @@ export default function NavBar() {
           <Grid item onClick={() => navigate("/")} className="clickable">
             <img src={"/images/logo.svg"} alt="logo" />{" "}
           </Grid>
+
           <Grid item>
             <Grid
               container

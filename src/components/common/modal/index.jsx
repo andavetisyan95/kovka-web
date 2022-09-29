@@ -62,6 +62,7 @@ export default memo(function ImgModal({ currentImg, imageList }) {
                   style={{ objectFit: "cover", borderRadius: "0px" }}
                   src={el}
                   alt={el}
+                  key={i}
                 />
               )
           )}

@@ -9,11 +9,14 @@ import { MoreServices, CatalogMain } from "./catalog-page";
 
 export default function Catalog() {
   const [items, setItems] = useState([]);
+
   useEffect(() => {
-    axios(process.env.REACT_APP_SERVICE_HOST)
+    axios
+      .get(process.env.REACT_APP_SERVICE_HOST)
       .then(res => setItems(res.data))
       .catch(err => console.log(err));
   }, []);
+
   return (
     <Box sx={{ display: "flex", flexDirection: "column" }}>
       <CatalogMain items={items} />

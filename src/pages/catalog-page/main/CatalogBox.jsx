@@ -3,7 +3,7 @@ import { Box, Collapse, Grid, Typography } from "@mui/material";
 //react hooks
 import { useState } from "react";
 
-export default function CatalogBox({ title, description, image, item }) {
+export default function CatalogBox({ title, description, image }) {
   const [showInfo, setShowInfo] = useState(false);
 
   return (

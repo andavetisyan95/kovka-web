@@ -1,5 +1,5 @@
 //MUi components
-import { Grid, Box, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 //react components
 import { CatalogCommon } from "..";
 
@@ -8,15 +8,13 @@ export default function IndividualItem({ item }) {
     <CatalogCommon title="КАТАЛОГ">
       <Grid container spacing={10}>
         <Grid item xs={12} sm={6}>
-          <Box position="relative" sx={{ height: { lg: 400, sm: 320, xs: 240 } }}>
-            <img
-              style={{ objectFit: "cover" }}
-              width="100%"
-              height="100%"
-              src={item?.image || "/images/placeholder.jpg"}
-              alt={item?.image}
-            />
-          </Box>
+          <img
+            style={{ objectFit: "cover" }}
+            width="100%"
+            height="100%"
+            src={item?.image || "/images/placeholder.jpg"}
+            alt={item?.image}
+          />
         </Grid>
         <Grid item xs={12} sm={6}>
           <Grid container sx={{ gap: { lg: 10, xs: 5 } }}>
