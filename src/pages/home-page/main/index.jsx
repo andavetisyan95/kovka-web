@@ -33,7 +33,7 @@ export default function MainPage() {
                   fontSize: { xs: 16, sm: 18 },
                   textTransform: "capitalize",
                   lineHeight: { xs: "20px", sm: "25px" },
-                  width: { xs: 304, sm: 320 },
+                  width: { xs: 280, sm: 320 },
                   height: { xs: 60, sm: 80 }
                 }}
               >

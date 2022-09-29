@@ -23,7 +23,7 @@ export default function DrawerComponent({ open, close }) {
           width: { xs: "100vw", sm: "auto" },
           pl: { xs: 2.5, sm: 12 },
           pr: { sm: 19 },
-          pt: 19
+          pt: { xs: 16, sm: 19 }
         }
       }}
       ModalProps={{ keepMounted: true }}
@@ -32,7 +32,7 @@ export default function DrawerComponent({ open, close }) {
         container
         direction="column"
         sx={{ justifyContent: "center", alignItems: "center" }}
-        spacing={10}
+        spacing={7}
       >
         <Grid item sx={{ alignSelf: { xs: "start", sm: "center" } }}>
           <IconButton onClick={close}>

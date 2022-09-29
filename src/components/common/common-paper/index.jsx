@@ -9,7 +9,7 @@ export default function CommonPaper({ title, children }) {
         direction="column"
         sx={{
           py: { sm: 10, xs: 5 },
-          pl: { sm: 5, lg: 10, xs: 15 },
+          pl: { sm: 5, lg: 10, xs: 3 },
           gap: { sm: 7.5, xs: 5 }
         }}
       >

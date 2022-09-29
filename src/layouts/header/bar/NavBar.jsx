@@ -158,7 +158,7 @@ export default function NavBar() {
                       bgcolor: "transparent",
                       display: "flex",
                       flexDirection: "row",
-                      width: { xs: 280, sm: 220 }
+                      width: { xs: 230, sm: 220 }
                     },
                     endAdornment: (
                       <IconButton sx={{ color: "white" }}>

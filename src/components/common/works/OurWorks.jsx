@@ -38,7 +38,7 @@ export default function OurWorks() {
                 <BoxForWorks imgName="/images/vrata.svg" imageList={imageList} />
               </Grid>
             </Hidden>
-            <Hidden lgDwon>
+            <Hidden only={["xs", "sm", "md"]}>
               <Grid item lg={3}>
                 <BoxForWorks imgName="/images/kovannie-perila.svg" imageList={imageList} />
               </Grid>

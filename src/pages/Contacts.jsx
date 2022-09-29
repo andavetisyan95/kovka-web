@@ -97,12 +97,10 @@ export default function Contacts() {
                   </Grid>
                 </Grid>
                 <Grid item>
-                  <Grid container direction="row" gap={3}>
+                  <Grid container gap={3} sx={{ direction: "row", flexFlow: "nowrap" }}>
                     <Grid item>
                       <LocationOnIcon
                         sx={{
-                          width: "1em",
-                          height: "1em",
                           color: "primary.main",
                           fontSize: { xs: 22, sm: 26, lg: 30 }
                         }}

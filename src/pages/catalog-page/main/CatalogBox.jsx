@@ -30,12 +30,12 @@ export default function CatalogBox({ title, description, image, item }) {
             width: "100%"
           }}
         >
-          <Grid container spacing={8} sx={{ pt: "5px", pl: 5, pb: { xs: 3, lg: 5 } }}>
+          <Grid container spacing={6.5} sx={{ pl: 5, pb: { xs: 2, lg: 5 } }}>
             <Grid item>
               <Typography
                 sx={{
-                  fontSize: { xs: 20, sm: 25, md: "1.563vw" },
-                  lineHeight: { xs: "25px", sm: "38px" }
+                  fontSize: { xs: 20, sm: 20, md: "1.563vw" },
+                  lineHeight: { xs: "25px", sm: "25px" }
                 }}
                 color={showInfo ? "#FFDB7F" : "white"}
               >
