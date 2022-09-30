@@ -1,11 +1,40 @@
+//axios
+import axios from "axios";
 //Mui components
 import { Box, Typography, Grid } from "@mui/material";
+//react hooks
+import { useEffect, useState } from "react";
 //react router
 import { useLocation } from "react-router";
+import { CatalogMain } from "./catalog-page";
 
 export default function SearchResults() {
   const location = useLocation();
   const result = location.search.split("?")[1].split("=")[1];
+
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_SERVICE_HOST}?q=${result}`)
+      .then(res => setItems(res.data))
+      .catch(err => console.log(err));
+  }, [result]);
+
+  const newArr = [];
+  items?.filter(el => {
+    if (el.title.includes(result)) {
+      newArr.push(el);
+    }
+    return newArr;
+  });
+
+  const titleArr = [];
+  newArr.filter(({ title }) => {
+    titleArr.push(title);
+    return titleArr;
+  });
+
   return (
     <main>
       <Box>
@@ -28,9 +57,13 @@ export default function SearchResults() {
             </Typography>
           </Grid>
           <Grid item>
-            <Typography sx={{ fontSize: 30, lineHeight: "38px" }}>
-              По запросу {result} ничего не найдено.
-            </Typography>
+            {titleArr.toString().includes(result) ? (
+              <CatalogMain items={newArr} />
+            ) : (
+              <Typography sx={{ fontSize: 30, lineHeight: "38px" }}>
+                По запросу {result} ничего не найдено.
+              </Typography>
+            )}
           </Grid>
         </Grid>
       </Box>

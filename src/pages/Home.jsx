@@ -1,5 +1,3 @@
-//react
-import axios from "axios";
 //Mui components
 import { Box } from "@mui/material";
 //react hooks
@@ -25,9 +23,23 @@ export default function Home() {
 
   return (
     <Box>
-      <MainPage />
-      <Services services={kovkaData?.services} />
-      <OurWorks />
+      <Box
+        sx={{
+          background: "url(/images/mainBack.svg)",
+          width: "100%",
+          position: "absolute",
+          top: 0,
+          zIndex: -1,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "100vh"
+        }}
+      />{" "}
+      <Box sx={{ px: { xl: 28.5, sm: 12, xs: 3 } }}>
+        <MainPage />
+        <Services services={kovkaData?.services} />
+        <OurWorks />
+      </Box>
       <Advantege advanteges={kovkaData?.advanteges} />
     </Box>
   );

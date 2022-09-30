@@ -24,7 +24,7 @@ export default function Services({ services }) {
 
   return (
     <CommonBox title="НАШИ УСЛУГИ">
-      <Grid container columnSpacing={3}>
+      <Grid container columnSpacing={1.5}>
         <Grid item>
           <Grid container direction="column" spacing={1.5}>
             {services?.map(({ title, id, item }, i) => (

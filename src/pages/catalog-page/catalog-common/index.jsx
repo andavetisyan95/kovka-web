@@ -5,7 +5,7 @@ export default function CatalogCommon({ children, title }) {
   return (
     <Box
       sx={{
-        pt: { xl: 35, lg: 25, xs: 25 },
+        pt: { lg: 25, xs: 25 },
         pb: { xs: 10 },
         px: { xl: 28.5, lg: 21.25, sm: 8.75, xs: 3 }
       }}

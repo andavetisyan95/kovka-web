@@ -9,11 +9,14 @@ import { useLocation } from "react-router";
 export default function MainLayout({ children }) {
   const location = useLocation();
   return (
-    <Box position="relative">
+    <Box>
       <Box>
         <Header />
       </Box>
-      <Box>{children}</Box>
+      <main>
+        <div style={{ display: "flex", flexDirection: "column" }}>{children}</div>
+      </main>
+
       <Box>{location.pathname !== "/contacts" && location.pathname !== "/*" && <Footer />}</Box>
     </Box>
   );

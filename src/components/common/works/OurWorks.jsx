@@ -18,7 +18,14 @@ export default function OurWorks() {
     <CommonBox title="НАШИ РАБОТЫ">
       <Grid container spacing={8} direction="column">
         <Grid item xs={12}>
-          <Grid container spacing={3}>
+          <Grid
+            container
+            spacing={{
+              xs: 1,
+              sm: 2,
+              lg: 3
+            }}
+          >
             <Grid item xs={6} sm={4.5} lg={3}>
               <BoxForWorks imgName="/images/reshotka.svg" imageList={imageList} />
             </Grid>

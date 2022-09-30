@@ -1,14 +1,5 @@
 //MUI components
-import {
-  Grid,
-  AppBar,
-  Toolbar,
-  IconButton,
-  Typography,
-  TextField,
-  Hidden,
-  Slide
-} from "@mui/material";
+import { Grid, IconButton, Typography, TextField, Hidden, Box } from "@mui/material";
 
 //react router
 import { useNavigate } from "react-router-dom";
@@ -18,7 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { navLinks } from "src/source/navLinks";
 
 //react hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 //MUI icons
 import MenuIcon from "@mui/icons-material/Menu";
 import { DrawerComponent } from ".";
@@ -30,7 +21,36 @@ export default function NavBar() {
   const [handleOpen, setHandleOpen] = useState(false);
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
-  const [handleAddTransition, setHandleAddTransition] = useState(false);
+
+  useEffect(() => {
+    if (title.length >= 1 && title !== undefined) {
+      const handle = setTimeout(() => {
+        fetch(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`)
+          .then(res => res.json())
+          .then(results => {
+            setItems(results);
+          });
+      }, 500);
+      return () => {
+        clearTimeout(handle);
+      };
+    }
+  }, [title]);
+
+  const handleEnter = e => {
+    if (e.key === "Enter") {
+      navigate(`/search_results?query=${title}`);
+      setTitle("");
+    }
+  };
+
+  const titleArray = [];
+  items?.filter(({ title }) => titleArray.push(title));
+  const stringArr = titleArray.toString();
+
+  const handleClose = () => {
+    setHandleOpen(false);
+  };
 
   const changeBackground = () => {
     if (window.scrollY >= 2) {
@@ -39,160 +59,167 @@ export default function NavBar() {
       setScroll(false);
     }
   };
-
-  const addTransition = () => {
-    if (window.scrollY >= 1) {
-      setHandleAddTransition(true);
-    } else {
-      setHandleAddTransition(false);
-    }
-  };
-
-  const handleEnter = e => {
-    if (e.key === "Enter") {
-      if (title === "" || !items.includes(title)) {
-        navigate(`/search_results?query=${title}`);
-        setTitle("");
-      } else {
-        e.preventDefault();
-        setTitle(e.target.value);
-      }
-    }
-  };
-
-  const handleClose = () => {
-    setHandleOpen(false);
-  };
-  // useEffect(() => {
-  //   if (title.length >= 1 && title !== undefined) {
-  //     const handle = setTimeout(() => {
-  //       fetch("http://localhost:8000/services ")
-  //         .then(res => res.json())
-  //         .then(results => {
-  //           setItems(results);
-  //         });
-  //     }, 500);
-  //     return () => {
-  //       clearTimeout(handle);
-  //     };
-  //   }
-  // }, [title]);
-
   window.addEventListener("scroll", changeBackground);
-  window.addEventListener("scroll", addTransition);
+
   return (
-    <AppBar
+    <Box
       sx={{
         bgcolor: scroll ? "rgba(0,0,0,0.7)" : "transparent",
         boxShadow: "0",
-        position: scroll ? "fixed" : "absolute",
-        top: scroll ? 0 : { xl: 80, xs: 0 }
+        position: scroll ? "fixed" : "block",
+        top: scroll ? 0 : { xl: 80, xs: 0 },
+        width: "100%",
+        zIndex: 1
       }}
     >
-      <Toolbar>
-        <Grid
-          container
-          sx={{
-            py: 1.875,
-            gap: { xs: 2.5, lg: 15, xl: 22 }
-          }}
-          justifyContent="center"
-          alignItems="center"
-          direction={{ xs: "column", lg: "row" }}
-        >
+      <Grid
+        container
+        sx={{
+          py: 2.5,
+          px: { xs: 3, sm: 6, lg: 0 },
+          gap: { xs: 2.5, lg: 13, xl: 22 },
+          justifyContent: { lg: "center", xs: "space-between" },
+          alignItems: "center"
+        }}
+      >
+        <Hidden lgDown>
           <Grid item onClick={() => navigate("/")} className="clickable">
-            <img src={"/images/logo.svg"} alt="logo" />{" "}
+            <img src={"/images/logo.svg"} alt="logo" width={100} height={100} />{" "}
           </Grid>
+        </Hidden>
+        <Hidden lgUp>
+          <Grid item>
+            <MenuIcon
+              sx={{
+                color: "white",
+                fontSize: "2rem"
+              }}
+              onClick={() => setHandleOpen(true)}
+              className="clickable"
+            />
+          </Grid>
+        </Hidden>
 
+        <Hidden lgDown>
           <Grid item>
             <Grid
               container
-              sx={{ columnGap: { xl: 22, lg: 15, md: 70, xs: 10, sm: 35 } }}
-              justifyContent="center"
+              sx={{
+                gap: { lg: 9 }
+              }}
               alignItems="center"
+              justifyContent="center"
             >
-              <Grid item sx={{ display: { xs: "block", lg: "none" } }}>
-                <MenuIcon
-                  sx={{
-                    color: "white",
-                    fontSize: "2rem"
+              {navLinks.map(({ title, path }) => (
+                <Grid
+                  item
+                  onClick={() => {
+                    navigate(path);
                   }}
-                  onClick={() => setHandleOpen(true)}
-                  className="clickable"
-                />
-              </Grid>
-              <Hidden lgDown>
-                <Grid item>
-                  <Grid
-                    container
+                  key={title}
+                  sx={{ cursor: "pointer" }}
+                  className={window.location.pathname === path ? "active" : "nav_bar_items"}
+                >
+                  <Typography
                     sx={{
-                      gap: { lg: 9 }
+                      fontFamily: "Mulish",
+                      fontStyle: "normal",
+                      fontWeight: 300,
+                      fontSize: { lg: 16 },
+                      lineHeight: "25px"
                     }}
-                    alignItems="center"
-                    justifyContent="center"
                   >
-                    {navLinks.map(({ title, path }) => (
-                      <Grid
-                        item
-                        onClick={() => {
-                          navigate(path);
-                        }}
-                        key={title}
-                        sx={{ cursor: "pointer" }}
-                        className={window.location.pathname === path ? "active" : "nav_bar_items"}
-                      >
-                        <Typography
-                          sx={{
-                            fontFamily: "Mulish",
-                            fontStyle: "normal",
-                            fontWeight: 300,
-                            fontSize: { lg: 16 },
-                            lineHeight: "25px"
-                          }}
-                        >
-                          {title}
-                        </Typography>
-                      </Grid>
-                    ))}
-                  </Grid>
+                    {title}
+                  </Typography>
                 </Grid>
-              </Hidden>
+              ))}
+            </Grid>
+          </Grid>
+        </Hidden>
 
-              <Grid item>
-                <TextField
-                  onChange={e => setTitle(e.target.value)}
-                  onKeyPress={handleEnter}
-                  value={title}
-                  placeholder="Поиск"
-                  focused={false}
-                  InputProps={{
-                    sx: {
-                      "& input": {
-                        color: "white",
-                        padding: 0,
-                        ml: "15px"
-                      },
-
-                      border: "1px solid #FFFFFF",
-                      borderRadius: "5px",
-                      bgcolor: "transparent",
-                      display: "flex",
-                      flexDirection: "row",
-                      width: { xs: 230, sm: 220 }
+        <Grid item position="relative">
+          <Grid container direction="column">
+            <Grid item>
+              <TextField
+                onChange={e => setTitle(e.target.value)}
+                onKeyPress={handleEnter}
+                value={title}
+                placeholder="Поиск"
+                focused={false}
+                InputProps={{
+                  sx: {
+                    "& input": {
+                      color: "white",
+                      padding: 0,
+                      ml: "15px"
                     },
-                    endAdornment: (
-                      <IconButton sx={{ color: "white" }}>
-                        <SearchIcon />
-                      </IconButton>
-                    )
+
+                    border: "1px solid #FFFFFF",
+                    borderBottom: title ? "none" : "1px solid white",
+                    borderRadius: title ? "5px 5px 0 0 " : "5px",
+                    bgcolor: "transparent",
+                    display: "flex",
+                    flexDirection: "row",
+                    width: { xs: 230, sm: 220 }
+                  },
+                  endAdornment: (
+                    <IconButton sx={{ color: "white" }}>
+                      <SearchIcon />
+                    </IconButton>
+                  )
+                }}
+              />
+            </Grid>
+            <Grid item sx={{ width: "100%", position: "absolute", top: "40px" }}>
+              {title.length >= 1 && (
+                <Box
+                  sx={{
+                    border: "1px  solid white",
+                    borderTop: "unset",
+                    borderRadius: "0 0 5px 5px",
+                    maxHeight: "200px",
+                    wordBreak: "break-all",
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 2,
+                    p: 2,
+                    overflow: "scroll",
+                    backgroundColor: "rgba(0,0,0,0.7)"
                   }}
-                />
-              </Grid>
+                >
+                  {stringArr.includes(title) ? (
+                    items.map(({ title, item }) => (
+                      <Typography
+                        key={`${title}_${item}`}
+                        className="clickable"
+                        sx={{
+                          fontSize: "1rem",
+                          fontWeight: "400",
+                          lineHeight: 1.5,
+                          textAlign: "start",
+
+                          "&:hover": {
+                            color: "primary.main"
+                          }
+                        }}
+                        onClick={() => {
+                          navigate(`/catalog_item/${item}`);
+                          setTitle("");
+                        }}
+                      >
+                        {title}
+                      </Typography>
+                    ))
+                  ) : (
+                    <Typography>No result</Typography>
+                  )}
+                </Box>
+              )}
             </Grid>
           </Grid>
         </Grid>
-      </Toolbar>
+      </Grid>
       <DrawerComponent open={handleOpen} close={handleClose} />
-    </AppBar>
+    </Box>
   );
 }
