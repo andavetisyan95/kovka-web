@@ -1,26 +1,20 @@
-//react
-import axios from "axios";
 //Mui components
 import { Box } from "@mui/material";
-//React hooks
-import { useState, useEffect } from "react";
 //Components
 import { Main, Machins } from "./about-page";
-import { OurWorks } from "src/components/common";
+import { BoxBackground, OurWorks } from "src/components/common";
 
 export default function AboutUs() {
-  const [items, setItems] = useState(null);
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_SERVICE_HOST)
-      .then(res => setItems(res.data))
-      .catch(err => console.log(err));
-  }, []);
   return (
-    <Box>
-      <Main />
-      <OurWorks works={items} />
-      <Machins />
-    </Box>
+    <>
+      <BoxBackground imgName="/images/aboutPage.svg" />
+      <Box sx={{ px: { xs: 3, sm: 12, xl: 28.5 } }}>
+        <Main />
+        <OurWorks />
+      </Box>
+      <Box sx={{ pt: { xs: 10, sm: 15, lg: 20 } }}>
+        <Machins />
+      </Box>
+    </>
   );
 }

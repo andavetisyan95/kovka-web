@@ -1,10 +1,10 @@
-//Mui components
-import { Box } from "@mui/material";
 //react hooks
 import { useEffect, useState } from "react";
+//Mui components
+import { Box } from "@mui/material";
 //react components
 import { Advantege, MainPage, Services } from "./home-page";
-import { OurWorks } from "src/components/common";
+import { BoxBackground, OurWorks } from "src/components/common";
 
 export default function Home() {
   const [kovkaData, setKovkaData] = useState([]);
@@ -22,25 +22,14 @@ export default function Home() {
   }
 
   return (
-    <Box>
-      <Box
-        sx={{
-          background: "url(/images/mainBack.svg)",
-          width: "100%",
-          position: "absolute",
-          top: 0,
-          zIndex: -1,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          height: "100vh"
-        }}
-      />{" "}
-      <Box sx={{ px: { xl: 28.5, sm: 12, xs: 3 } }}>
+    <>
+      <BoxBackground imgName={"/images/mainBack.svg"} />{" "}
+      <Box sx={{ px: { xl: 28.5, sm: 12, xs: 3 }, display: "flex", flexDirection: "column" }}>
         <MainPage />
         <Services services={kovkaData?.services} />
-        <OurWorks />
+        <OurWorks works={kovkaData?.services} />
       </Box>
       <Advantege advanteges={kovkaData?.advanteges} />
-    </Box>
+    </>
   );
 }

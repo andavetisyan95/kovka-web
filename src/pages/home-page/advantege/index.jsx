@@ -1,13 +1,12 @@
 //Mui components
-import { Grid, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 //react components
 import { CommonPaper } from "src/components/common";
 
 export default function Advanteg({ advanteges }) {
   return (
-    <Grid container sx={{ pt: { xs: 10, sm: 15, lg: 20 } }}>
-      <Grid
-        item
+    <Box sx={{ pt: { xs: 10, sm: 15, lg: 20 } }}>
+      <Box
         sx={{
           background: "url(/images/mainBack2.svg)",
           width: "100%",
@@ -16,21 +15,20 @@ export default function Advanteg({ advanteges }) {
           py: { xs: 10 }
         }}
       >
-        <Grid
-          container
-          width="100%"
+        <Box
           sx={{
+            display: "flex",
             justifyContent: "center",
             posititon: "relative",
             px: { xs: 3, sm: 12 }
           }}
         >
           <CommonPaper title="ПОЧЕМУ ВЫБИРАЮТ НАС?">
-            <Grid container direction="column" sx={{ gap: { sm: 10, xs: 5 } }}>
+            <Stack sx={{ gap: { sm: 10, xs: 5 } }}>
               {advanteges?.map(({ title, subtitle, id }) => (
-                <Grid item key={id}>
-                  <Grid container direction="column" sx={{ gap: { xs: 2, sm: 3 } }}>
-                    <Grid item>
+                <Box key={id}>
+                  <Stack sx={{ gap: { xs: 2, sm: 3 } }}>
+                    <Box>
                       <Typography
                         sx={{
                           fontSize: { lg: 40, sm: 30, xs: 24 },
@@ -39,8 +37,8 @@ export default function Advanteg({ advanteges }) {
                       >
                         {title}
                       </Typography>
-                    </Grid>
-                    <Grid item>
+                    </Box>
+                    <Box>
                       <Typography
                         sx={{
                           fontSize: { lg: 20, xs: 16 },
@@ -49,14 +47,14 @@ export default function Advanteg({ advanteges }) {
                       >
                         {subtitle}
                       </Typography>
-                    </Grid>
-                  </Grid>
-                </Grid>
+                    </Box>
+                  </Stack>
+                </Box>
               ))}
-            </Grid>
+            </Stack>
           </CommonPaper>
-        </Grid>
-      </Grid>
-    </Grid>
+        </Box>
+      </Box>
+    </Box>
   );
 }

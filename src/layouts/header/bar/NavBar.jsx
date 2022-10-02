@@ -53,7 +53,7 @@ export default function NavBar() {
   };
 
   const changeBackground = () => {
-    if (window.scrollY >= 2) {
+    if (window.scrollY >= 1) {
       setScroll(true);
     } else {
       setScroll(false);
@@ -67,7 +67,6 @@ export default function NavBar() {
         bgcolor: scroll ? "rgba(0,0,0,0.7)" : "transparent",
         boxShadow: "0",
         position: scroll ? "fixed" : "block",
-        top: scroll ? 0 : { xl: 80, xs: 0 },
         width: "100%",
         zIndex: 1
       }}
@@ -75,7 +74,7 @@ export default function NavBar() {
       <Grid
         container
         sx={{
-          py: 2.5,
+          py: 3,
           px: { xs: 3, sm: 6, lg: 0 },
           gap: { xs: 2.5, lg: 13, xl: 22 },
           justifyContent: { lg: "center", xs: "space-between" },
@@ -183,7 +182,7 @@ export default function NavBar() {
                     flexDirection: "column",
                     gap: 2,
                     p: 2,
-                    overflow: "scroll",
+                    overflow: "auto",
                     backgroundColor: "rgba(0,0,0,0.7)"
                   }}
                 >

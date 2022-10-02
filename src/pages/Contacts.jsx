@@ -16,10 +16,11 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export default function Contacts() {
   return (
-    <BoxBackground img="/images/contacts.svg">
+    <>
+      <BoxBackground imgName="/images/contacts.svg" />
       <Container
         sx={{
-          pt: { xl: 30, lg: 20, sm: 25, xs: 25 }
+          pt: { xl: 8, sm: 5, xs: 10 }
         }}
       >
         <CommonPaper title="КОНТАКТНАЯ ИНФОРМАЦИЯ КОМПАНИИ">
@@ -150,6 +151,6 @@ export default function Contacts() {
           </Grid>
         </CommonPaper>
       </Container>
-    </BoxBackground>
+    </>
   );
 }

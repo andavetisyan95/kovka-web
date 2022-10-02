@@ -5,15 +5,13 @@ import { NavLink } from "react-router-dom";
 //react components
 import { BoxForWorks, CommonBox } from "src/components/common";
 
-export default function OurWorks() {
-  const imageList = [
-    "/images/reshotka.svg",
-    "/images/stul.svg",
-    "/images/gates.svg",
-    "/images/perila.svg",
-    "/images/vrata.svg",
-    "/images/kovannie-perila.svg"
-  ];
+export default function OurWorks({ works }) {
+  const imageList = [];
+  works?.reduce((aggr, el, i) => {
+    aggr[i] = el.image;
+    return aggr;
+  }, imageList);
+
   return (
     <CommonBox title="НАШИ РАБОТЫ">
       <Grid container spacing={8} direction="column">
@@ -32,7 +30,7 @@ export default function OurWorks() {
             <Grid item xs={6} sm={7.5} lg={5}>
               <BoxForWorks imgName="/images/stul.svg" imageList={imageList} />
             </Grid>
-            <Hidden lgDown>
+            <Hidden only={["xs", "sm", "md"]}>
               <Grid item lg={4}>
                 <BoxForWorks imgName="/images/gates.svg" imageList={imageList} />
               </Grid>

@@ -1,5 +1,5 @@
 //MUI components
-import { Box, Grid, Link, Typography, Toolbar, Slide, Hidden } from "@mui/material";
+import { Box, Grid, Link, Typography, Slide, Hidden } from "@mui/material";
 //MUi icons
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
@@ -23,7 +23,7 @@ export default function CallSection() {
   window.addEventListener("scroll", handleChangeVisibility);
 
   return (
-    <Slide in={!hiden} direcction="down">
+    <Slide in={!hiden} direcction="down" timeout={500}>
       <Box
         className="flex_center"
         sx={{
@@ -38,54 +38,52 @@ export default function CallSection() {
           </Box>
         </Hidden>
         <Hidden xlDown>
-          <Toolbar>
-            <Grid container className="grid_center" pt={5} columnSpacing={10} pb={1.3}>
-              <Grid item>
-                <Box className="flex_center" gap={2.5}>
-                  <Box>
-                    <PhoneIcon sx={{ width: 25, height: 25, color: "primary.main" }} />
-                  </Box>
-                  <Box>
-                    <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
-                      <Typography sx={{ fontSize: 24, fontWeight: 500, lineHeight: "30px" }}>
-                        {COMPANY_MAIN_PHONE_NUMBER}
-                      </Typography>
-                    </Link>
-                  </Box>
-                </Box>
-              </Grid>
-              <Grid item>
+          <Grid container className="grid_center" pt={5} columnSpacing={10} pb={1.3}>
+            <Grid item>
+              <Box className="flex_center" gap={2.5}>
                 <Box>
-                  <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_PHONE_NUMBER}`}>
-                    <Typography
-                      sx={{
-                        fontSize: 24,
-                        fontWeight: 500,
-                        lineHeight: "30px",
-                        textAlign: "center"
-                      }}
-                    >
-                      {COMPANY_PHONE_NUMBER}
+                  <PhoneIcon sx={{ width: 25, height: 25, color: "primary.main" }} />
+                </Box>
+                <Box>
+                  <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
+                    <Typography sx={{ fontSize: 24, fontWeight: 500, lineHeight: "30px" }}>
+                      {COMPANY_MAIN_PHONE_NUMBER}
                     </Typography>
                   </Link>
                 </Box>
-              </Grid>
-              <Grid item>
-                <Box className="flex_center" gap="20px">
-                  <Box>
-                    <MailIcon sx={{ width: 25, height: 25 }} color="primary" mt={4.5} mb={1.6} />
-                  </Box>
-                  <Box>
-                    <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>
-                      <Typography sx={{ fontSize: 24, fontWeight: 500, lineHeight: "30px" }}>
-                        {COMPANY_EMAIL}
-                      </Typography>
-                    </Link>
-                  </Box>
-                </Box>
-              </Grid>
+              </Box>
             </Grid>
-          </Toolbar>
+            <Grid item>
+              <Box>
+                <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_PHONE_NUMBER}`}>
+                  <Typography
+                    sx={{
+                      fontSize: 24,
+                      fontWeight: 500,
+                      lineHeight: "30px",
+                      textAlign: "center"
+                    }}
+                  >
+                    {COMPANY_PHONE_NUMBER}
+                  </Typography>
+                </Link>
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box className="flex_center" gap="20px">
+                <Box>
+                  <MailIcon sx={{ width: 25, height: 25 }} color="primary" mt={4.5} mb={1.6} />
+                </Box>
+                <Box>
+                  <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>
+                    <Typography sx={{ fontSize: 24, fontWeight: 500, lineHeight: "30px" }}>
+                      {COMPANY_EMAIL}
+                    </Typography>
+                  </Link>
+                </Box>
+              </Box>
+            </Grid>
+          </Grid>
         </Hidden>
       </Box>
     </Slide>

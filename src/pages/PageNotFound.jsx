@@ -8,7 +8,8 @@ import { BoxBackground } from "../components/common";
 export default function PageNotFound() {
   const navigate = useNavigate();
   return (
-    <BoxBackground img="/images/noResult.svg">
+    <>
+      <BoxBackground img="/images/noResult.svg" />
       <Container>
         <Box sx={{ pt: { lg: 20, sm: 15, xs: 10 } }}>
           <Grid
@@ -61,6 +62,6 @@ export default function PageNotFound() {
           </Grid>
         </Box>
       </Container>
-    </BoxBackground>
+    </>
   );
 }

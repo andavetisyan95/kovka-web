@@ -26,7 +26,6 @@ export default function DrawerComponent({ open, close }) {
           pt: { xs: 16, sm: 19 }
         }
       }}
-      ModalProps={{ keepMounted: true }}
     >
       <Grid
         container

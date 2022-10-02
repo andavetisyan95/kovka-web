@@ -109,10 +109,11 @@ export default function Footer() {
           sx={{
             pt: { md: 15 },
             pb: { xs: 10.375, md: 15 },
-            cursor: "pointer"
+            cursor: "pointer",
+            alignSelf: "center"
           }}
         >
-          <img src="/images/footer.svg" alt="logo" />
+          <img src="/images/footer.svg" alt="logo" width={280} height={200} />
         </Grid>
       </Grid>
     </Box>

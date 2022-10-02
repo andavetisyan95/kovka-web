@@ -1,7 +1,7 @@
 //axios
 import axios from "axios";
 //Mui components
-import { Box, Typography, Grid } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 //react hooks
 import { useEffect, useState } from "react";
 //react router
@@ -38,13 +38,8 @@ export default function SearchResults() {
   return (
     <main>
       <Box>
-        <Grid
-          container
-          direction="column"
-          spacing={10}
-          sx={{ py: { xs: 25, sm: 27.5 }, px: { xs: 12, sm: 27.5 } }}
-        >
-          <Grid item>
+        <Stack spacing={10} sx={{ py: { xs: 25, sm: 27.5 }, px: { xs: 12, sm: 27.5 } }}>
+          <Box>
             <Typography
               variant="h1"
               sx={{
@@ -55,8 +50,8 @@ export default function SearchResults() {
             >
               РЕЗУЛЬТАТ ПОИСКА
             </Typography>
-          </Grid>
-          <Grid item>
+          </Box>
+          <Box>
             {titleArr.toString().includes(result) ? (
               <CatalogMain items={newArr} />
             ) : (
@@ -64,8 +59,8 @@ export default function SearchResults() {
                 По запросу {result} ничего не найдено.
               </Typography>
             )}
-          </Grid>
-        </Grid>
+          </Box>
+        </Stack>
       </Box>
     </main>
   );

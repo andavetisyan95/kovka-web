@@ -10,7 +10,7 @@ export default function MainLayout({ children }) {
   const location = useLocation();
   return (
     <Box>
-      <Box>
+      <Box height={200}>
         <Header />
       </Box>
       <main>

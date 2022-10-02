@@ -1,14 +1,14 @@
 //Mui components
-import { Grid, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 
 export default function CommonBox({ title, children }) {
   return (
-    <Grid
+    <Stack
       container
       sx={{ gap: { sm: 8, xs: 5 }, pt: { xs: 10, sm: 15, lg: 20 } }}
       direction="column"
     >
-      <Grid item>
+      <Box>
         <Typography
           sx={{
             fontSize: { sm: 40, xs: 30 },
@@ -19,9 +19,10 @@ export default function CommonBox({ title, children }) {
         >
           {title}
         </Typography>
-      </Grid>
-      <Grid item>{children}</Grid>
-    </Grid>
+      </Box>
+
+      <Box>{children}</Box>
+    </Stack>
   );
 }
 
