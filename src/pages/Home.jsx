@@ -23,7 +23,7 @@ export default function Home() {
 
   return (
     <>
-      <BoxBackground imgName={"/images/mainBack.svg"} />{" "}
+      <BoxBackground imgName={"/images/mainBack.jpg"} />{" "}
       <Box sx={{ px: { xl: 28.5, sm: 12, xs: 3 }, display: "flex", flexDirection: "column" }}>
         <MainPage />
         <Services services={kovkaData?.services} />

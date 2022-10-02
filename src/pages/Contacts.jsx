@@ -17,7 +17,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 export default function Contacts() {
   return (
     <>
-      <BoxBackground imgName="/images/contacts.svg" />
+      <BoxBackground imgName="/images/contacts.jpg" />
       <Container
         sx={{
           pt: { xl: 8, sm: 5, xs: 10 }

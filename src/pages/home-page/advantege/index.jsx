@@ -8,7 +8,7 @@ export default function Advanteg({ advanteges }) {
     <Box sx={{ pt: { xs: 10, sm: 15, lg: 20 } }}>
       <Box
         sx={{
-          background: "url(/images/mainBack2.svg)",
+          background: "url(/images/mainBack2.jpg)",
           width: "100%",
           backgroundSize: "cover",
           backgroundPosition: "center",

@@ -7,7 +7,7 @@ import { BoxBackground, OurWorks } from "src/components/common";
 export default function AboutUs() {
   return (
     <>
-      <BoxBackground imgName="/images/aboutPage.svg" />
+      <BoxBackground imgName="/images/aboutPage.jpg" />
       <Box sx={{ px: { xs: 3, sm: 12, xl: 28.5 } }}>
         <Main />
         <OurWorks />

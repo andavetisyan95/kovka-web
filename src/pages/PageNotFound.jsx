@@ -9,7 +9,7 @@ export default function PageNotFound() {
   const navigate = useNavigate();
   return (
     <>
-      <BoxBackground img="/images/noResult.svg" />
+      <BoxBackground imgName="/images/noResult.jpg" />
       <Container>
         <Box sx={{ pt: { lg: 20, sm: 15, xs: 10 } }}>
           <Grid

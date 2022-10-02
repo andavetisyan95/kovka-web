@@ -1,5 +1,3 @@
-//react axios
-import axios from "axios";
 //MUi components
 import { Grid } from "@mui/material";
 //react component
@@ -11,7 +9,7 @@ export default function CatalogMain({ items }) {
   const navigate = useNavigate();
 
   return (
-    <CatalogCommon>
+    <CatalogCommon title="КАТАЛОГ">
       <Grid container columnSpacing={3} rowSpacing={2}>
         {items?.map(({ title, description, item, image, id }) => (
           <Grid

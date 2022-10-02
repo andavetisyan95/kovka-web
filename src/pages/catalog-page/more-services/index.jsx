@@ -2,11 +2,18 @@
 import { Box, Container, Typography } from "@mui/material";
 
 //Components
-import { BoxBackground, CommonPaper } from "src/components/common";
+import { CommonPaper } from "src/components/common";
 
 export default function MoreServices() {
   return (
-    <BoxBackground img="/images/catalogPage.svg">
+    <Box
+      sx={{
+        background: "url(/images/catalogPage.jpg)",
+        width: "100%",
+        backgroundSize: "cover",
+        backgroundPosition: "center"
+      }}
+    >
       <Container sx={{ py: { xs: 10 } }}>
         <CommonPaper title="ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ">
           <Box sx={{ pr: { sm: 10, xs: 2.5 } }}>
@@ -20,6 +27,6 @@ export default function MoreServices() {
           </Box>
         </CommonPaper>
       </Container>
-    </BoxBackground>
+    </Box>
   );
 }

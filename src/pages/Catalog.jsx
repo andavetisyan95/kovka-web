@@ -18,9 +18,18 @@ export default function Catalog() {
   }, []);
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column" }}>
-      <CatalogMain items={items} />
+    <>
+      <Box
+        sx={{
+          pt: { xs: 10, xl: 8 },
+          px: { xs: 3, sm: 12, xl: 28.5 },
+          display: "flex",
+          flexDirection: "column"
+        }}
+      >
+        <CatalogMain items={items} />
+      </Box>
       <MoreServices />
-    </Box>
+    </>
   );
 }

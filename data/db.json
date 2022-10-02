@@ -5,7 +5,7 @@
         "title": "Кованые ворота",
         "item":"kovannie-vorota",
         "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-        "image": "/images/gates.svg",
+        "image": "/images/gates.jpg",
         "price":"от 9000 ₽/кв. м."
       },
       {
@@ -13,7 +13,7 @@
         "title": "Кованые перила",
         "item":"kovannie-perila",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/reshotka.svg",
+        "image": "/images/reshotka.jpg",
         "price":"от 7500 ₽/м. пог."
       },
       {
@@ -21,7 +21,7 @@
         "title": "Кованые балконы",
         "item":"kovannie-balkoni",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/stul.svg",
+        "image": "/images/stul.jpg",
         "price":"от 8500 ₽/м. пог."
       },
       {
@@ -29,7 +29,7 @@
         "title": "Кованые заборы",
         "item":"kovannie-zabori",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/vorota.svg",
+        "image": "/images/vorota.jpg",
         "price":"от 5500 ₽/кв. м."
       },
       {
@@ -37,7 +37,7 @@
         "title": "Кованые мангалы",
         "item":"kovannie-mangali",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/perila.svg",
+        "image": "/images/perila.jpg",
         "price":"от 8 300 ₽"
       },
       {
@@ -45,7 +45,7 @@
         "title": "Кованые навесы",
         "item":"kovannie-navesi",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/vrata.svg",
+        "image": "/images/vrata.jpg",
         "price":"от 15000 ₽ / Навес от 4500 ₽/кв. м."
       },
       {
@@ -53,7 +53,7 @@
         "title": "Кованые подставки для всего",
         "item":"kovannie-podstavki-dlya-vsego",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/kovannie-perila.svg",
+        "image": "/images/kovannie-perila.jpg",
         "price":"от 9800 ₽/кв. м."
       },
       {
@@ -61,7 +61,7 @@
         "title": "Решётки на окна",
         "item":"reshotki-na-okna",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image": "/images/gates.svg",
+        "image": "/images/gates.jpg",
         "price":"от 4200 ₽/кв. м."
       },
       {
@@ -69,7 +69,7 @@
         "title": "Кованные стулья и столы",
         "item":"kovannie-stulya-i-stoly",
         "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
-        "image":"/images/gates.svg",
+        "image":"/images/gates.jpg",
         "price":"Договорная"
       }
     ],

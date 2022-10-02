@@ -17,7 +17,7 @@ export default function Prices() {
 
   return (
     <>
-      <BoxBackground imgName="/images/pricePage.svg" />
+      <BoxBackground imgName="/images/pricePage.jpg" />
       <Box
         sx={{
           pt: { xl: 8, sm: 5, xs: 10 },

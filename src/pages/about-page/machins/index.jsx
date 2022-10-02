@@ -8,7 +8,7 @@ export default function Machins() {
   return (
     <Box
       sx={{
-        background: "url(/images/Machins.svg)",
+        background: "url(/images/Machins.jpg)",
         width: "100%",
         backgroundSize: "cover",
         backgroundPosition: "center"
