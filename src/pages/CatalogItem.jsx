@@ -30,9 +30,18 @@ export default function CatalogItem() {
   }, []);
 
   return (
-    <Box>
-      <IndividualItem item={itemInfo[0]} />
+    <>
+      <Box
+        sx={{
+          pt: { xs: 10, xl: 8 },
+          px: { xs: 3, sm: 12, xl: 28.5 },
+          display: "flex",
+          flexDirection: "column"
+        }}
+      >
+        <IndividualItem item={itemInfo[0]} />
+      </Box>
       <ItemsExamples examples={examples} />
-    </Box>
+    </>
   );
 }

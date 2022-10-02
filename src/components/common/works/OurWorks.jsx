@@ -25,27 +25,27 @@ export default function OurWorks({ works }) {
             }}
           >
             <Grid item xs={6} sm={4.5} lg={3}>
-              <BoxForWorks imgName="/images/reshotka.svg" imageList={imageList} />
+              <BoxForWorks imgName="/images/reshotka.jpg" imageList={imageList} />
             </Grid>
             <Grid item xs={6} sm={7.5} lg={5}>
-              <BoxForWorks imgName="/images/stul.svg" imageList={imageList} />
+              <BoxForWorks imgName="/images/stul.jpg" imageList={imageList} />
             </Grid>
             <Hidden only={["xs", "sm", "md"]}>
               <Grid item lg={4}>
-                <BoxForWorks imgName="/images/gates.svg" imageList={imageList} />
+                <BoxForWorks imgName="/images/gates.jpg" imageList={imageList} />
               </Grid>
             </Hidden>
             <Grid item xs={12} sm={8} lg={6}>
-              <BoxForWorks imgName="/images/perila.svg" imageList={imageList} />
+              <BoxForWorks imgName="/images/perila.jpg" imageList={imageList} />
             </Grid>
             <Hidden smDown>
               <Grid item sm={4} lg={3}>
-                <BoxForWorks imgName="/images/vrata.svg" imageList={imageList} />
+                <BoxForWorks imgName="/images/vrata.jpg" imageList={imageList} />
               </Grid>
             </Hidden>
             <Hidden only={["xs", "sm", "md"]}>
               <Grid item lg={3}>
-                <BoxForWorks imgName="/images/kovannie-perila.svg" imageList={imageList} />
+                <BoxForWorks imgName="/images/kovannie-perila.jpg" imageList={imageList} />
               </Grid>
             </Hidden>
           </Grid>
