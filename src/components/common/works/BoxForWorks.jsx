@@ -3,11 +3,11 @@ import { Box, Button, Fade, Modal } from "@mui/material";
 //Mui icons
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
 //react hooks
-import { memo, useState } from "react";
+import { useState } from "react";
 //React components
 import { ImgModal } from "..";
 
-export default memo(function BoxForWorks({ imgName, imageList }) {
+export default function BoxForWorks({ imgName, imageList }) {
   const [hover, setHover] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
@@ -66,4 +66,4 @@ export default memo(function BoxForWorks({ imgName, imageList }) {
       </Modal>
     </Box>
   );
-});
+}

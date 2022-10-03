@@ -39,7 +39,7 @@ export default function DrawerComponent({ open, close }) {
           </IconButton>
         </Grid>
         <Grid item>
-          <Grid container direction="column" sx={{ gap: { xs: 8.75 } }}>
+          <Grid container direction="column" sx={{ gap: { xs: 8.5 } }}>
             {navLinks.map(({ title, path }) => (
               <Grid
                 key={title}
