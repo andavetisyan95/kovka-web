@@ -20,7 +20,7 @@ export default function CatalogMain({ items }) {
             lg={4}
             onClick={() => navigate(`/catalog_item/${item}`)}
           >
-            <CatalogBox title={title} description={description} item={item} image={image} />
+            <CatalogBox title={title} description={description} image={image} />
           </Grid>
         ))}
       </Grid>

@@ -1,18 +1,17 @@
-//MUI components
-import { Grid, IconButton, Typography, TextField, Hidden, Box } from "@mui/material";
-
-//react router
-import { useNavigate } from "react-router-dom";
-//icons from Mui
-import SearchIcon from "@mui/icons-material/Search";
-//source
-import { navLinks } from "src/source/navLinks";
-
+//axios
+import axios from "axios";
 //react hooks
 import { useState, useEffect } from "react";
-//MUI icons
-import MenuIcon from "@mui/icons-material/Menu";
+//react router
+import { useNavigate } from "react-router-dom";
+//MUI components
+import { Grid, IconButton, Typography, TextField, Hidden, Box } from "@mui/material";
+//source
+import { navLinks } from "src/source/navLinks";
 import { DrawerComponent } from ".";
+//icons from Mui
+import SearchIcon from "@mui/icons-material/Search";
+import MenuIcon from "@mui/icons-material/Menu";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -22,20 +21,19 @@ export default function NavBar() {
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
 
-  useEffect(() => {
-    if (title.length >= 1 && title !== undefined) {
-      const handle = setTimeout(() => {
-        fetch(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`)
-          .then(res => res.json())
-          .then(results => {
-            setItems(results);
-          });
-      }, 500);
-      return () => {
-        clearTimeout(handle);
-      };
-    }
-  }, [title]);
+  // useEffect(() => {
+  //   if (title.length >= 1 && title !== undefined) {
+  //     const handle = setTimeout(() => {
+  //       axios
+  //         .get(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`)
+  //         .then(res => setItems(res.data))
+  //         .catch(err => console.log(err));
+  //     }, 500);
+  //     return () => {
+  //       clearTimeout(handle);
+  //     };
+  //   }
+  // }, [title]);
 
   const handleEnter = e => {
     if (e.key === "Enter") {
@@ -47,7 +45,8 @@ export default function NavBar() {
   const titleArray = [];
   items?.filter(({ title }) => titleArray.push(title));
   const stringArr = titleArray.toString();
-
+  console.log(items);
+  console.log(titleArray);
   const handleClose = () => {
     setHandleOpen(false);
   };
@@ -156,7 +155,7 @@ export default function NavBar() {
                     border: "1px solid #FFFFFF",
                     borderBottom: title ? "none" : "1px solid white",
                     borderRadius: title ? "5px 5px 0 0 " : "5px",
-                    bgcolor: "transparent",
+                    bgcolor: title.length >= 1 ? "rgba(0,0,0,0.7)" : "transparent",
                     display: "flex",
                     flexDirection: "row",
                     width: { xs: 230, sm: 220 }
