@@ -3,11 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 
 export default function CommonBox({ title, children }) {
   return (
-    <Stack
-      container
-      sx={{ gap: { sm: 8, xs: 5 }, pt: { xs: 10, sm: 15, lg: 20 } }}
-      direction="column"
-    >
+    <Stack sx={{ gap: { sm: 8, xs: 5 }, pt: { xs: 10, sm: 15, lg: 20 } }} direction="column">
       <Box>
         <Typography
           sx={{

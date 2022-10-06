@@ -1,7 +1,7 @@
 //axios
 import axios from "axios";
 //react hooks
-import { useState, useEffect } from "react";
+import { useState, memo, useEffect } from "react";
 //react router
 import { useNavigate } from "react-router-dom";
 //MUI components
@@ -13,7 +13,7 @@ import { DrawerComponent } from ".";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 
-export default function NavBar() {
+export default memo(function NavBar() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -21,19 +21,19 @@ export default function NavBar() {
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
 
-  // useEffect(() => {
-  //   if (title.length >= 1 && title !== undefined) {
-  //     const handle = setTimeout(() => {
-  //       axios
-  //         .get(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`)
-  //         .then(res => setItems(res.data))
-  //         .catch(err => console.log(err));
-  //     }, 500);
-  //     return () => {
-  //       clearTimeout(handle);
-  //     };
-  //   }
-  // }, [title]);
+  useEffect(() => {
+    if (title.length >= 1 && title !== undefined) {
+      const handle = setTimeout(() => {
+        axios
+          .get(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`)
+          .then(res => setItems(res.data))
+          .catch(err => console.log(err));
+      }, 500);
+      return () => {
+        clearTimeout(handle);
+      };
+    }
+  }, [title]);
 
   const handleEnter = e => {
     if (e.key === "Enter") {
@@ -45,8 +45,7 @@ export default function NavBar() {
   const titleArray = [];
   items?.filter(({ title }) => titleArray.push(title));
   const stringArr = titleArray.toString();
-  console.log(items);
-  console.log(titleArray);
+
   const handleClose = () => {
     setHandleOpen(false);
   };
@@ -220,4 +219,4 @@ export default function NavBar() {
       <DrawerComponent open={handleOpen} close={handleClose} />
     </Box>
   );
-}
+});

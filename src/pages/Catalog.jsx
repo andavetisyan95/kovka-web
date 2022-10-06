@@ -11,10 +11,8 @@ export default function Catalog() {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_SERVICE_HOST)
-      .then(res => setItems(res.data))
-      .catch(err => console.log(err));
+    const result = async () => setItems((await axios.get(process.env.REACT_APP_SERVICE_HOST)).data);
+    result().then(res => setItems(res.data));
   }, []);
 
   return (

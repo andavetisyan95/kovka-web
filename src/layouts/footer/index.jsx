@@ -1,3 +1,5 @@
+//react hooks
+import { useEffect } from "react";
 //MUI components
 import { Box, Grid, Link } from "@mui/material";
 //components
@@ -15,7 +17,6 @@ import {
   COMPANY_EMAIL,
   COMPANY_LOCATION
 } from "src/constants";
-import { useEffect } from "react";
 
 export default function Footer() {
   const navigate = useNavigate();

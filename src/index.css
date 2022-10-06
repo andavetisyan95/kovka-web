@@ -20,7 +20,7 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-  direction: row;
+ 
 }
 
 .grid_center{
@@ -107,5 +107,36 @@ code {
 
 .clickable{
   cursor: pointer;
+}
+
+.pulse{
+  animation: pulse 1s infinite;
+  transition:all 1s ease 0s;
+}
+
+@keyframes pulse {
+  0%{
+    transform: scale(0.9);
+  }
+  70%{
+    transform: scale(1.2);
+  }
+  100%{
+    transform: scale(0.9);
+  }
+}
+
+.circle{
+  animation:circle 1s infinite;
+}
+
+
+@keyframes circle{
+  70%{
+    box-shadow: rgba(255,219,127,0.1) 0 0 0 20px;
+  }
+  100%{
+    box-shadow: rgba(255,219,127,0) 0 0 0 0;
+  }
 }
 
