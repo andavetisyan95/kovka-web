@@ -1,5 +1,5 @@
 //Mui components
-import { Container, Grid, Typography } from "@mui/material";
+import { Container, Grid, Typography, Box } from "@mui/material";
 //common container
 import { BoxBackground, CommonPaper } from "../components/common";
 //constants
@@ -16,7 +16,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 
 export default function Contacts() {
   return (
-    <>
+    <Box>
       <BoxBackground imgName="/images/contacts.jpg" />
       <Container
         sx={{
@@ -27,14 +27,12 @@ export default function Contacts() {
           <Grid
             container
             direction="column"
-            sx={{
-              gap: { xs: 5, lg: 22.5 },
-              justifyContent: "center",
-              alignItems: "center"
-            }}
+            justifyContent="center"
+            alignItems="center"
+            gap={{ xs: 5, lg: 22.5 }}
           >
             <Grid item>
-              <Grid container direction="column" sx={{ gap: 5.125 }}>
+              <Grid container direction="column" gap={5.125}>
                 <Grid item>
                   <Grid container direction="row" gap={3}>
                     <Grid item>
@@ -122,7 +120,7 @@ export default function Contacts() {
               </Grid>
             </Grid>
             <Grid item>
-              <Grid container direction="column" sx={{ gap: { xs: 3.75, xl: 0 } }}>
+              <Grid container direction="column" gap={{ xs: 3.75, xl: 0 }}>
                 <Grid item>
                   <Typography
                     sx={{
@@ -151,6 +149,6 @@ export default function Contacts() {
           </Grid>
         </CommonPaper>
       </Container>
-    </>
+    </Box>
   );
 }

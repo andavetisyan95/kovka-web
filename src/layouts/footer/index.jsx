@@ -1,16 +1,18 @@
-//react hooks
-import { useEffect } from "react";
-//MUI components
+// MUI components
 import { Box, Grid, Link } from "@mui/material";
-//components
+
+// components
 import { FooterTypography } from "src/components/common";
-//MUI icons
+
+// MUI icons
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-//react dom
+
+// react dom
 import { useNavigate } from "react-router-dom";
-//constants
+
+// constants
 import {
   COMPANY_MAIN_PHONE_NUMBER,
   COMPANY_PHONE_NUMBER,
@@ -20,10 +22,7 @@ import {
 
 export default function Footer() {
   const navigate = useNavigate();
-  //makes scroll up to the top of page
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  });
+
   return (
     <Box
       sx={{
@@ -33,12 +32,10 @@ export default function Footer() {
     >
       <Grid
         container
-        sx={{
-          direction: { xs: "column", md: "row" },
-          gap: { xl: 66.25, lg: 25, md: 22.5 },
-          justifyContent: "center",
-          alignItems: "center"
-        }}
+        direction={{ xs: "column", md: "row" }}
+        gap={{ xl: 66.25, lg: 25, md: 22.5 }}
+        justifyContent="center"
+        alignItems="center"
       >
         <Grid
           item
@@ -46,16 +43,16 @@ export default function Footer() {
             py: { xs: 10.375, md: 15 }
           }}
         >
-          <Grid container direction="column" sx={{ gap: { lg: 5.625, xs: 2.5 } }}>
+          <Grid container direction="column" gap={{ lg: 5.625, xs: 2.5 }}>
             <Grid item>
               <Grid
                 container
-                sx={{ direction: { md: "row", xs: "row" }, gap: { md: 3.125, xs: 2 } }}
+                gap={{ md: 3.125, xs: 2 }}
                 justifyContent="center"
                 alignItems="center"
               >
                 <Grid item>
-                  <PhoneIcon sx={{ width: 20, height: 20, color: "primary.main" }} />
+                  <PhoneIcon sx={{ width: 20, height: 18, color: "primary.main" }} />
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
@@ -70,12 +67,9 @@ export default function Footer() {
               </Grid>
             </Grid>
             <Grid item>
-              <Grid
-                container
-                sx={{ direction: { md: "row", xs: "row" }, gap: { md: 3.125, xs: 2 } }}
-              >
+              <Grid container gap={{ xs: 2, md: 3.125 }}>
                 <Grid item>
-                  <MailIcon sx={{ width: 22.5, height: 18.75 }} color="primary" />
+                  <MailIcon sx={{ width: 20, height: 18 }} color="primary" />
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>
@@ -85,12 +79,9 @@ export default function Footer() {
               </Grid>
             </Grid>
             <Grid item>
-              <Grid
-                container
-                sx={{ direction: { md: "row", xs: "row" }, gap: { md: 3.125, xs: 2 } }}
-              >
+              <Grid container gap={{ xs: 2, md: 3.125 }}>
                 <Grid item>
-                  <LocationOnIcon sx={{ width: 18, height: 18 }} color="primary" />
+                  <LocationOnIcon sx={{ width: 20, height: 18 }} color="primary" />
                 </Grid>
                 <Grid item>
                   <Link
@@ -105,7 +96,10 @@ export default function Footer() {
           </Grid>
         </Grid>
         <Grid
-          onClick={() => navigate("/")}
+          onClick={() => {
+            navigate("/");
+            window.scrollTo(0, 0);
+          }}
           item
           sx={{
             pt: { md: 15 },

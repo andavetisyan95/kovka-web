@@ -1,7 +1,7 @@
 //axios
 import axios from "axios";
 //react hooks
-import { useState, memo, useEffect } from "react";
+import { useState, memo, useEffect, useCallback } from "react";
 //react router
 import { useNavigate } from "react-router-dom";
 //MUI components
@@ -21,19 +21,18 @@ export default memo(function NavBar() {
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
 
-  useEffect(() => {
+  const getItems = useCallback(() => {
     if (title.length >= 1 && title !== undefined) {
-      const handle = setTimeout(() => {
-        axios
-          .get(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`)
-          .then(res => setItems(res.data))
-          .catch(err => console.log(err));
-      }, 500);
-      return () => {
-        clearTimeout(handle);
-      };
+      setTimeout(async () => {
+        const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`);
+        setItems(data ?? []);
+      }, 800);
     }
   }, [title]);
+
+  useEffect(() => {
+    getItems();
+  }, [getItems]);
 
   const handleEnter = e => {
     if (e.key === "Enter") {
@@ -57,26 +56,31 @@ export default memo(function NavBar() {
       setScroll(false);
     }
   };
-  window.addEventListener("scroll", changeBackground);
+
+  useEffect(() => {
+    window.addEventListener("scroll", changeBackground);
+    return () => window.removeEventListener("scroll", changeBackground);
+  }, []);
 
   return (
     <Box
       sx={{
         bgcolor: scroll ? "rgba(0,0,0,0.7)" : "transparent",
-        boxShadow: "0",
+        boxShadow: 0,
         position: scroll ? "fixed" : "block",
+        top: 0,
         width: "100%",
         zIndex: 1
       }}
     >
       <Grid
         container
+        gap={{ xs: 2.5, lg: 13, xl: 22 }}
+        justifyContent={{ lg: "center", xs: "space-between" }}
+        alignItems="center"
         sx={{
           py: 3,
-          px: { xs: 3, sm: 6, lg: 0 },
-          gap: { xs: 2.5, lg: 13, xl: 22 },
-          justifyContent: { lg: "center", xs: "space-between" },
-          alignItems: "center"
+          px: { xs: 3, sm: 6, lg: 0 }
         }}
       >
         <Hidden lgDown>

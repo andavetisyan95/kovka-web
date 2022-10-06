@@ -7,10 +7,11 @@ import { CommonPaper } from "src/components/common/";
 
 export default function MainPage() {
   const navigate = useNavigate();
+
   return (
     <Grid container sx={{ pt: { xl: 8, sm: 5, xs: 10 }, pb: { xl: 16, sm: 3, xs: 25 } }}>
       <CommonPaper title="ПРОИЗВОДИТЕЛЬ КОВАННЫХ ИЗДЕЛИЙ">
-        <Grid container direction="column" sx={{ gap: { sm: 10, xs: 5 } }}>
+        <Grid container direction="column" gap={{ sm: 10, xs: 5 }}>
           <Grid item sx={{ pr: 5 }}>
             <Typography
               sx={{

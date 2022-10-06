@@ -7,28 +7,32 @@ import MailIcon from "@mui/icons-material/Mail";
 import { COMPANY_EMAIL, COMPANY_MAIN_PHONE_NUMBER, COMPANY_PHONE_NUMBER } from "src/constants";
 //react hooks
 import { useNavigate } from "react-router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function CallSection() {
   const navigate = useNavigate();
-  const [hiden, setHiden] = useState(false);
+  const [hidden, setHidden] = useState(false);
 
   const handleChangeVisibility = () => {
-    if (window.scrollY >= 1) {
-      setHiden(true);
+    if (window.scrollY >= 0.5) {
+      setHidden(true);
     } else {
-      setHiden(false);
+      setHidden(false);
     }
   };
-  window.addEventListener("scroll", handleChangeVisibility);
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleChangeVisibility);
+    return () => window.removeEventListener("scroll", handleChangeVisibility);
+  }, []);
 
   return (
-    <Slide in={!hiden} direcction="down" timeout={500}>
+    <Slide in={!hidden} direcction="down" timeout={500}>
       <Box
         className="flex_center"
         sx={{
           bgcolor: "transparent",
-          display: { xl: hiden ? "none" : "block" },
+          display: { xl: hidden ? "none" : "block" },
           boxShadow: "0"
         }}
       >
