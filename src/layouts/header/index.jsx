@@ -1,5 +1,6 @@
 //Mui components
 import { Box, Stack } from "@mui/material";
+
 //Components
 import { CallSection } from "./bar";
 import { NavBar } from "./bar";

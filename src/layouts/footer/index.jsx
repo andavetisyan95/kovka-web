@@ -1,5 +1,8 @@
+// react dom
+import { useNavigate } from "react-router-dom";
+
 // MUI components
-import { Box, Grid, Link } from "@mui/material";
+import { Box, Grid, Link, Stack } from "@mui/material";
 
 // components
 import { FooterTypography } from "src/components/common";
@@ -8,9 +11,6 @@ import { FooterTypography } from "src/components/common";
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-
-// react dom
-import { useNavigate } from "react-router-dom";
 
 // constants
 import {
@@ -37,14 +37,9 @@ export default function Footer() {
         justifyContent="center"
         alignItems="center"
       >
-        <Grid
-          item
-          sx={{
-            py: { xs: 10.375, md: 15 }
-          }}
-        >
-          <Grid container direction="column" gap={{ lg: 5.625, xs: 2.5 }}>
-            <Grid item>
+        <Grid item py={{ xs: 10.375, sm: 15, lg: 20 }}>
+          <Stack gap={{ lg: 5.625, xs: 2.5 }}>
+            <Box>
               <Grid
                 container
                 gap={{ md: 3.125, xs: 2 }}
@@ -52,7 +47,12 @@ export default function Footer() {
                 alignItems="center"
               >
                 <Grid item>
-                  <PhoneIcon sx={{ width: 20, height: 18, color: "primary.main" }} />
+                  <PhoneIcon
+                    sx={{
+                      fontSize: "1.5rem",
+                      color: "primary.main"
+                    }}
+                  />
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`tel:${COMPANY_MAIN_PHONE_NUMBER}`}>
@@ -65,11 +65,11 @@ export default function Footer() {
                   </Link>
                 </Grid>
               </Grid>
-            </Grid>
-            <Grid item>
+            </Box>
+            <Box>
               <Grid container gap={{ xs: 2, md: 3.125 }}>
                 <Grid item>
-                  <MailIcon sx={{ width: 20, height: 18 }} color="primary" />
+                  <MailIcon sx={{ fontSize: "1.5rem" }} color="primary" />
                 </Grid>
                 <Grid item>
                   <Link sx={{ textDecoration: "none" }} href={`mailto:${COMPANY_EMAIL}`}>
@@ -77,11 +77,11 @@ export default function Footer() {
                   </Link>
                 </Grid>
               </Grid>
-            </Grid>
-            <Grid item>
+            </Box>
+            <Box>
               <Grid container gap={{ xs: 2, md: 3.125 }}>
                 <Grid item>
-                  <LocationOnIcon sx={{ width: 20, height: 18 }} color="primary" />
+                  <LocationOnIcon sx={{ fontSize: "1.5rem" }} color="primary" />
                 </Grid>
                 <Grid item>
                   <Link
@@ -92,18 +92,18 @@ export default function Footer() {
                   </Link>
                 </Grid>
               </Grid>
-            </Grid>
-          </Grid>
+            </Box>
+          </Stack>
         </Grid>
         <Grid
+          item
           onClick={() => {
             navigate("/");
             window.scrollTo(0, 0);
           }}
-          item
+          pt={{ md: 15 }}
+          pb={{ xs: 10.375, md: 15 }}
           sx={{
-            pt: { md: 15 },
-            pb: { xs: 10.375, md: 15 },
             cursor: "pointer",
             alignSelf: "center"
           }}

@@ -4,9 +4,9 @@ import { Box, Button, Grid } from "@mui/material";
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 //react hooks
-import { memo, useState } from "react";
+import { useState } from "react";
 
-export default memo(function ImgModal({ currentImg, imageList }) {
+export default function ImgModal({ currentImg, imageList }) {
   const [current, setCurrent] = useState(imageList.indexOf(currentImg));
 
   if (!Array.isArray(imageList) || imageList.length <= 0) {
@@ -75,4 +75,4 @@ export default memo(function ImgModal({ currentImg, imageList }) {
       </Grid>
     </Grid>
   );
-});
+}

@@ -1,15 +1,19 @@
 //react hooks
 import { useState } from "react";
+
 //react router
 import { useLocation } from "react-router";
+
 //react components
 import Header from "./header";
 import Footer from "./footer";
+
 //Material UI
 import { Box, Hidden, Link } from "@mui/material";
 
 //MUI icons
 import PhoneIcon from "@mui/icons-material/Phone";
+
 //constants
 import { COMPANY_MAIN_PHONE_NUMBER } from "src/constants";
 
