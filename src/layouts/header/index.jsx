@@ -7,7 +7,7 @@ import { NavBar } from "./bar";
 
 export default function Header() {
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box width="100%">
       <Stack>
         <CallSection />
         <NavBar />

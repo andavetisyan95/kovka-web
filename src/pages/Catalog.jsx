@@ -1,9 +1,12 @@
 //axios
 import axios from "axios";
-//MUi components
-import { Box } from "@mui/material";
+
 //react hooks
 import { useCallback, useEffect, useState } from "react";
+
+//MUi components
+import { Box } from "@mui/material";
+
 //react components
 import { MoreServices, CatalogMain } from "./catalog-page";
 
@@ -22,9 +25,9 @@ export default function Catalog() {
   return (
     <Box>
       <Box
+        pt={{ xs: 10, xl: 8 }}
+        px={{ xs: 3, sm: 12, xl: 28.5 }}
         sx={{
-          pt: { xs: 10, xl: 8 },
-          px: { xs: 3, sm: 12, xl: 28.5 },
           display: "flex",
           flexDirection: "column"
         }}

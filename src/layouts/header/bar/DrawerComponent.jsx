@@ -1,12 +1,14 @@
+//react router
+import { useNavigate } from "react-router";
+
+//MUI components
+import { Box, IconButton, Drawer, Typography, Stack } from "@mui/material";
+
 //MUI icons
 import CloseIcon from "@mui/icons-material/Close";
-//MUI components
-import { Grid, IconButton, Drawer, Typography } from "@mui/material";
 
 //source
 import { navLinks } from "src/source/navLinks";
-//react dom
-import { useNavigate } from "react-router-dom";
 
 export default function DrawerComponent({ open, close }) {
   const navigate = useNavigate();
@@ -27,23 +29,17 @@ export default function DrawerComponent({ open, close }) {
         }
       }}
     >
-      <Grid
-        container
-        direction="column"
-        sx={{ justifyContent: "center", alignItems: "center" }}
-        spacing={7}
-      >
-        <Grid item sx={{ alignSelf: { xs: "start", sm: "center" } }}>
+      <Stack sx={{ display: "flex", justifyContent: "center", alignItems: "center" }} spacing={7}>
+        <Box sx={{ alignSelf: { xs: "start", sm: "center" } }}>
           <IconButton onClick={close}>
             <CloseIcon sx={{ color: "white" }} />
           </IconButton>
-        </Grid>
-        <Grid item>
-          <Grid container direction="column" sx={{ gap: { xs: 8.5 } }}>
+        </Box>
+        <Box>
+          <Stack sx={{ gap: { xs: 8.5 } }}>
             {navLinks.map(({ title, path }) => (
-              <Grid
+              <Box
                 key={title}
-                item
                 onClick={close}
                 sx={{ cursor: "pointer" }}
                 className={window.location.pathname === path ? "active" : "nav_bar_items"}
@@ -57,11 +53,11 @@ export default function DrawerComponent({ open, close }) {
                 >
                   {title}
                 </Typography>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
-        </Grid>
-      </Grid>
+          </Stack>
+        </Box>
+      </Stack>
     </Drawer>
   );
 }

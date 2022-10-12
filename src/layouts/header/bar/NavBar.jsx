@@ -1,14 +1,19 @@
 //axios
 import axios from "axios";
+
 //react hooks
 import { useState, memo, useEffect, useCallback } from "react";
+
 //react router
 import { useNavigate } from "react-router-dom";
+
 //MUI components
 import { Grid, IconButton, Typography, TextField, Hidden, Box } from "@mui/material";
+
 //source
 import { navLinks } from "src/source/navLinks";
 import { DrawerComponent } from ".";
+
 //icons from Mui
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
@@ -17,7 +22,7 @@ export default memo(function NavBar() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [handleOpen, setHandleOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
   const [items, setItems] = useState([]);
   const [scroll, setScroll] = useState(false);
 
@@ -42,11 +47,15 @@ export default memo(function NavBar() {
   };
 
   const titleArray = [];
-  items?.filter(({ title }) => titleArray.push(title));
+  items?.reduce((aggr, el, i) => {
+    aggr[i] = el.title;
+    return aggr;
+  }, titleArray);
+
   const stringArr = titleArray.toString();
 
   const handleClose = () => {
-    setHandleOpen(false);
+    setIsOpen(false);
   };
 
   const changeBackground = () => {
@@ -95,7 +104,7 @@ export default memo(function NavBar() {
                 color: "white",
                 fontSize: "2rem"
               }}
-              onClick={() => setHandleOpen(true)}
+              onClick={() => setIsOpen(true)}
               className="clickable"
             />
           </Grid>
@@ -220,7 +229,7 @@ export default memo(function NavBar() {
           </Grid>
         </Grid>
       </Grid>
-      <DrawerComponent open={handleOpen} close={handleClose} />
+      <DrawerComponent open={isOpen} close={handleClose} />
     </Box>
   );
 });

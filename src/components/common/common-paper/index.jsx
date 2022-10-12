@@ -10,7 +10,7 @@ export default function CommonPaper({ title, children }) {
         px: { sm: 5, lg: 10, xs: 3 }
       }}
     >
-      <Stack sx={{ gap: { sm: 7.5, xs: 5 } }}>
+      <Stack gap={{ sm: 7.5, xs: 5 }}>
         <Box>
           <Typography
             sx={{

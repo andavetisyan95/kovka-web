@@ -1,9 +1,11 @@
-//MUi components
-import { Grid } from "@mui/material";
-//react component
-import { CatalogBox, CatalogCommon } from "..";
 //react hooks
 import { useNavigate } from "react-router";
+
+//MUi components
+import { Grid } from "@mui/material";
+
+//react component
+import { CatalogBox, CatalogCommon } from "..";
 
 export default function CatalogMain({ items }) {
   const navigate = useNavigate();

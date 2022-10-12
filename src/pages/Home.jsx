@@ -1,7 +1,9 @@
 //react hooks
 import { useEffect, useState } from "react";
+
 //Mui components
 import { Box } from "@mui/material";
+
 //react components
 import { Advantege, MainPage, Services } from "./home-page";
 import { BoxBackground, OurWorks } from "src/components/common";
@@ -24,7 +26,7 @@ export default function Home() {
   return (
     <>
       <BoxBackground imgName={"/images/mainBack.jpg"} />{" "}
-      <Box sx={{ px: { xl: 28.5, sm: 12, xs: 3 }, display: "flex", flexDirection: "column" }}>
+      <Box px={{ xl: 28.5, sm: 12, xs: 3 }} display="flex" flexDirection="column">
         <MainPage />
         <Services services={kovkaData?.services} />
         <OurWorks works={kovkaData?.services} />

@@ -1,10 +1,17 @@
+//react hooks
+import { useState } from "react";
+
 //Mui components
 import { Box, Button, Grid } from "@mui/material";
+
+//react-slider
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+
 //Mui icons
 import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-//react hooks
-import { useState } from "react";
 
 export default function ImgModal({ currentImg, imageList }) {
   const [current, setCurrent] = useState(imageList.indexOf(currentImg));
@@ -21,38 +28,46 @@ export default function ImgModal({ currentImg, imageList }) {
     setCurrent(current === 0 ? imageList.length - 1 : current - 1);
   };
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1
+  };
+
   return (
-    <Grid
-      container
+    <Box
       sx={{
-        direction: { xs: "column", md: "row" },
-        outline: "none",
-        border: "none"
+        width: { xs: "100%", md: "70%", lg: "60%" },
+        position: "absolute",
+        top: "50%",
+        left: "50%",
+        transform: "translate(-50%, -50%)"
       }}
-      rowSpacing={6}
-      columnSpacing={3}
-      justifyContent="center "
-      alignItems="center"
     >
-      <Grid item sx={{ order: { xs: "1", md: "0" } }}>
+      <Grid container sx={{ width: "100%", flexWrap: "wrap", position: "relative" }}>
         <Button
           sx={{
-            width: 70,
-            height: 70,
-            borderRadius: "0px"
+            width: { xs: 54, sm: 70 },
+            left: { xs: `calc(50% - 70px)`, sm: `calc(50% - 80px)`, md: "-120px" },
+            top: { md: "50%" },
+            bottom: { xs: "-96px", sm: "-110px", md: "unset" },
+            height: { xs: 54, sm: 70 },
+            borderRadius: "0px",
+            position: "absolute",
+            transform: { md: "translate(0%, -50%)" }
           }}
           onClick={prevImg}
         >
           <ArrowBackIosIcon
             sx={{
               color: "black",
-              pl: "5px"
+              pl: "4px"
             }}
           />
         </Button>
-      </Grid>
-      <Grid item md={7} xs={12} order={{ xs: "0", md: "1" }}>
-        <Box position="relative" sx={{ overflow: "hidden" }}>
+        <Slider {...settings}>
           {imageList.map(
             (el, i) =>
               i === current && (
@@ -66,13 +81,32 @@ export default function ImgModal({ currentImg, imageList }) {
                 />
               )
           )}
-        </Box>
-      </Grid>
-      <Grid item sx={{ order: { xs: "2", md: "3" } }}>
-        <Button sx={{ width: 70, height: 70, borderRadius: "0px" }} onClick={nextImg}>
+        </Slider>
+        <Button
+          sx={{
+            width: { xs: 54, sm: 70 },
+            height: { xs: 54, sm: 70 },
+            borderRadius: "0px",
+            position: "absolute",
+            top: { md: "50%" },
+            bottom: { xs: "-96px", sm: "-110px", md: "unset" },
+            transform: { md: "translate(0%,-50%)" },
+            right: { xs: `calc(50% - 70px)`, sm: `calc(50% - 80px)`, md: "-120px" }
+          }}
+          onClick={nextImg}
+        >
           <ArrowForwardIosIcon sx={{ color: "black" }} />
         </Button>
       </Grid>
-    </Grid>
+    </Box>
   );
 }
+
+// width: "100%",
+//           height: "100%",
+//           top: "50%",
+//           left: "50%",
+//           transform: "translate(-50%, -50%)",
+//           display: "flex",
+//           justifyContent: "center",
+//           alignItems: "center"

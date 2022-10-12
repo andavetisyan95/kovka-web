@@ -1,12 +1,15 @@
 //axios
 import axios from "axios";
-//MUi components
-import { Box } from "@mui/material";
+
 //react hooks
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import { IndividualItem, ItemsExamples } from "./catalog-page";
+
+//MUi components
+import { Box } from "@mui/material";
+
 //react components
+import { IndividualItem, ItemsExamples } from "./catalog-page";
 
 export default function CatalogItem() {
   const [itemInfo, setItemInfo] = useState([]);
@@ -32,9 +35,9 @@ export default function CatalogItem() {
   return (
     <>
       <Box
+        pt={{ xs: 10, xl: 8 }}
+        px={{ xs: 3, sm: 12, xl: 28.5 }}
         sx={{
-          pt: { xs: 10, xl: 8 },
-          px: { xs: 3, sm: 12, xl: 28.5 },
           display: "flex",
           flexDirection: "column"
         }}

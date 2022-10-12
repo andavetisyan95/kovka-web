@@ -1,21 +1,30 @@
-//Mui components
-import { Grid, Hidden, Typography } from "@mui/material";
 //react router
 import { NavLink } from "react-router-dom";
+
+//Mui components
+import { Box, Grid, Hidden, Stack, Typography } from "@mui/material";
+
 //react components
 import { BoxForWorks, CommonBox } from "src/components/common";
 
 export default function OurWorks({ works }) {
-  const imageList = [];
-  works?.reduce((aggr, el, i) => {
-    aggr[i] = el.image;
-    return aggr;
-  }, imageList);
+  const imageList = [
+    "/images/reshotka.jpg",
+    "/images/stul.jpg",
+    "/images/gates.jpg",
+    "/images/perila.jpg",
+    "/images/vrata.jpg",
+    "/images/kovannie-perila.jpg"
+  ];
+  // works?.reduce((aggr, el, i) => {
+  //   aggr[i] = el.image;
+  //   return aggr;
+  // }, imageList);
 
   return (
     <CommonBox title="НАШИ РАБОТЫ">
-      <Grid container spacing={8} direction="column">
-        <Grid item xs={12}>
+      <Stack spacing={8}>
+        <Box xs={12}>
           <Grid
             container
             spacing={{
@@ -49,8 +58,8 @@ export default function OurWorks({ works }) {
               </Grid>
             </Hidden>
           </Grid>
-        </Grid>
-        <Grid item>
+        </Box>
+        <Box>
           <NavLink to={"/catalog"}>
             <Typography
               className="watch-more"
@@ -59,8 +68,8 @@ export default function OurWorks({ works }) {
               Посмотреть больше
             </Typography>
           </NavLink>
-        </Grid>
-      </Grid>
+        </Box>
+      </Stack>
     </CommonBox>
   );
 }

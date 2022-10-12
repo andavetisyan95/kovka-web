@@ -1,5 +1,6 @@
 //MUi components
 import { Grid, Typography } from "@mui/material";
+
 //react components
 import { CatalogCommon } from "..";
 
@@ -17,7 +18,7 @@ export default function IndividualItem({ item }) {
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Grid container sx={{ gap: { lg: 10, xs: 5 } }}>
+          <Grid container gap={{ lg: 10, xs: 5 }}>
             <Grid item>
               <Typography
                 sx={{

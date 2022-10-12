@@ -1,11 +1,15 @@
 //axios
 import axios from "axios";
-//Mui components
-import { Box, Typography, Stack } from "@mui/material";
+
 //react hooks
 import { useCallback, useEffect, useState } from "react";
+
 //react router
 import { useLocation } from "react-router";
+
+//Mui components
+import { Box, Typography, Stack } from "@mui/material";
+
 import { CatalogMain } from "./catalog-page";
 
 export default function SearchResults() {
@@ -24,12 +28,19 @@ export default function SearchResults() {
   }, [handleGetItems]);
 
   const newArr = [];
-  items?.filter(el => {
+  // items?.filter(el => {
+  //   if (el.title.includes(result)) {
+  //     newArr.push(el);
+  //   }
+  //   return newArr;
+  // });
+
+  items?.reduce((aggr, el, i) => {
     if (el.title.includes(result)) {
-      newArr.push(el);
+      aggr[i] = el.title;
     }
-    return newArr;
-  });
+    return aggr;
+  }, newArr);
 
   const titleArr = [];
   newArr.filter(({ title }) => {
@@ -39,7 +50,7 @@ export default function SearchResults() {
 
   return (
     <Box>
-      <Stack spacing={10} sx={{ py: { xs: 25, sm: 27.5 }, px: { xs: 12, sm: 27.5 } }}>
+      <Stack spacing={10} py={{ xs: 25, sm: 27.5 }} px={{ xs: 12, sm: 27.5 }}>
         <Box>
           <Typography
             variant="h1"
