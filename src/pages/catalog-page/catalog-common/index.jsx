@@ -3,7 +3,7 @@ import { Box, Stack, Typography } from "@mui/material";
 
 export default function CatalogCommon({ children, title }) {
   return (
-    <Stack sx={{ gap: { xs: 5, sm: 10 } }}>
+    <Stack gap={{ xs: 5, sm: 10 }}>
       <Typography
         variant="h1"
         sx={{
@@ -17,7 +17,7 @@ export default function CatalogCommon({ children, title }) {
       >
         {title}
       </Typography>
-      <Box sx={{ pb: { xs: 5, sm: 10 } }}>{children}</Box>
+      <Box pb={{ xs: 5, sm: 10 }}>{children}</Box>
     </Stack>
   );
 }

@@ -2,7 +2,7 @@
 import axios from "axios";
 
 //react hooks
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useParams } from "react-router";
 
 //MUi components
@@ -18,19 +18,20 @@ export default function CatalogItem() {
   //get query params
   const { itemName } = useParams();
 
-  useEffect(() => {
-    axios
-      .get(`${process.env.REACT_APP_SERVICE_HOST}?item=${itemName}`)
-      .then(res => setItemInfo(res.data))
-      .catch(err => console.log(err));
+  const getItemName = useCallback(async () => {
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?item=${itemName}`);
+    setItemInfo(data ?? []);
   }, [itemName]);
 
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_SERVICE_HOST)
-      .then(res => setExamples(res.data))
-      .catch(err => console.log(err));
+  const fetchData = useCallback(async () => {
+    const { data } = await axios.get(process.env.REACT_APP_SERVICE_HOST);
+    setExamples(data ?? []);
   }, []);
+
+  useEffect(() => {
+    getItemName();
+    fetchData();
+  }, [getItemName, fetchData]);
 
   return (
     <>

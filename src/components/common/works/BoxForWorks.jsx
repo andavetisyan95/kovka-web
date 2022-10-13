@@ -52,6 +52,7 @@ export default function BoxForWorks({ imgName, imageList }) {
             height: 40,
             "&:hover": { background: "rgba(0, 0, 0, 0.7)" }
           }}
+          onClick={handleModalOpen}
         >
           <ZoomInIcon sx={{ color: "white", width: 20, height: 20 }} />
         </Button>

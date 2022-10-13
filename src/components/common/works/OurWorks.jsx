@@ -7,7 +7,7 @@ import { Box, Grid, Hidden, Stack, Typography } from "@mui/material";
 //react components
 import { BoxForWorks, CommonBox } from "src/components/common";
 
-export default function OurWorks({ works }) {
+export default function OurWorks() {
   const imageList = [
     "/images/reshotka.jpg",
     "/images/stul.jpg",
@@ -16,10 +16,6 @@ export default function OurWorks({ works }) {
     "/images/vrata.jpg",
     "/images/kovannie-perila.jpg"
   ];
-  // works?.reduce((aggr, el, i) => {
-  //   aggr[i] = el.image;
-  //   return aggr;
-  // }, imageList);
 
   return (
     <CommonBox title="НАШИ РАБОТЫ">

@@ -19,33 +19,20 @@ export default function SearchResults() {
   const [items, setItems] = useState([]);
 
   const handleGetItems = useCallback(async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?q=${result}`);
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?title_like=${result}`);
     setItems(data ?? []);
   }, [result]);
-
+  console.log(items);
   useEffect(() => {
     handleGetItems();
   }, [handleGetItems]);
 
   const newArr = [];
-  // items?.filter(el => {
-  //   if (el.title.includes(result)) {
-  //     newArr.push(el);
-  //   }
-  //   return newArr;
-  // });
-
-  items?.reduce((aggr, el, i) => {
-    if (el.title.includes(result)) {
-      aggr[i] = el.title;
+  items?.filter(el => {
+    if (items?.some(el => el.title.includes(result))) {
+      newArr.push(el);
     }
-    return aggr;
-  }, newArr);
-
-  const titleArr = [];
-  newArr.filter(({ title }) => {
-    titleArr.push(title);
-    return titleArr;
+    return newArr;
   });
 
   return (
@@ -64,7 +51,7 @@ export default function SearchResults() {
           </Typography>
         </Box>
         <Box>
-          {titleArr.toString().includes(result) ? (
+          {items?.some(el => el.title.includes(result)) ? (
             <CatalogMain items={newArr} />
           ) : (
             <Typography sx={{ fontSize: 30, lineHeight: "38px" }}>

@@ -54,7 +54,7 @@ export default function MainLayout({ children }) {
             <PhoneIcon
               sx={{
                 color: "primary.light",
-                fontSize: "1.8rem"
+                fontSize: "29px"
               }}
             />
             <Box

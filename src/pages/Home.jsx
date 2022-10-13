@@ -29,7 +29,7 @@ export default function Home() {
       <Box px={{ xl: 28.5, sm: 12, xs: 3 }} display="flex" flexDirection="column">
         <MainPage />
         <Services services={kovkaData?.services} />
-        <OurWorks works={kovkaData?.services} />
+        <OurWorks />
       </Box>
       <Advantege advanteges={kovkaData?.advanteges} />
     </>

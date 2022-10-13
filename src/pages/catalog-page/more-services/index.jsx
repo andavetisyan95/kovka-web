@@ -14,7 +14,7 @@ export default function MoreServices() {
         backgroundPosition: "center"
       }}
     >
-      <Container py={{ xs: 10 }}>
+      <Container sx={{ py: { xs: 10 } }}>
         <CommonPaper title="ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ">
           <Box pr={{ sm: 10, xs: 2.5 }}>
             <Typography

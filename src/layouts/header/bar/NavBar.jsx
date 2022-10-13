@@ -8,7 +8,7 @@ import { useState, memo, useEffect, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 
 //MUI components
-import { Grid, IconButton, Typography, TextField, Hidden, Box } from "@mui/material";
+import { Grid, IconButton, Typography, TextField, Hidden, Box, Stack } from "@mui/material";
 
 //source
 import { navLinks } from "src/source/navLinks";
@@ -29,7 +29,9 @@ export default memo(function NavBar() {
   const getItems = useCallback(() => {
     if (title.length >= 1 && title !== undefined) {
       setTimeout(async () => {
-        const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?q=${title}`);
+        const { data } = await axios.get(
+          `${process.env.REACT_APP_SERVICE_HOST}?title_like=${title}`
+        );
         setItems(data ?? []);
       }, 800);
     }
@@ -44,18 +46,6 @@ export default memo(function NavBar() {
       navigate(`/search_results?query=${title}`);
       setTitle("");
     }
-  };
-
-  const titleArray = [];
-  items?.reduce((aggr, el, i) => {
-    aggr[i] = el.title;
-    return aggr;
-  }, titleArray);
-
-  const stringArr = titleArray.toString();
-
-  const handleClose = () => {
-    setIsOpen(false);
   };
 
   const changeBackground = () => {
@@ -148,8 +138,8 @@ export default memo(function NavBar() {
         </Hidden>
 
         <Grid item position="relative">
-          <Grid container direction="column">
-            <Grid item>
+          <Stack>
+            <Box>
               <TextField
                 onChange={e => setTitle(e.target.value)}
                 onKeyPress={handleEnter}
@@ -179,8 +169,8 @@ export default memo(function NavBar() {
                   )
                 }}
               />
-            </Grid>
-            <Grid item sx={{ width: "100%", position: "absolute", top: "40px" }}>
+            </Box>
+            <Box sx={{ width: "100%", position: "absolute", top: "40px" }}>
               {title.length >= 1 && (
                 <Box
                   sx={{
@@ -197,7 +187,7 @@ export default memo(function NavBar() {
                     backgroundColor: "rgba(0,0,0,0.7)"
                   }}
                 >
-                  {stringArr.includes(title) ? (
+                  {items?.some(el => el.title.includes(title)) ? (
                     items.map(({ title, item }) => (
                       <Typography
                         key={`${title}_${item}`}
@@ -225,11 +215,11 @@ export default memo(function NavBar() {
                   )}
                 </Box>
               )}
-            </Grid>
-          </Grid>
+            </Box>
+          </Stack>
         </Grid>
       </Grid>
-      <DrawerComponent open={isOpen} close={handleClose} />
+      <DrawerComponent open={isOpen} close={() => setIsOpen(false)} />
     </Box>
   );
 });
