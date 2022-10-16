@@ -43,7 +43,7 @@ export default function CatalogItem() {
           flexDirection: "column"
         }}
       >
-        <IndividualItem item={itemInfo[0]} />
+        <IndividualItem item={itemInfo?.[0]} />
       </Box>
       <ItemsExamples examples={examples} />
     </>
