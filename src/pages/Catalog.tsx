@@ -13,12 +13,17 @@ import { Box } from "@mui/material";
 //react components
 import { CatalogMain, MoreServices } from './catalog-page';
 
+//types
+import { Product } from '../types/CommonTypes';
+
+
+
 export default function Catalog() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
 
   const getServices = useCallback(async () => {
-    const { data } = await axios.get(process.env.REACT_APP_SERVICE_HOST);
-    setItems(data ?? []);
+    const { data } = await axios.get<Product[]>(process.env.REACT_APP_SERVICE_HOST as string);
+    setItems(data);
   }, []);
 
   useEffect(() => {

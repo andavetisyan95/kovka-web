@@ -1,10 +1,24 @@
+//react
+import React from 'react';
+
 //MUi components
 import { Grid, Typography } from "@mui/material";
 
 //react components
 import { CatalogCommon } from "..";
 
-export default function IndividualItem({ item }) {
+
+type ItemParams = {
+  image:string
+  title:string
+  description:string
+}
+
+// type IndividualItemProps = {
+//   item:ItemParams
+// }
+
+export default function IndividualItem({ item }:ItemParams) {
   return (
     <CatalogCommon title="КАТАЛОГ">
       <Grid container spacing={10}>

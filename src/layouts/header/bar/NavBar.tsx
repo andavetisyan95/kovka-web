@@ -21,13 +21,16 @@ import { DrawerComponent } from ".";
 import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 
+//types
+import { Product } from '../../../types/CommonTypes';
+
 
 export default memo(function NavBar() {
   const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
   const [isOpen, setIsOpen] = useState(false);
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
   const [scroll, setScroll] = useState(false);
 
   const getItems = useCallback(() => {
@@ -45,12 +48,14 @@ export default memo(function NavBar() {
     getItems();
   }, [getItems]);
 
-  const handleEnter = e => {
+  const handleEnter = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
       navigate(`/search_results?query=${title}`);
       setTitle("");
     }
   };
+
+ 
 
   const changeBackground = () => {
     if (window.scrollY >= 1) {
@@ -191,7 +196,7 @@ export default memo(function NavBar() {
                     backgroundColor: "rgba(0,0,0,0.7)"
                   }}
                 >
-                  {items?.some(el => el.title.includes(title)) ? (
+                  {items?.some(el => el.title?.includes(title)) ? (
                     items.map(({ title, item }) => (
                       <Typography
                         key={`${title}_${item}`}
@@ -223,7 +228,7 @@ export default memo(function NavBar() {
           </Stack>
         </Grid>
       </Grid>
-      <DrawerComponent showDrawer={isOpen} close={() => setIsOpen(false)} />
+      <DrawerComponent showDrawer={isOpen} close={()=>setIsOpen(prev=> !prev)} />
     </Box>
   );
 });

@@ -1,9 +1,17 @@
+import React from "react";
+
 //Mui components
 import { Box, Stack, Typography } from "@mui/material";
-//react components
-import { CommonPaper } from "src/components/common";
 
-export default function Advanteg({ advanteges }) {
+//react components
+import { CommonPaper } from "../../../components/common";
+
+//type
+import {  DataIteration } from "../../../types/CommonTypes";
+
+
+
+export default function Advanteg({ advanteges }: DataIteration) {
   return (
     <Box sx={{ pt: { xs: 10, sm: 15, lg: 20 } }}>
       <Box

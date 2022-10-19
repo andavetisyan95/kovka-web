@@ -1,7 +1,13 @@
+//react
+import React from 'react';
+
 //Mui components
 import { Box, Stack, Typography } from "@mui/material";
 
-export default function CatalogCommon({ children, title }) {
+//types
+import { CommonProps } from '../../../types/CommonTypes';
+
+export default function CatalogCommon({ children, title }:CommonProps) {
   return (
     <Stack gap={{ xs: 5, sm: 10 }}>
       <Typography

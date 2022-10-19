@@ -1,8 +1,14 @@
+//react
+import React from "react";
+
 //axios
 import axios from "axios";
 
 //react hooks
 import { useCallback, useEffect, useState } from "react";
+
+//types
+import { Product } from "../types/CommonTypes";
 
 //react router
 import { useLocation } from "react-router";
@@ -10,30 +16,36 @@ import { useLocation } from "react-router";
 //Mui components
 import { Box, Typography, Stack } from "@mui/material";
 
+//react components
 import { CatalogMain } from "./catalog-page";
+
 
 export default function SearchResults() {
   const location = useLocation();
   const result = location.search.split("?")[1].split("=")[1];
 
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState<Product[]>([]);
 
   const handleGetItems = useCallback(async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?title_like=${result}`);
+    const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?title_like=${result}`);    
     setItems(data ?? []);
   }, [result]);
-  console.log(items);
+
+
   useEffect(() => {
     handleGetItems();
   }, [handleGetItems]);
 
-  const newArr = [];
-  items?.filter(el => {
-    if (items?.some(el => el.title.includes(result))) {
-      newArr.push(el);
-    }
-    return newArr;
-  });
+  const newArr:Product[] = [];
+  if(items.length>0){
+    items?.filter(el => {
+      if (items?.some(el => el.title?.includes(result))) {
+        newArr.push(el);
+      }
+      return newArr;
+    });
+  }
+  
 
   return (
     <Box>
@@ -51,7 +63,7 @@ export default function SearchResults() {
           </Typography>
         </Box>
         <Box>
-          {items?.some(el => el.title.includes(result)) ? (
+          {items?.some(el => el.title?.includes(result)) ? (
             <CatalogMain items={newArr} />
           ) : (
             <Typography sx={{ fontSize: 30, lineHeight: "38px" }}>

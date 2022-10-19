@@ -1,10 +1,19 @@
+//react
+import React from 'react';
+
 //react hooks
 import { useState } from "react";
 
 //Mui components
 import { Box, Collapse, Stack, Typography } from "@mui/material";
 
-export default function CatalogBox({ title, description, image }) {
+type CatalogBoxProps = {
+  title:string
+  description:string
+  image:string
+}
+
+export default function CatalogBox({ title, description, image }:CatalogBoxProps) {
   const [showInfo, setShowInfo] = useState(false);
 
   return (

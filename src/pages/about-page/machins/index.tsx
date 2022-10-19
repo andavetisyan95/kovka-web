@@ -1,8 +1,11 @@
+//react
+import React from 'react';
+
 //MUi components
 import { Box, Container, Typography } from "@mui/material";
 
 //Components
-import { CommonPaper } from "src/components/common";
+import { CommonPaper } from '../../../components/common';
 
 export default function Machins() {
   return (

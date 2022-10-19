@@ -1,12 +1,19 @@
-//Mui components
-import { Container, Box, Grid, Typography, Button } from "@mui/material";
+//react
+import React from 'react';
+
 //react router
 import { useNavigate } from "react-router";
+
+//Mui components
+import { Container, Box, Grid, Typography, Button } from "@mui/material";
+
 //common component
 import { BoxBackground } from "../components/common";
 
 export default function PageNotFound() {
+
   const navigate = useNavigate();
+
   return (
     <>
       <BoxBackground imgName="/images/noResult.jpg" />

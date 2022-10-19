@@ -1,3 +1,6 @@
+//react
+import React from 'react';
+
 //react hooks
 import { useNavigate } from "react-router";
 
@@ -7,7 +10,15 @@ import { Grid } from "@mui/material";
 //react component
 import { CatalogBox, CatalogCommon } from "..";
 
-export default function CatalogMain({ items }) {
+//types
+import { Product } from '../../../types/CommonTypes';
+
+type CatalogMainProps = {
+  items:Product[]
+} 
+
+
+export default function CatalogMain({ items }:CatalogMainProps) {
   const navigate = useNavigate();
 
   return (
@@ -22,7 +33,7 @@ export default function CatalogMain({ items }) {
             lg={4}
             onClick={() => navigate(`/catalog_item/${item}`)}
           >
-            <CatalogBox title={title} description={description} image={image} />
+            <CatalogBox title ={title} description={description} image={image} />
           </Grid>
         ))}
       </Grid>

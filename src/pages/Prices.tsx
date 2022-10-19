@@ -1,19 +1,36 @@
 //react
-import axios from "axios";
+import React from 'react';
+
 //react hooks
-import { useEffect, useState } from "react";
+import { useEffect, useState,useCallback } from "react";
+
+//react
+import axios from "axios";
+
 //Mui components
 import { Box, Grid, Paper, Typography } from "@mui/material";
-import { BoxBackground } from "src/components/common";
+
+//react components
+import { BoxBackground } from '../components/common';
+
+
+type PricesParams ={
+  id:number
+  title:string
+  price:string
+}
 
 export default function Prices() {
-  const [prices, setPrices] = useState(null);
-  useEffect(() => {
-    axios
-      .get(process.env.REACT_APP_SERVICE_HOST)
-      .then(res => setPrices(res.data))
-      .catch(err => console.log(err));
-  }, []);
+  const [prices, setPrices] = useState<PricesParams[]>([]);
+  
+const getPrices = useCallback(async()=>{
+  const {data} = await axios.get(process.env.REACT_APP_SERVICE_HOST as string)
+  setPrices(data ?? []);
+},[])
+
+useEffect(()=>{
+  getPrices()
+},[getPrices])
 
   return (
     <>

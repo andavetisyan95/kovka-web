@@ -1,17 +1,27 @@
-//Mui components
-import { Fade, Grid, Hidden, List, ListItem, ListItemText, Typography } from "@mui/material";
+import React from 'react';
+
 //React hooks
 import { useState } from "react";
-import { useNavigate } from "react-router";
-//react components
-import { CommonBox } from "src/components/common";
+import { useNavigate } from "react-router"
 
-export default function Services({ services }) {
+//Mui components
+import { Fade, Grid, Hidden, List, ListItem, ListItemText, Typography } from "@mui/material";
+
+
+//react components
+import { CommonBox } from '../../../components/common';
+
+//types
+import { DataIteration, Product } from '../../../types/CommonTypes';
+
+
+
+export default function Services({ services }:DataIteration) {
   const [isShown, setIsShown] = useState(false);
-  const [image, setImage] = useState([]);
+  const [image, setImage] = useState<Product>({} as Product);
   const navigate = useNavigate();
 
-  const showImage = i => {
+  const showImage = (i:number) => {
     setIsShown(true);
     services?.filter(el => {
       if (el.id === i) {

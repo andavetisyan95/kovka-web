@@ -1,3 +1,5 @@
+import React from "react";
+
 //react router
 import { useNavigate } from "react-router";
 
@@ -7,15 +9,17 @@ import { Box, IconButton, Drawer, Typography, Stack } from "@mui/material";
 //MUI icons
 import CloseIcon from "@mui/icons-material/Close";
 
+
 //source
-import { navLinks } from "src/source/navLinks";
+import { navLinks } from "../../../source/navLinks";
+
 
 type DrawerProps ={
-  showDrawer: ()=> void
+  showDrawer:  boolean
   close: ()=> void
 }
 
-export default function DrawerComponent({ showDrawer, close }:DrawerProps) {
+export default function DrawerComponent({ showDrawer,close }:DrawerProps) {
   const navigate = useNavigate();
 
   return (

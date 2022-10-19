@@ -1,9 +1,11 @@
 //MUI components
 import { Typography, Grid, Button } from "@mui/material";
+import React from "react";
 //react hooks
 import { useNavigate } from "react-router";
+
 //react components
-import { CommonPaper } from "src/components/common/";
+import { CommonPaper } from "../../../components/common";
 
 export default function MainPage() {
   const navigate = useNavigate();
