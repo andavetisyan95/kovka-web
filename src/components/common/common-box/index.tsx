@@ -1,8 +1,9 @@
-//react
 import React from "react";
 
 //Mui components
 import { Box, Stack, Typography } from "@mui/material";
+
+//types
 import { CommonProps } from "../../../types/CommonTypes";
 
 

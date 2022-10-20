@@ -14,6 +14,23 @@ import { CommonBox } from '../../../components/common';
 //types
 import { DataIteration, Product } from '../../../types/CommonTypes';
 
+//confguration for Typography variant property
+declare module '@mui/material/styles' {
+  interface TypographyVariants {
+    poster: React.CSSProperties;
+  }
+
+  interface TypographyVariantsOptions {
+    poster?: React.CSSProperties;
+  }
+}
+declare module '@mui/material/Typography' {
+  interface TypographyPropsVariantOverrides {
+    poster: true;
+    span: true;
+  }
+}
+
 
 
 export default function Services({ services }:DataIteration) {

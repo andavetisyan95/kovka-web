@@ -1,5 +1,6 @@
-//react
 import React from "react";
+
+//react hooks
 import { useState } from "react";
 
 //Mui components
@@ -7,7 +8,6 @@ import { Box, Button, Fade, Modal } from "@mui/material";
 
 //Mui icons
 import ZoomInIcon from "@mui/icons-material/ZoomIn";
-
 
 //React components
 import ImgModal from "../modal";
