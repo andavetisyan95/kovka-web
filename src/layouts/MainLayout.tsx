@@ -11,11 +11,7 @@ import Header from "./header";
 import Footer from "./footer";
 import { FixedCallButton } from "../components/common";
 
-type MainLayoutProps = {
-  children: React.ReactNode;
-};
-
-export default function MainLayout({ children }: MainLayoutProps) {
+export default function MainLayout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
 
   return (
