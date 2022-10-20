@@ -1,20 +1,16 @@
 import React from 'react';
 
-//axios
-import axios from "axios";
-
 //react hooks
-import { useState, memo, useEffect, useCallback } from "react";
+import { useState, memo, useEffect } from "react";
 
 //react router
 import { useNavigate } from "react-router-dom";
 
 //MUI components
-import { Grid, IconButton, Typography, TextField, Hidden, Box, Stack } from "@mui/material";
+import { Grid, Typography, Hidden, Box} from "@mui/material";
 
 //source
 import { navLinks } from "../../../source/navLinks";
-
 
 //icons from Mui
 import MenuIcon from "@mui/icons-material/Menu";
@@ -27,13 +23,10 @@ import SearchBox from './SearchBox';
 export default memo(function NavBar() {
   const navigate = useNavigate();
 
-  
   const [isOpen, setIsOpen] = useState(false);
-  
   const [scroll, setScroll] = useState(false);
 
  
-
   const changeBackground = () => {
     if (window.scrollY >= 1) {
       setScroll(true);
@@ -85,7 +78,6 @@ export default memo(function NavBar() {
             />
           </Grid>
         </Hidden>
-
         <Hidden lgDown>
           <Grid item>
             <Grid
