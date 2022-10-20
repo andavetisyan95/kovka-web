@@ -32,7 +32,7 @@ declare module "@mui/material/Typography" {
 
 export default function Services({ services }: DataInsertion) {
   const [isShown, setIsShown] = useState(false);
-  const [image, setImage] = useState<Product>({} as Product);
+  const [image, setImage] = useState<Product>();
   const navigate = useNavigate();
 
   const showImage = (i: number) => {
@@ -87,7 +87,7 @@ export default function Services({ services }: DataInsertion) {
                   style={{ objectFit: "cover", borderRadius: 5 }}
                   width="100%"
                   height={500}
-                  src={image.image}
+                  src={image?.image}
                   alt="works"
                 />
               </Fade>

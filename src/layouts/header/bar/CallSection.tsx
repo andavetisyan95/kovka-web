@@ -68,7 +68,7 @@ export default function CallSection() {
             <Grid item>
               <Box className="flex_center" gap="20px">
                 <Box>
-                  <MailIcon sx={{ width: 25, height: 25, color: "primary", mt: 4.5, mb: 1.6 }} />
+                  <MailIcon sx={{ width: 25, height: 25, color: "primary.main" }} />
                 </Box>
                 <CallSectionBox dir={`mailto:${COMPANY_EMAIL}`} text={COMPANY_EMAIL} />
               </Box>

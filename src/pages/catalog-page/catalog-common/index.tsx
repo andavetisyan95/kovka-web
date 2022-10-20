@@ -8,9 +8,8 @@ import { CommonProps } from "../../../types/CommonTypes";
 
 export default function CatalogCommon({ children, title }: CommonProps) {
   return (
-    <Stack gap={{ xs: 5, sm: 10 }}>
+    <Stack mt={5} gap={{ xs: 5, sm: 10 }}>
       <Typography
-        variant="h1"
         sx={{
           color: "primary.main",
           fontFamily: "Play",

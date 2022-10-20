@@ -21,7 +21,6 @@ export default function CatalogItem() {
 
   //get query params
   const { itemName } = useParams();
-  console.log(itemInfo);
 
   const getItemName = useCallback(async () => {
     const { data } = await axios.get<Product[]>(

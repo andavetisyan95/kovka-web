@@ -14,7 +14,7 @@ import {
   COMPANY_PHONE_NUMBER
 } from "../constants";
 
-//MUI icons
+// icons
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
