@@ -6,3 +6,4 @@ export { default as BoxForWorks } from "./works/BoxForWorks";
 export { default as OurWorks } from "./works/OurWorks";
 export { default as CallSectionBox } from "./callsection-box";
 export { default as ImgModal } from "./modal";
+export { default as FixedCallButton } from "./fixed-callButton";

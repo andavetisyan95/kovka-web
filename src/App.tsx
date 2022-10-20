@@ -1,4 +1,3 @@
-//react
 import React from "react";
 
 //hooks and helpers
