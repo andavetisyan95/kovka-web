@@ -1,13 +1,12 @@
-//react
-import React from 'react';
+import React from "react";
 
 //Mui components
 import { Box } from "@mui/material";
 
 //Components
-import { BoxBackground, OurWorks } from '../components/common';
-import Main from './about-page/main';
-import Machins from './about-page/machins';
+import { BoxBackground, OurWorks } from "../components/common";
+import Main from "./about-page/main";
+import Machins from "./about-page/machins";
 
 export default function AboutUs() {
   return (

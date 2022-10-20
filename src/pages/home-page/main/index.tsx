@@ -1,8 +1,9 @@
+import React from "react";
+
+import { useNavigate } from "react-router";
+
 //MUI components
 import { Typography, Grid, Button } from "@mui/material";
-import React from "react";
-//react hooks
-import { useNavigate } from "react-router";
 
 //react components
 import { CommonPaper } from "../../../components/common";

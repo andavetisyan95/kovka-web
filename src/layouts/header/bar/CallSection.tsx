@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 //react hooks
 import { useNavigate } from "react-router";
@@ -8,17 +8,14 @@ import { useEffect, useState } from "react";
 import { Box, Grid, Slide, Hidden } from "@mui/material";
 
 //constants
-import { COMPANY_EMAIL, COMPANY_MAIN_PHONE_NUMBER, COMPANY_PHONE_NUMBER } from '../../../constants';
+import { COMPANY_EMAIL, COMPANY_MAIN_PHONE_NUMBER, COMPANY_PHONE_NUMBER } from "../../../constants";
 
 //components
-import { CallSectionBox } from '../../../components/common';
+import { CallSectionBox } from "../../../components/common";
 
 //MUi icons
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
-
-
-
 
 export default function CallSection() {
   const navigate = useNavigate();
@@ -71,7 +68,7 @@ export default function CallSection() {
             <Grid item>
               <Box className="flex_center" gap="20px">
                 <Box>
-                  <MailIcon sx={{ width: 25, height: 25, color:"primary", mt:4.5, mb:1.6 }}  />
+                  <MailIcon sx={{ width: 25, height: 25, color: "primary", mt: 4.5, mb: 1.6 }} />
                 </Box>
                 <CallSectionBox dir={`mailto:${COMPANY_EMAIL}`} text={COMPANY_EMAIL} />
               </Box>

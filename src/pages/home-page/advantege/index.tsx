@@ -7,11 +7,9 @@ import { Box, Stack, Typography } from "@mui/material";
 import { CommonPaper } from "../../../components/common";
 
 //type
-import {  DataIteration } from "../../../types/CommonTypes";
+import { DataInsertion } from "../../../types/CommonTypes";
 
-
-
-export default function Advanteg({ advanteges }: DataIteration) {
+export default function Advanteg({ advanteges }: DataInsertion) {
   return (
     <Box sx={{ pt: { xs: 10, sm: 15, lg: 20 } }}>
       <Box

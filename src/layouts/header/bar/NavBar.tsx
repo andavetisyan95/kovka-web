@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 //react hooks
 import { useState, memo, useEffect } from "react";
@@ -7,7 +7,7 @@ import { useState, memo, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 //MUI components
-import { Grid, Typography, Hidden, Box} from "@mui/material";
+import { Grid, Typography, Hidden, Box } from "@mui/material";
 
 //source
 import { navLinks } from "../../../source/navLinks";
@@ -17,8 +17,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 
 //components
 import { DrawerComponent } from ".";
-import SearchBox from './SearchBox';
-
+import SearchBox from "./SearchBox";
 
 export default memo(function NavBar() {
   const navigate = useNavigate();
@@ -26,7 +25,6 @@ export default memo(function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scroll, setScroll] = useState(false);
 
- 
   const changeBackground = () => {
     if (window.scrollY >= 1) {
       setScroll(true);
@@ -115,10 +113,10 @@ export default memo(function NavBar() {
           </Grid>
         </Hidden>
         <Grid item position="relative">
-          <SearchBox  />
-         </Grid>
+          <SearchBox />
+        </Grid>
       </Grid>
-      <DrawerComponent showDrawer={isOpen} close={()=>setIsOpen(prev=> !prev)} />
+      <DrawerComponent showDrawer={isOpen} close={() => setIsOpen(prev => !prev)} />
     </Box>
   );
 });

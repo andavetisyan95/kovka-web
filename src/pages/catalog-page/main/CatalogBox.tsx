@@ -1,5 +1,4 @@
-//react
-import React from 'react';
+import React from "react";
 
 //react hooks
 import { useState } from "react";
@@ -8,12 +7,12 @@ import { useState } from "react";
 import { Box, Collapse, Stack, Typography } from "@mui/material";
 
 type CatalogBoxProps = {
-  title:string
-  description:string
-  image:string
-}
+  title: string;
+  description: string;
+  image: string;
+};
 
-export default function CatalogBox({ title, description, image }:CatalogBoxProps) {
+export default function CatalogBox({ title, description, image }: CatalogBoxProps) {
   const [showInfo, setShowInfo] = useState(false);
 
   return (

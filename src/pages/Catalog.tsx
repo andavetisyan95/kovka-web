@@ -1,7 +1,5 @@
-//react
-import React from 'react';
+import React from "react";
 
-//axios
 import axios from "axios";
 
 //react hooks
@@ -11,12 +9,10 @@ import { useCallback, useEffect, useState } from "react";
 import { Box } from "@mui/material";
 
 //react components
-import { CatalogMain, MoreServices } from './catalog-page';
+import { CatalogMain, MoreServices } from "./catalog-page";
 
 //types
-import { Product } from '../types/CommonTypes';
-
-
+import { Product } from "../types/CommonTypes";
 
 export default function Catalog() {
   const [items, setItems] = useState<Product[]>([]);

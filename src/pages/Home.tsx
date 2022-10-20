@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 //react hooks
 import { useEffect, useState } from "react";
@@ -8,15 +8,13 @@ import { Box } from "@mui/material";
 
 //react components
 import { Advantege, MainPage, Services } from "./home-page";
-import { BoxBackground, OurWorks } from '../components/common';
+import { BoxBackground, OurWorks } from "../components/common";
 
 //types
-import { DataIteration } from '../types/CommonTypes';
-
-
+import { DataInsertion } from "../types/CommonTypes";
 
 export default function Home() {
-  const [kovkaData, setKovkaData] = useState<DataIteration>({} as DataIteration);
+  const [kovkaData, setKovkaData] = useState<DataInsertion>({} as DataInsertion);
 
   useEffect(() => {
     fetchAllInfo();
@@ -24,8 +22,8 @@ export default function Home() {
 
   async function fetchAllInfo() {
     const [services, advanteges] = await Promise.all([
-      fetch(process.env.REACT_APP_SERVICE_HOST as string).then(res=>res.json()),
-      fetch(process.env.REACT_APP_ADVANTEGES_HOST as string).then(res=>res.json())
+      fetch(process.env.REACT_APP_SERVICE_HOST as string).then(res => res.json()),
+      fetch(process.env.REACT_APP_ADVANTEGES_HOST as string).then(res => res.json())
     ]);
     setKovkaData({ services, advanteges });
   }

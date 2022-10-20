@@ -1,7 +1,5 @@
-//react
-import React from 'react';
+import React from "react";
 
-//axios
 import axios from "axios";
 
 //react hooks
@@ -14,25 +12,27 @@ import { Box } from "@mui/material";
 //react components
 import { IndividualItem, ItemsExamples } from "./catalog-page";
 
-
+//types
+import { Product } from "../types/CommonTypes";
 
 export default function CatalogItem() {
-  const [itemInfo, setItemInfo] = useState<[]>([]);
+  const [itemInfo, setItemInfo] = useState<Product[]>([]);
   const [examples, setExamples] = useState<[]>([]);
 
   //get query params
   const { itemName } = useParams();
+  console.log(itemInfo);
 
   const getItemName = useCallback(async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?item=${itemName}`);
-    setItemInfo(data ?? []);
+    const { data } = await axios.get<Product[]>(
+      `${process.env.REACT_APP_SERVICE_HOST}?item=${itemName}`
+    );
+    setItemInfo(data);
   }, [itemName]);
 
-
-
   const fetchData = useCallback(async () => {
-    const { data } = await axios.get(process.env.REACT_APP_SERVICE_HOST as string);
-    setExamples(data ?? []);
+    const { data } = await axios.get<[]>(process.env.REACT_APP_SERVICE_HOST as string);
+    setExamples(data);
   }, []);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ export default function CatalogItem() {
           flexDirection: "column"
         }}
       >
-        <IndividualItem item={itemInfo?.[0] } />
+        <IndividualItem product={itemInfo?.[0]} />
       </Box>
       <ItemsExamples examples={examples} />
     </>

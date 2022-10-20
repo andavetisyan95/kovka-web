@@ -1,24 +1,22 @@
-//react
-import React from 'react';
+import React from "react";
 
 //Mui components
 import { Box, Grid } from "@mui/material";
 
 //React components
-import { BoxForWorks, CommonBox } from '../../../components/common';
+import { BoxForWorks, CommonBox } from "../../../components/common";
 
-type ExamplesParams={
-  id:number
-  image:string
-}
+type ExamplesParams = {
+  id: number;
+  image: string;
+};
 
 type ItemsExamplesProps = {
-  examples:ExamplesParams[]
-}
+  examples: ExamplesParams[];
+};
 
-
-export default function ItemsExamples({ examples }:ItemsExamplesProps) {
-  const exampleImages: string[]= examples?.map(({ image }) => image);
+export default function ItemsExamples({ examples }: ItemsExamplesProps) {
+  const exampleImages: string[] = examples?.map(({ image }) => image);
 
   return (
     <Box px={{ xl: 28.5, xs: 3, sm: 12 }} pb={10}>

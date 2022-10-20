@@ -1,11 +1,10 @@
-//react
-import React from 'react';
+import React from "react";
 
 //Mui components
 import { Typography, Grid } from "@mui/material";
 
 //React components
-import { CommonPaper } from '../../../components/common';
+import { CommonPaper } from "../../../components/common";
 
 export default function Main() {
   return (

@@ -1,5 +1,4 @@
-//react
-import React from 'react';
+import React from "react";
 
 //Mui components
 import { Container, Grid, Typography, Box } from "@mui/material";
@@ -8,13 +7,17 @@ import { Container, Grid, Typography, Box } from "@mui/material";
 import { BoxBackground, CommonPaper } from "../components/common";
 
 //constants
-import { COMPANY_EMAIL, COMPANY_LOCATION, COMPANY_MAIN_PHONE_NUMBER, COMPANY_PHONE_NUMBER } from '../constants';
+import {
+  COMPANY_EMAIL,
+  COMPANY_LOCATION,
+  COMPANY_MAIN_PHONE_NUMBER,
+  COMPANY_PHONE_NUMBER
+} from "../constants";
 
 //MUI icons
 import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
-
 
 export default function Contacts() {
   return (

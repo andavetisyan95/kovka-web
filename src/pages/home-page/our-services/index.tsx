@@ -1,21 +1,20 @@
-import React from 'react';
+import React from "react";
 
 //React hooks
 import { useState } from "react";
-import { useNavigate } from "react-router"
+import { useNavigate } from "react-router";
 
 //Mui components
 import { Fade, Grid, Hidden, List, ListItem, ListItemText, Typography } from "@mui/material";
 
-
 //react components
-import { CommonBox } from '../../../components/common';
+import { CommonBox } from "../../../components/common";
 
 //types
-import { DataIteration, Product } from '../../../types/CommonTypes';
+import { DataInsertion, Product } from "../../../types/CommonTypes";
 
 //confguration for Typography variant property
-declare module '@mui/material/styles' {
+declare module "@mui/material/styles" {
   interface TypographyVariants {
     poster: React.CSSProperties;
   }
@@ -24,21 +23,19 @@ declare module '@mui/material/styles' {
     poster?: React.CSSProperties;
   }
 }
-declare module '@mui/material/Typography' {
+declare module "@mui/material/Typography" {
   interface TypographyPropsVariantOverrides {
     poster: true;
     span: true;
   }
 }
 
-
-
-export default function Services({ services }:DataIteration) {
+export default function Services({ services }: DataInsertion) {
   const [isShown, setIsShown] = useState(false);
   const [image, setImage] = useState<Product>({} as Product);
   const navigate = useNavigate();
 
-  const showImage = (i:number) => {
+  const showImage = (i: number) => {
     setIsShown(true);
     services?.filter(el => {
       if (el.id === i) {

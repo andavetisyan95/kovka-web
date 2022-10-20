@@ -1,12 +1,11 @@
-//react
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-//app
 import App from "./App";
 
-//Mui
 import { BrowserRouter } from "react-router-dom";
+
+//Mui
 import { ThemeProvider } from "@mui/material";
 import { theme } from "./providers/mui/index";
 

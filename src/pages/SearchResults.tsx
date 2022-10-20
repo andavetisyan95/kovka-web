@@ -19,7 +19,6 @@ import { Box, Typography, Stack } from "@mui/material";
 //react components
 import { CatalogMain } from "./catalog-page";
 
-
 export default function SearchResults() {
   const location = useLocation();
   const result = location.search.split("?")[1].split("=")[1];
@@ -27,17 +26,18 @@ export default function SearchResults() {
   const [items, setItems] = useState<Product[]>([]);
 
   const handleGetItems = useCallback(async () => {
-    const { data } = await axios.get(`${process.env.REACT_APP_SERVICE_HOST}?title_like=${result}`);    
-    setItems(data ?? []);
+    const { data } = await axios.get<Product[]>(
+      `${process.env.REACT_APP_SERVICE_HOST}?title_like=${result}`
+    );
+    setItems(data);
   }, [result]);
-
 
   useEffect(() => {
     handleGetItems();
   }, [handleGetItems]);
 
-  const newArr:Product[] = [];
-  if(items.length>0){
+  const newArr: Product[] = [];
+  if (items.length > 0) {
     items?.filter(el => {
       if (items?.some(el => el.title?.includes(result))) {
         newArr.push(el);
@@ -45,7 +45,6 @@ export default function SearchResults() {
       return newArr;
     });
   }
-  
 
   return (
     <Box>

@@ -1,5 +1,5 @@
 //react
-import React from 'react';
+import React from "react";
 
 //MUi components
 import { Grid, Typography } from "@mui/material";
@@ -7,18 +7,14 @@ import { Grid, Typography } from "@mui/material";
 //react components
 import { CatalogCommon } from "..";
 
+//types
+import { Product } from "../../../types/CommonTypes";
 
-type ItemParams = {
-  image:string
-  title:string
-  description:string
-}
+type IndividualItemProps = {
+  product: Product;
+};
 
-// type IndividualItemProps = {
-//   item:ItemParams
-// }
-
-export default function IndividualItem({ item }:ItemParams) {
+export default function IndividualItem({ product }: IndividualItemProps) {
   return (
     <CatalogCommon title="КАТАЛОГ">
       <Grid container spacing={10}>
@@ -27,8 +23,8 @@ export default function IndividualItem({ item }:ItemParams) {
             style={{ objectFit: "cover" }}
             width="100%"
             height="100%"
-            src={item?.image || "/images/placeholder.jpg"}
-            alt={item?.image}
+            src={product?.image || "/images/placeholder.jpg"}
+            alt={product?.image}
           />
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -41,7 +37,7 @@ export default function IndividualItem({ item }:ItemParams) {
                   lineHeight: { lg: "50px", sm: "38px", xs: "30px" }
                 }}
               >
-                {item?.title}
+                {product?.title}
               </Typography>
             </Grid>
             <Grid item>
@@ -51,7 +47,7 @@ export default function IndividualItem({ item }:ItemParams) {
                   lineHeight: { xs: "20px", sm: "25px", lg: "30px" }
                 }}
               >
-                {item?.description}
+                {product?.description}
               </Typography>
             </Grid>
           </Grid>
