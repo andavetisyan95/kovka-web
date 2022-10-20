@@ -16,19 +16,19 @@ import ArrowBackIosIcon from "@mui/icons-material/ArrowBackIos";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 type ImgModalProps = {
-  currentImg: string
-  imageList: string[]
-}
+  currentImg: string;
+  imageList: string[];
+};
 
 type Settings = {
-  dots: boolean,
-  infinite: boolean
-  speed: number
-  slidesToShow: number
-  slidesToScroll: number
-}
+  dots: boolean;
+  infinite: boolean;
+  speed: number;
+  slidesToShow: number;
+  slidesToScroll: number;
+};
 
-export default function ImgModal({ currentImg, imageList }:ImgModalProps){
+export default function ImgModal({ currentImg, imageList }: ImgModalProps) {
   const [current, setCurrent] = useState<number>(imageList.indexOf(currentImg));
 
   if (!Array.isArray(imageList) || imageList.length <= 0) {
@@ -43,7 +43,7 @@ export default function ImgModal({ currentImg, imageList }:ImgModalProps){
     setCurrent(current === 0 ? imageList.length - 1 : current - 1);
   };
 
-  const settings:Settings = {
+  const settings: Settings = {
     dots: true,
     infinite: true,
     speed: 500,
@@ -67,7 +67,7 @@ export default function ImgModal({ currentImg, imageList }:ImgModalProps){
             width: { xs: 54, sm: 70 },
             left: { xs: `calc(50% - 70px)`, sm: `calc(50% - 80px)`, md: "-120px" },
             top: { md: "50%" },
-            bottom: { xs: "-96px", sm: "-110px", md: "unset" },
+            bottom: { xs: "-70px", sm: "-110px", md: "unset" },
             height: { xs: 54, sm: 70 },
             borderRadius: "0px",
             position: "absolute",
@@ -104,7 +104,7 @@ export default function ImgModal({ currentImg, imageList }:ImgModalProps){
             borderRadius: "0px",
             position: "absolute",
             top: { md: "50%" },
-            bottom: { xs: "-96px", sm: "-110px", md: "unset" },
+            bottom: { xs: "-70px", sm: "-110px", md: "unset" },
             transform: { md: "translate(0%,-50%)" },
             right: { xs: `calc(50% - 70px)`, sm: `calc(50% - 80px)`, md: "-120px" }
           }}
@@ -116,4 +116,3 @@ export default function ImgModal({ currentImg, imageList }:ImgModalProps){
     </Box>
   );
 }
-
