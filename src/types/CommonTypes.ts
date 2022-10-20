@@ -17,6 +17,7 @@ export interface Advanteges {
   title: string;
   subtitle: string;
 }
+
 export interface DataInsertion {
   services?: Product[];
   advanteges?: Advanteges[];

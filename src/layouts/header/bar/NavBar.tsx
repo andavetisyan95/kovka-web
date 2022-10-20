@@ -16,8 +16,7 @@ import { navLinks } from "../../../source/navLinks";
 import MenuIcon from "@mui/icons-material/Menu";
 
 //components
-import { DrawerComponent } from ".";
-import SearchBox from "./SearchBox";
+import { DrawerComponent, SearchBox } from ".";
 
 export default memo(function NavBar() {
   const navigate = useNavigate();

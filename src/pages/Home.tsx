@@ -14,7 +14,7 @@ import { BoxBackground, OurWorks } from "../components/common";
 import { DataInsertion } from "../types/CommonTypes";
 
 export default function Home() {
-  const [kovkaData, setKovkaData] = useState<DataInsertion>({} as DataInsertion);
+  const [kovkaData, setKovkaData] = useState<DataInsertion>({});
 
   useEffect(() => {
     fetchAllInfo();
@@ -30,7 +30,7 @@ export default function Home() {
 
   return (
     <>
-      <BoxBackground imgName={"/images/mainBack.jpg"} />{" "}
+      <BoxBackground imgName={"/images/mainBack.jpg"} />
       <Box px={{ xl: 28.5, sm: 12, xs: 3 }} display="flex" flexDirection="column">
         <MainPage />
         <Services services={kovkaData?.services} />

@@ -1,5 +1,4 @@
-//react
-import React from 'react';
+import React from "react";
 
 //Mui components
 import { Box, Stack } from "@mui/material";
