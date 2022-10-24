@@ -1,4 +1,4 @@
-import React,{ FC, ReactElement } from 'react';
+import React, { FC, ReactElement } from "react";
 
 //react hooks
 import { useNavigate } from "react-router-dom";
@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Grid, Link, Stack } from "@mui/material";
 
 // components
-import { FooterTypography } from '../../components/common';
+import { FooterTypography } from "../../components/common";
 
 // MUI icons
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -20,10 +20,9 @@ import {
   COMPANY_PHONE_NUMBER,
   COMPANY_EMAIL,
   COMPANY_LOCATION
-} from '../../constants'
+} from "../../constants";
 
-
-export const Footer:FC =():ReactElement=>{
+export const Footer: FC = (): ReactElement => {
   const navigate = useNavigate();
 
   return (
@@ -36,12 +35,13 @@ export const Footer:FC =():ReactElement=>{
       <Grid
         container
         direction={{ xs: "column", md: "row" }}
-        gap={{ xl: 66.25, lg: 25, md: 22.5 }}
+        columnGap={{ md: 25, lg: 40, xl: 60 }}
+        rowGap={{ xs: 5 }}
         justifyContent="center"
         alignItems="center"
       >
-        <Grid item py={{ xs: 10.375, sm: 15, lg: 20 }}>
-          <Stack gap={{ lg: 5.625, xs: 2.5 }}>
+        <Grid item py={{ md: 15, lg: 20 }} pt={{ xs: 10.375, sm: 15 }}>
+          <Stack gap={{ lg: 5.625, xs: 4 }}>
             <Box>
               <Grid
                 container
@@ -116,6 +116,6 @@ export const Footer:FC =():ReactElement=>{
       </Grid>
     </Box>
   );
-}
+};
 
 export default Footer;

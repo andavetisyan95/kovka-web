@@ -8,7 +8,7 @@ import { memo, useCallback, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 //MUI components
-import { Typography, TextField, Box, Stack, IconButton } from "@mui/material";
+import { Typography, TextField, Box, Stack } from "@mui/material";
 
 //icons from Mui
 import SearchIcon from "@mui/icons-material/Search";
@@ -44,11 +44,17 @@ const SearchBox = () => {
     }
   };
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.value !== " ") {
+      setTitle(e.target.value);
+    }
+  };
+
   return (
     <Stack>
       <Box>
         <TextField
-          onChange={e => setTitle(e.target.value)}
+          onChange={handleChange}
           onKeyPress={handleEnter}
           value={title}
           placeholder="Поиск"
@@ -57,8 +63,8 @@ const SearchBox = () => {
             sx: {
               "& input": {
                 color: "white",
-                padding: 0,
-                ml: "15px"
+                padding: 1.5,
+                ml: "5px"
               },
 
               border: "1px solid #FFFFFF",
@@ -67,17 +73,13 @@ const SearchBox = () => {
               bgcolor: title.length >= 1 ? "rgba(0,0,0,0.7)" : "transparent",
               display: "flex",
               flexDirection: "row",
-              width: { xs: 230, sm: 220 }
+              width: { xs: 230, sm: 230 }
             },
-            endAdornment: (
-              <IconButton sx={{ color: "white" }}>
-                <SearchIcon />
-              </IconButton>
-            )
+            endAdornment: <SearchIcon sx={{ color: "white" }} />
           }}
         />
       </Box>
-      <Box sx={{ width: "100%", position: "absolute", top: "40px" }}>
+      <Box sx={{ width: "100%", position: "absolute", top: 48 }}>
         {title.length >= 1 && (
           <Box
             sx={{
@@ -94,7 +96,7 @@ const SearchBox = () => {
               backgroundColor: "rgba(0,0,0,0.7)"
             }}
           >
-            {items?.some(el => el.title?.includes(title)) ? (
+            {items?.some(el => el?.title.includes(title)) ? (
               items.map(({ title, item }) => (
                 <Typography
                   key={`${title}_${item}`}

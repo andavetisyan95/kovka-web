@@ -55,7 +55,7 @@ export default memo(function NavBar() {
         alignItems="center"
         sx={{
           py: 3,
-          px: { xs: 3, sm: 6, lg: 0 }
+          px: { xs: 3, sm: 6, md: 10, lg: 0 }
         }}
       >
         <Hidden lgDown>

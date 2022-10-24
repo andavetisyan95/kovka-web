@@ -4,14 +4,14 @@ import React from "react";
 import { Typography } from "@mui/material";
 
 type FooterTypographyProps = {
-  title: string
-}
+  title: string;
+};
 
-export default function FooterTypography({ title }:FooterTypographyProps) {
+export default function FooterTypography({ title }: FooterTypographyProps) {
   return (
     <Typography
       sx={{
-        fontSize: { lg: 20, xs: 14 },
+        fontSize: { xs: 14, sm: 16, lg: 20 },
         fontWeight: 500,
         lineHeight: { lg: "25px", xs: "20px" },
         textAlign: "center"
