@@ -13,11 +13,11 @@ import ZoomInIcon from "@mui/icons-material/ZoomIn";
 import ImgModal from "../modal";
 
 type WorksProps = {
-  imgName: string
-  imageList: string[]
-}
+  imgName: string;
+  imageList: string[];
+};
 
-export default function BoxForWorks({ imgName, imageList }:WorksProps){
+export default function BoxForWorks({ imgName, imageList }: WorksProps) {
   const [hover, setHover] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 

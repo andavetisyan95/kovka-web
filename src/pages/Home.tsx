@@ -11,7 +11,7 @@ import { Advantege, MainPage, Services } from "./home-page";
 import { BoxBackground, OurWorks } from "../components/common";
 
 //types
-import { DataInsertion } from "../types/CommonTypes";
+import { DataInsertion } from "../types/common-types";
 
 export default function Home() {
   const [kovkaData, setKovkaData] = useState<DataInsertion>({});

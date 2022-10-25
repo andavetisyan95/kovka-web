@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
 //types
-import { CommonProps } from "../../../types/CommonTypes";
+import { CommonProps } from "../../../types/common-types";
 
 export default function CatalogCommon({ children, title }: CommonProps) {
   return (

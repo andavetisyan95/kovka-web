@@ -11,7 +11,7 @@ import { Fade, Grid, Hidden, List, ListItem, ListItemText, Typography } from "@m
 import { CommonBox } from "../../../components/common";
 
 //types
-import { DataInsertion, Product } from "../../../types/CommonTypes";
+import { DataInsertion, Product } from "../../../types/common-types";
 
 //confguration for Typography variant property
 declare module "@mui/material/styles" {

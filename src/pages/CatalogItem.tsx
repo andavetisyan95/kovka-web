@@ -13,7 +13,7 @@ import { Box } from "@mui/material";
 import { IndividualItem, ItemsExamples } from "./catalog-page";
 
 //types
-import { Product } from "../types/CommonTypes";
+import { Product } from "../types/common-types";
 
 export default function CatalogItem() {
   const [itemInfo, setItemInfo] = useState<Product[]>([]);

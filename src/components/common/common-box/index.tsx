@@ -4,13 +4,11 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
 //types
-import { CommonProps } from "../../../types/CommonTypes";
+import { CommonProps } from "src/types/common-types";
 
-
-
-export default function CommonBox({ title, children }:CommonProps) {
+export default function CommonBox({ title, children }: CommonProps) {
   return (
-    <Stack gap={{ sm: 8, xs: 5 }} pt={{ xs: 10, sm: 15, lg: 20 }}>
+    <Stack spacing={{ sm: 8, xs: 5 }} pt={{ xs: 10, sm: 15, lg: 20 }}>
       <Box>
         <Typography
           sx={{

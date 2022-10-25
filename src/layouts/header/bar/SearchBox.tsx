@@ -14,7 +14,7 @@ import { Typography, TextField, Box, Stack } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 //types
-import { Product } from "../../../types/CommonTypes";
+import { Product } from "src/types/common-types";
 
 const SearchBox = () => {
   const [title, setTitle] = useState("");
@@ -68,9 +68,14 @@ const SearchBox = () => {
               },
 
               border: "1px solid #FFFFFF",
-              borderBottom: title ? "none" : "1px solid white",
-              borderRadius: title ? "5px 5px 0 0 " : "5px",
-              bgcolor: title.length >= 1 ? "rgba(0,0,0,0.7)" : "transparent",
+              borderBottom: "1px solid white",
+              borderRadius: "5px",
+              bgcolor: "transparent",
+              ...(title && {
+                borderBottom: "none",
+                borderRadius: "5px 5px 0 0",
+                bgcolor: "rgba(0,0,0,0.7)"
+              }),
               display: "flex",
               flexDirection: "row",
               width: { xs: 230, sm: 230 }
@@ -80,7 +85,7 @@ const SearchBox = () => {
         />
       </Box>
       <Box sx={{ width: "100%", position: "absolute", top: 48 }}>
-        {title.length >= 1 && (
+        {Boolean(title) && (
           <Box
             sx={{
               border: "1px  solid white",
@@ -96,7 +101,7 @@ const SearchBox = () => {
               backgroundColor: "rgba(0,0,0,0.7)"
             }}
           >
-            {items?.some(el => el?.title.includes(title)) ? (
+            {items.length ? (
               items.map(({ title, item }) => (
                 <Typography
                   key={`${title}_${item}`}

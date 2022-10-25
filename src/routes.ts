@@ -13,7 +13,7 @@ import SearchResults from "./pages/SearchResults";
 interface Routes {
   id: number;
   path: string;
-  Component: FC<{}>;
+  Component: FC;
 }
 
 export const routes: Array<Routes> = [

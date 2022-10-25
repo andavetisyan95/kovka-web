@@ -7,7 +7,7 @@ import { Box, Stack, Typography } from "@mui/material";
 import { CommonPaper } from "../../../components/common";
 
 //type
-import { DataInsertion } from "../../../types/CommonTypes";
+import { DataInsertion } from "../../../types/common-types";
 
 export default function Advanteg({ advanteges }: DataInsertion) {
   return (

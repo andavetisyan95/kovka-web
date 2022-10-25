@@ -8,7 +8,7 @@ import { Grid, Typography } from "@mui/material";
 import { CatalogCommon } from "..";
 
 //types
-import { Product } from "../../../types/CommonTypes";
+import { Product } from "../../../types/common-types";
 
 type IndividualItemProps = {
   product: Product;

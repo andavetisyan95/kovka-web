@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Grid, Link, Stack } from "@mui/material";
 
 // components
-import { FooterTypography } from "../../components/common";
+import { FooterTypography } from "src/components/common";
 
 // MUI icons
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -41,11 +41,11 @@ export const Footer: FC = (): ReactElement => {
         alignItems="center"
       >
         <Grid item py={{ md: 15, lg: 20 }} pt={{ xs: 10.375, sm: 15 }}>
-          <Stack gap={{ lg: 5.625, xs: 4 }}>
+          <Stack spacing={{ lg: 5.625, xs: 4 }}>
             <Box>
               <Grid
                 container
-                gap={{ md: 3.125, xs: 2 }}
+                spacing={{ md: 3.125, xs: 2 }}
                 justifyContent="center"
                 alignItems="center"
               >
@@ -70,7 +70,7 @@ export const Footer: FC = (): ReactElement => {
               </Grid>
             </Box>
             <Box>
-              <Grid container gap={{ xs: 2, md: 3.125 }}>
+              <Grid container spacing={{ xs: 2, md: 3.125 }}>
                 <Grid item>
                   <MailIcon sx={{ fontSize: "1.5rem" }} color="primary" />
                 </Grid>
@@ -82,7 +82,7 @@ export const Footer: FC = (): ReactElement => {
               </Grid>
             </Box>
             <Box>
-              <Grid container gap={{ xs: 2, md: 3.125 }}>
+              <Grid container spacing={{ xs: 2, md: 3.125 }}>
                 <Grid item>
                   <LocationOnIcon sx={{ fontSize: "1.5rem" }} color="primary" />
                 </Grid>

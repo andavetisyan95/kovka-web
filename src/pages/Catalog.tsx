@@ -12,7 +12,7 @@ import { Box } from "@mui/material";
 import { CatalogMain, MoreServices } from "./catalog-page";
 
 //types
-import { Product } from "../types/CommonTypes";
+import { Product } from "../types/common-types";
 
 export default function Catalog() {
   const [items, setItems] = useState<Product[]>([]);

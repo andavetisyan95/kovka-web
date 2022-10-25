@@ -10,7 +10,7 @@ import { Box, Hidden, Link } from "@mui/material";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 //constants
-import { COMPANY_MAIN_PHONE_NUMBER } from "../../../constants";
+import { COMPANY_MAIN_PHONE_NUMBER } from "src/constants";
 
 const FixedCallButton = () => {
   const [showAnimation, setShowAnimation] = useState(true);

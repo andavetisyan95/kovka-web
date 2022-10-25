@@ -8,7 +8,7 @@ import axios from "axios";
 import { useCallback, useEffect, useState } from "react";
 
 //types
-import { Product } from "../types/CommonTypes";
+import { Product } from "src/types/common-types";
 
 //react router
 import { useLocation } from "react-router";
@@ -62,7 +62,7 @@ export default function SearchResults() {
           </Typography>
         </Box>
         <Box>
-          {items?.some(el => el.title?.includes(result)) ? (
+          {items.length ? (
             <CatalogMain items={newArr} />
           ) : (
             <Typography sx={{ fontSize: 30, lineHeight: "38px" }}>

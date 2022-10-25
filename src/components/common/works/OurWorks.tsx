@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useCallback, useState, useEffect } from "react";
+import axios from "axios";
 
 //react-router
 import { NavLink } from "react-router-dom";
@@ -9,16 +10,25 @@ import { Box, Grid, Hidden, Stack, Typography } from "@mui/material";
 //react components
 import CommonBox from "../common-box";
 import BoxForWorks from "./BoxForWorks";
+import { Product } from "src/types/common-types";
 
 export default function OurWorks() {
-  const imageList = [
-    "/images/reshotka.jpg",
-    "/images/stul.jpg",
-    "/images/gates.jpg",
-    "/images/perila.jpg",
-    "/images/vrata.jpg",
-    "/images/kovannie-perila.jpg"
-  ];
+  const [servicesData, setServiceData] = useState<Product[]>([]);
+
+  const getImages = useCallback(async () => {
+    const { data } = await axios.get<Product[]>(process.env.REACT_APP_SERVICE_HOST as string);
+    setServiceData(data);
+  }, []);
+
+  useEffect(() => {
+    getImages();
+  }, [getImages]);
+
+  const imageList: string[] = [];
+  servicesData.filter(el => {
+    imageList.push(el.image);
+    return imageList;
+  });
 
   return (
     <CommonBox title="НАШИ РАБОТЫ">
@@ -33,27 +43,27 @@ export default function OurWorks() {
             }}
           >
             <Grid item xs={6} sm={4.5} lg={3}>
-              <BoxForWorks imgName="/images/reshotka.jpg" imageList={imageList} />
+              <BoxForWorks imgName={imageList[0]} imageList={imageList} />
             </Grid>
             <Grid item xs={6} sm={7.5} lg={5}>
-              <BoxForWorks imgName="/images/stul.jpg" imageList={imageList} />
+              <BoxForWorks imgName={imageList[1]} imageList={imageList} />
             </Grid>
             <Hidden only={["xs", "sm", "md"]}>
               <Grid item lg={4}>
-                <BoxForWorks imgName="/images/gates.jpg" imageList={imageList} />
+                <BoxForWorks imgName={imageList[2]} imageList={imageList} />
               </Grid>
             </Hidden>
             <Grid item xs={12} sm={8} lg={6}>
-              <BoxForWorks imgName="/images/perila.jpg" imageList={imageList} />
+              <BoxForWorks imgName={imageList[3]} imageList={imageList} />
             </Grid>
             <Hidden smDown>
               <Grid item sm={4} lg={3}>
-                <BoxForWorks imgName="/images/vrata.jpg" imageList={imageList} />
+                <BoxForWorks imgName={imageList[4]} imageList={imageList} />
               </Grid>
             </Hidden>
             <Hidden only={["xs", "sm", "md"]}>
               <Grid item lg={3}>
-                <BoxForWorks imgName="/images/kovannie-perila.jpg" imageList={imageList} />
+                <BoxForWorks imgName={imageList[5]} imageList={imageList} />
               </Grid>
             </Hidden>
           </Grid>
