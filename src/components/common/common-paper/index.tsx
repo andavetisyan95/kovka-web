@@ -9,8 +9,8 @@ export default function CommonPaper({ title, children }: CommonProps) {
     <Paper
       sx={{
         bgcolor: "rgba(0,0,0,0.7)",
-        py: { lg: 8, sm: 10, xs: 5 },
-        px: { sm: 5, lg: 10, xs: 3 }
+        py: { lg: 7, sm: 10, xs: 5 },
+        px: { sm: 5, lg: 9, xs: 3 }
       }}
     >
       <Stack spacing={{ sm: 7.5, xs: 5 }}>

@@ -4,7 +4,7 @@ import React from "react";
 import { Typography, Grid } from "@mui/material";
 
 //React components
-import { CommonPaper } from "../../../components/common";
+import { CommonPaper } from "src/components/common";
 
 export default function Main() {
   return (

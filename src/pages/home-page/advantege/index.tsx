@@ -4,10 +4,10 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
 //react components
-import { CommonPaper } from "../../../components/common";
+import { CommonPaper } from "src/components/common";
 
 //type
-import { DataInsertion } from "../../../types/common-types";
+import { DataInsertion } from "src/types/common-types";
 
 export default function Advanteg({ advanteges }: DataInsertion) {
   return (
@@ -30,10 +30,10 @@ export default function Advanteg({ advanteges }: DataInsertion) {
           }}
         >
           <CommonPaper title="ПОЧЕМУ ВЫБИРАЮТ НАС?">
-            <Stack sx={{ gap: { sm: 10, xs: 5 } }}>
+            <Stack spacing={{ sm: 10, xs: 5 }}>
               {advanteges?.map(({ title, subtitle, id }) => (
                 <Box key={id}>
-                  <Stack sx={{ gap: { xs: 2, sm: 3 } }}>
+                  <Stack spacing={{ xs: 2, sm: 3 }}>
                     <Box>
                       <Typography
                         sx={{

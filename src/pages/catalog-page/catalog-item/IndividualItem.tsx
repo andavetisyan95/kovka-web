@@ -8,7 +8,7 @@ import { Grid, Typography } from "@mui/material";
 import { CatalogCommon } from "..";
 
 //types
-import { Product } from "../../../types/common-types";
+import { Product } from "src/types/common-types";
 
 type IndividualItemProps = {
   product: Product;
@@ -28,7 +28,7 @@ export default function IndividualItem({ product }: IndividualItemProps) {
           />
         </Grid>
         <Grid item xs={12} sm={6}>
-          <Grid container gap={{ lg: 10, xs: 5 }}>
+          <Grid container spacing={{ lg: 10, xs: 5 }}>
             <Grid item>
               <Typography
                 sx={{

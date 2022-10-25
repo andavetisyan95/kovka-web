@@ -8,10 +8,10 @@ import { useEffect, useState } from "react";
 import { Box, Grid, Slide, Hidden } from "@mui/material";
 
 //constants
-import { COMPANY_EMAIL, COMPANY_MAIN_PHONE_NUMBER, COMPANY_PHONE_NUMBER } from "../../../constants";
+import { COMPANY_EMAIL, COMPANY_MAIN_PHONE_NUMBER, COMPANY_PHONE_NUMBER } from "src/constants";
 
 //components
-import { CallSectionBox } from "../../../components/common";
+import { CallSectionBox } from "src/components/common";
 
 //MUi icons
 import PhoneIcon from "@mui/icons-material/Phone";

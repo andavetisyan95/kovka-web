@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import { Grid, Typography, Hidden, Box } from "@mui/material";
 
 //source
-import { navLinks } from "../../../source/navLinks";
+import { navLinks } from "src/source/navLinks";
 
 //icons from Mui
 import MenuIcon from "@mui/icons-material/Menu";
@@ -50,7 +50,7 @@ export default memo(function NavBar() {
     >
       <Grid
         container
-        gap={{ xs: 2.5, lg: 13, xl: 22 }}
+        spacing={{ xs: 2.5, lg: 13, xl: 22 }}
         justifyContent={{ lg: "center", xs: "space-between" }}
         alignItems="center"
         sx={{

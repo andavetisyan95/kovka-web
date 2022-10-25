@@ -10,13 +10,12 @@ import { Box, Grid, Hidden, Stack, Typography } from "@mui/material";
 //react components
 import CommonBox from "../common-box";
 import BoxForWorks from "./BoxForWorks";
-import { Product } from "src/types/common-types";
 
 export default function OurWorks() {
-  const [servicesData, setServiceData] = useState<Product[]>([]);
+  const [servicesData, setServiceData] = useState<[]>([]);
 
   const getImages = useCallback(async () => {
-    const { data } = await axios.get<Product[]>(process.env.REACT_APP_SERVICE_HOST as string);
+    const { data } = await axios.get<[]>(process.env.REACT_APP_SERVICE_HOST as string);
     setServiceData(data);
   }, []);
 
@@ -24,11 +23,7 @@ export default function OurWorks() {
     getImages();
   }, [getImages]);
 
-  const imageList: string[] = [];
-  servicesData.filter(el => {
-    imageList.push(el.image);
-    return imageList;
-  });
+  const imageList: string[] = servicesData.map(({ image }) => image);
 
   return (
     <CommonBox title="НАШИ РАБОТЫ">

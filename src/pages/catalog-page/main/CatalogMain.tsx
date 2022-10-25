@@ -10,7 +10,7 @@ import { Grid } from "@mui/material";
 import { CatalogBox, CatalogCommon } from "..";
 
 //types
-import { Product } from "../../../types/common-types";
+import { Product } from "src/types/common-types";
 
 type CatalogMainProps = {
   items: Product[];

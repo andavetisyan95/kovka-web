@@ -1,7 +1,7 @@
 import React from "react";
 
 //Mui components
-import { Container, Grid, Typography, Box } from "@mui/material";
+import { Container, Grid, Typography, Box, Stack } from "@mui/material";
 
 //common container
 import { BoxBackground, CommonPaper } from "../components/common";
@@ -29,16 +29,10 @@ export default function Contacts() {
         }}
       >
         <CommonPaper title="КОНТАКТНАЯ ИНФОРМАЦИЯ КОМПАНИИ">
-          <Grid
-            container
-            direction="column"
-            justifyContent="center"
-            alignItems="center"
-            gap={{ xs: 5, lg: 22.5 }}
-          >
-            <Grid item>
-              <Grid container direction="column" gap={5.125}>
-                <Grid item>
+          <Stack justifyContent="center" alignItems="center" spacing={{ xs: 5, lg: 22.5 }}>
+            <Box>
+              <Stack spacing={5.125}>
+                <Box>
                   <Grid container direction="row" gap={3}>
                     <Grid item>
                       <PhoneIcon
@@ -51,7 +45,7 @@ export default function Contacts() {
                       />
                     </Grid>
                     <Grid item>
-                      <Grid container direction="column">
+                      <Stack>
                         <Grid item>
                           <Typography
                             sx={{
@@ -72,11 +66,11 @@ export default function Contacts() {
                             {COMPANY_PHONE_NUMBER}
                           </Typography>
                         </Grid>
-                      </Grid>
+                      </Stack>
                     </Grid>
                   </Grid>
-                </Grid>
-                <Grid item>
+                </Box>
+                <Box>
                   <Grid container direction="row" gap={3}>
                     <Grid item>
                       <MailIcon
@@ -99,9 +93,9 @@ export default function Contacts() {
                       </Typography>
                     </Grid>
                   </Grid>
-                </Grid>
-                <Grid item>
-                  <Grid container gap={3} sx={{ direction: "row", flexFlow: "nowrap" }}>
+                </Box>
+                <Box>
+                  <Grid container spacing={3} sx={{ direction: "row", flexFlow: "nowrap" }}>
                     <Grid item>
                       <LocationOnIcon
                         sx={{
@@ -121,12 +115,12 @@ export default function Contacts() {
                       </Typography>
                     </Grid>
                   </Grid>
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item>
-              <Grid container direction="column" gap={{ xs: 3.75, xl: 0 }}>
-                <Grid item>
+                </Box>
+              </Stack>
+            </Box>
+            <Box>
+              <Stack spacing={{ xs: 3.75, xl: 0 }}>
+                <Box>
                   <Typography
                     sx={{
                       color: "primary.main",
@@ -140,18 +134,18 @@ export default function Contacts() {
                   >
                     ОБРАЩАЙТЕСЬ ДАЖЕ ЗА СОВЕТОМ. МЫ ВАМ ПОМОЖЕМ.
                   </Typography>
-                </Grid>
-                <Grid item sx={{ alignSelf: "center" }}>
+                </Box>
+                <Box sx={{ alignSelf: "center" }}>
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2248.8461968677025!2d37.14000591612654!3d55.691661704173015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b55a501439297b%3A0x905ba792be5e4606!2s7%2C%20Soloslovo%2C%20Moskovskaya%20oblast'%2C%20Russia%2C%20143081!5e0!3m2!1sen!2s!4v1653732164000!5m2!1sen!2s"
                     loading="lazy"
                     style={{ border: "0px", width: "100%", height: "100%" }}
                     title="map"
                   ></iframe>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
+                </Box>
+              </Stack>
+            </Box>
+          </Stack>
         </CommonPaper>
       </Container>
     </Box>

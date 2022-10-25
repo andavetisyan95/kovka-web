@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 
 //Components
-import { CommonPaper } from "../../../components/common";
+import { CommonPaper } from "src/components/common";
 
 export default function Machins() {
   return (

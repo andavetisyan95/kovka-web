@@ -5,13 +5,23 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 
 //Mui components
-import { Fade, Grid, Hidden, List, ListItem, ListItemText, Typography } from "@mui/material";
+import {
+  Fade,
+  Grid,
+  Hidden,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+  Stack,
+  Box
+} from "@mui/material";
 
 //react components
-import { CommonBox } from "../../../components/common";
+import { CommonBox } from "src/components/common";
 
 //types
-import { DataInsertion, Product } from "../../../types/common-types";
+import { DataInsertion, Product } from "src/types/common-types";
 
 //confguration for Typography variant property
 declare module "@mui/material/styles" {
@@ -50,9 +60,9 @@ export default function Services({ services }: DataInsertion) {
     <CommonBox title="НАШИ УСЛУГИ">
       <Grid container columnSpacing={1.5}>
         <Grid item>
-          <Grid container direction="column" spacing={1.5}>
+          <Stack spacing={1.5}>
             {services?.map(({ title, id, item }, i) => (
-              <Grid item key={id}>
+              <Box key={id}>
                 <List>
                   <ListItem
                     sx={{ padding: 0, cursor: "pointer" }}
@@ -75,9 +85,9 @@ export default function Services({ services }: DataInsertion) {
                     </ListItemText>
                   </ListItem>
                 </List>
-              </Grid>
+              </Box>
             ))}
-          </Grid>
+          </Stack>
         </Grid>
         <Hidden lgDown>
           <Grid item lg={6} xl={7} position="relative" sx={{ overflow: "hidden" }}>

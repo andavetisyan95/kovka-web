@@ -4,7 +4,7 @@ import React from "react";
 import { Box, Grid } from "@mui/material";
 
 //React components
-import { BoxForWorks, CommonBox } from "../../../components/common";
+import { BoxForWorks, CommonBox } from "src/components/common";
 
 type ExamplesParams = {
   id: number;

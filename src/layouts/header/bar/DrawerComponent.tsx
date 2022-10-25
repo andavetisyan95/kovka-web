@@ -10,15 +10,14 @@ import { Box, IconButton, Drawer, Typography, Stack } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 //source
-import { navLinks } from "../../../source/navLinks";
+import { navLinks } from "src/source/navLinks";
 
+type DrawerProps = {
+  showDrawer: boolean;
+  close: () => void;
+};
 
-type DrawerProps ={
-  showDrawer:  boolean
-  close: ()=> void
-}
-
-export default function DrawerComponent({ showDrawer,close }:DrawerProps) {
+export default function DrawerComponent({ showDrawer, close }: DrawerProps) {
   const navigate = useNavigate();
 
   return (
@@ -44,7 +43,7 @@ export default function DrawerComponent({ showDrawer,close }:DrawerProps) {
           </IconButton>
         </Box>
         <Box>
-          <Stack sx={{ gap: { xs: 8.5 } }}>
+          <Stack spacing={{ xs: 8.5 }}>
             {navLinks.map(({ title, path }) => (
               <Box
                 key={title}

@@ -3,19 +3,19 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 //MUI components
-import { Typography, Grid, Button } from "@mui/material";
+import { Typography, Button, Stack, Box } from "@mui/material";
 
 //react components
-import { CommonPaper } from "../../../components/common";
+import { CommonPaper } from "src/components/common";
 
 export default function MainPage() {
   const navigate = useNavigate();
 
   return (
-    <Grid container sx={{ pt: { xl: 8, sm: 5, xs: 10 }, pb: { xl: 16, sm: 3, xs: 25 } }}>
+    <Box sx={{ mt: { lg: 7, sm: 5, xs: 10 }, mb: { lg: 12, sm: 3, xs: 25 } }}>
       <CommonPaper title="ПРОИЗВОДИТЕЛЬ КОВАННЫХ ИЗДЕЛИЙ">
-        <Grid container direction="column" gap={{ sm: 10, xs: 5 }}>
-          <Grid item sx={{ pr: 5 }}>
+        <Stack spacing={{ sm: 6, xs: 5 }}>
+          <Box sx={{ pr: 5 }}>
             <Typography
               sx={{
                 fontFamily: "Mulish",
@@ -26,8 +26,8 @@ export default function MainPage() {
             >
               Один из ведущих производителей кованых изделий в Московской области
             </Typography>
-          </Grid>
-          <Grid item>
+          </Box>
+          <Box>
             <Button
               onClick={() => navigate("/catalog")}
               sx={{
@@ -35,15 +35,15 @@ export default function MainPage() {
                 fontSize: { xs: 16, sm: 18 },
                 textTransform: "capitalize",
                 lineHeight: { xs: "20px", sm: "25px" },
-                width: { xs: 280, sm: 320 },
-                height: { xs: 60, sm: 80 }
+                width: { xs: 280, sm: 330 },
+                height: { xs: 60, sm: 65 }
               }}
             >
               Каталог
             </Button>
-          </Grid>
-        </Grid>
+          </Box>
+        </Stack>
       </CommonPaper>
-    </Grid>
+    </Box>
   );
 }

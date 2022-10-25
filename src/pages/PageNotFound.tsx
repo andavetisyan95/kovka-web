@@ -1,17 +1,16 @@
 //react
-import React from 'react';
+import React from "react";
 
 //react router
 import { useNavigate } from "react-router";
 
 //Mui components
-import { Container, Box, Grid, Typography, Button } from "@mui/material";
+import { Container, Box, Typography, Button, Stack } from "@mui/material";
 
 //common component
 import { BoxBackground } from "../components/common";
 
 export default function PageNotFound() {
-
   const navigate = useNavigate();
 
   return (
@@ -19,19 +18,17 @@ export default function PageNotFound() {
       <BoxBackground imgName="/images/noResult.jpg" />
       <Container>
         <Box sx={{ pt: { lg: 20, sm: 15, xs: 10 } }}>
-          <Grid
-            container
+          <Stack
             sx={{
               bgcolor: "rgba(0,0,0,0.7)",
-              gap: { sm: 10, xs: 5 },
               pt: { xs: 10 },
               pb: { xs: 10 }
             }}
-            direction="column"
+            spacing={{ sm: 10, xs: 5 }}
             justifyContent="center"
             alignItems="center"
           >
-            <Grid item>
+            <Box>
               <Typography
                 sx={{
                   fontSize: { xs: 140, sm: 250 },
@@ -41,11 +38,11 @@ export default function PageNotFound() {
               >
                 404
               </Typography>
-            </Grid>
-            <Grid item>
+            </Box>
+            <Box>
               <Typography sx={{ fontSize: 40, lineHeight: "50px" }}>Страница не найдена</Typography>
-            </Grid>
-            <Grid item>
+            </Box>
+            <Box>
               <Button
                 onClick={() => navigate("/")}
                 sx={{
@@ -65,8 +62,8 @@ export default function PageNotFound() {
               >
                 Вернуться на главную
               </Button>
-            </Grid>
-          </Grid>
+            </Box>
+          </Stack>
         </Box>
       </Container>
     </>

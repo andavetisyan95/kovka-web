@@ -4,11 +4,11 @@ import React from "react";
 import { Box, Stack, Typography } from "@mui/material";
 
 //types
-import { CommonProps } from "../../../types/common-types";
+import { CommonProps } from "src/types/common-types";
 
 export default function CatalogCommon({ children, title }: CommonProps) {
   return (
-    <Stack mt={5} gap={{ xs: 5, sm: 10 }}>
+    <Stack mt={5} spacing={{ xs: 5, sm: 10 }}>
       <Typography
         sx={{
           color: "primary.main",
