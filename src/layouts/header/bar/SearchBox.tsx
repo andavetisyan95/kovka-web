@@ -67,10 +67,11 @@ const SearchBox = () => {
                 padding: 1.5,
                 ml: "5px"
               },
-              ...(title && { borderBottom: "none", borderRadius: "5px 5px 0 0 " }),
+
               border: "1px solid #FFFFFF",
-              borderBottom: "1px solid white",
+              borderBottom: "1px solid #FFFFFF",
               borderRadius: "5px",
+              ...(title && { borderBottom: "none", borderRadius: "5px 5px 0 0" }),
               bgcolor: title.length >= 1 ? "rgba(0,0,0,0.7)" : "transparent",
               display: "flex",
               flexDirection: "row",
