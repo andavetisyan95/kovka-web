@@ -67,7 +67,6 @@ const SearchBox = () => {
                 padding: 1.5,
                 ml: "5px"
               },
-
               border: "1px solid #FFFFFF",
               borderBottom: "1px solid #FFFFFF",
               borderRadius: "5px",
