@@ -50,7 +50,7 @@ export default memo(function NavBar() {
     >
       <Grid
         container
-        spacing={{ xs: 2.5, lg: 13, xl: 22 }}
+        gap={{ xs: 2.5, lg: 13, xl: 22 }}
         justifyContent={{ lg: "center", xs: "space-between" }}
         alignItems="center"
         sx={{
