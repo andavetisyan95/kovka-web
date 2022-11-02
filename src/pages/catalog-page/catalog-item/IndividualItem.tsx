@@ -10,11 +10,15 @@ import { CatalogCommon } from "..";
 //types
 import { Product } from "src/types/common-types";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 type IndividualItemProps = {
   product: Product;
 };
 
 export default function IndividualItem({ product }: IndividualItemProps) {
+  TabTitle(product?.title);
   return (
     <CatalogCommon title="КАТАЛОГ">
       <Grid container spacing={10}>
