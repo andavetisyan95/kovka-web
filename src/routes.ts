@@ -1,3 +1,4 @@
+import { TabTitle } from "./utils/GeneralFunctions";
 import { FC } from "react";
 
 //components
