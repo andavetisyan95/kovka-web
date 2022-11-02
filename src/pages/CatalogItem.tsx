@@ -15,7 +15,11 @@ import { IndividualItem, ItemsExamples } from "./catalog-page";
 //types
 import { Product } from "../types/common-types";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 export default function CatalogItem() {
+  TabTitle("Каталог");
   const [itemInfo, setItemInfo] = useState<Product[]>([]);
   const [examples, setExamples] = useState<[]>([]);
 

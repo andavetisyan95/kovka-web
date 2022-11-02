@@ -1,8 +1,8 @@
 //react
-import React from 'react';
+import React from "react";
 
 //react hooks
-import { useEffect, useState,useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 
 //react
 import axios from "axios";
@@ -11,26 +11,30 @@ import axios from "axios";
 import { Box, Grid, Paper, Typography } from "@mui/material";
 
 //react components
-import { BoxBackground } from '../components/common';
+import { BoxBackground } from "../components/common";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
 
-type PricesParams ={
-  id:number
-  title:string
-  price:string
-}
+type PricesParams = {
+  id: number;
+  title: string;
+  price: string;
+};
 
 export default function Prices() {
-  const [prices, setPrices] = useState<PricesParams[]>([]);
-  
-const getPrices = useCallback(async()=>{
-  const {data} = await axios.get(process.env.REACT_APP_SERVICE_HOST as string)
-  setPrices(data ?? []);
-},[])
+  TabTitle("Цены");
 
-useEffect(()=>{
-  getPrices()
-},[getPrices])
+  const [prices, setPrices] = useState<PricesParams[]>([]);
+
+  const getPrices = useCallback(async () => {
+    const { data } = await axios.get(process.env.REACT_APP_SERVICE_HOST as string);
+    setPrices(data ?? []);
+  }, []);
+
+  useEffect(() => {
+    getPrices();
+  }, [getPrices]);
 
   return (
     <>

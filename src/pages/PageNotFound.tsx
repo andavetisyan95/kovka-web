@@ -10,8 +10,13 @@ import { Container, Box, Typography, Button, Stack } from "@mui/material";
 //common component
 import { BoxBackground } from "../components/common";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 export default function PageNotFound() {
   const navigate = useNavigate();
+
+  TabTitle("Not Found");
 
   return (
     <>

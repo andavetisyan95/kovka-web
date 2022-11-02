@@ -14,7 +14,12 @@ import { CatalogMain, MoreServices } from "./catalog-page";
 //types
 import { Product } from "../types/common-types";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 export default function Catalog() {
+  TabTitle("Каталог");
+
   const [items, setItems] = useState<Product[]>([]);
 
   const getServices = useCallback(async () => {

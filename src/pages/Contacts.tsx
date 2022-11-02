@@ -19,7 +19,11 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import MailIcon from "@mui/icons-material/Mail";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 export default function Contacts() {
+  TabTitle("Контакты");
   return (
     <Box>
       <BoxBackground imgName="/images/contacts.jpg" />

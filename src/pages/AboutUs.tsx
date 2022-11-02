@@ -8,7 +8,11 @@ import { BoxBackground, OurWorks } from "../components/common";
 import Main from "./about-page/main";
 import Machins from "./about-page/machins";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 export default function AboutUs() {
+  TabTitle("О нас");
   return (
     <>
       <BoxBackground imgName="/images/aboutPage.jpg" />

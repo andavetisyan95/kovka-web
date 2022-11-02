@@ -13,7 +13,12 @@ import { BoxBackground, OurWorks } from "../components/common";
 //types
 import { DataInsertion } from "../types/common-types";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 export default function Home() {
+  TabTitle("Главная");
+
   const [kovkaData, setKovkaData] = useState<DataInsertion>({});
 
   useEffect(() => {

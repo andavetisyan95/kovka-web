@@ -19,7 +19,11 @@ import { Box, Typography, Stack } from "@mui/material";
 //react components
 import { CatalogMain } from "./catalog-page";
 
+//function for title generation
+import { TabTitle } from "src/utils/GeneralFunctions";
+
 export default function SearchResults() {
+  TabTitle("Результат поиска");
   const location = useLocation();
   const result = location.search.split("?")[1].split("=")[1];
 
