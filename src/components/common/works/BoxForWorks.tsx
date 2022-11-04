@@ -39,7 +39,7 @@ export default function BoxForWorks({ imgName, imageList }: WorksProps) {
       className="clickable"
     >
       <img
-        src={imgName}
+        src={imgName || "/images/placeholder.jpg"}
         alt={imgName}
         width="100%"
         height={250}
