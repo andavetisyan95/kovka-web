@@ -8,8 +8,6 @@ import MainLayout from "./layouts/MainLayout";
 
 // source
 import { routes } from "./routes";
-import { navLinks } from "./source/navLinks";
-import { TabTitle } from "./utils/GeneralFunctions";
 
 function App() {
   return (
